@@ -2,6 +2,7 @@
 export PYTHONPATH=/home/long/github/tf/hlzhu_tfmodels/research:/home/long/github/tf/hlzhu_tfmodels/research/slim:$PYTHONPATH
 
 2.experiments command line
+first cd hlzhu_tfmodels/research/deeplab, then run the following scripts.
 
 sh pyramid_class_aware_train.sh 2>&1 | tee pyramid_class_aware_train.log
 
