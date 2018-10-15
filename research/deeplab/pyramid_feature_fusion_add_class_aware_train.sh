@@ -26,9 +26,9 @@ python pyramid_feature_fusion_and_class_aware_train.py\
     --num_clones=2\
     --train_split="train"\
     --model_variant="xception_65"\
-    --atrous_rates=6\
     --atrous_rates=12\
-    --atrous_rates=18\
+    --atrous_rates=24\
+    --atrous_rates=36\
     --output_stride=8\
     --decoder_output_stride=4\
     --train_crop_size=513\
