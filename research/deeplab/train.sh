@@ -23,7 +23,7 @@ python train.py\
 python train.py\
     --logtostderr\
     --num_clones=2\
-    --train_split="train"\
+    --train_split="train_aug"\
     --model_variant="xception_65"\
     --atrous_rates=12\
     --atrous_rates=24\
