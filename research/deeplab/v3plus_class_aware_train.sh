@@ -33,7 +33,7 @@ python class_aware_train.py\
     --decoder_output_stride=4\
     --train_crop_size=513\
     --train_crop_size=513\
-    --train_batch_size=2\
+    --train_batch_size=8\
     --training_number_of_steps=30000\
     --fine_tune_batch_norm=false\
     --base_learning_rate=0.001\
