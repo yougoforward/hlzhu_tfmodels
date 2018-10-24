@@ -1041,7 +1041,7 @@ def pyramid_class_aware_refine_by_decoder(features,
             image_feature = tf.reduce_mean(decoder_features, axis=[1, 2])[:, tf.newaxis,
                             tf.newaxis]
             image_feature = slim.conv2d(image_feature, skip_depth, 1,activation_fn=None,
-      normalizer_fn=None, scope=IMAGE_POOLING_SCOPE)
+      normalizer_fn=None, scope=IMAGE_POOLING_SCOPE+str(i))
             global_attention= tf.nn.sigmoid(image_feature, name=None)
 
             decoder_features_list.append(
