@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model2.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,18 +38,85 @@
       <file leaf-file-name="pyramid_class_aware_eval2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+            <state relative-caret-position="524">
+              <caret line="24" column="49" selection-end-line="176" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pyramid_class_aware_model2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pyramid_class_aware_model2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1518">
+            <state relative-caret-position="-2055">
+              <caret line="928" column="34" lean-forward="true" selection-start-line="928" selection-start-column="34" selection-end-line="928" selection-end-column="34" />
               <folding>
                 <element signature="e#2206#2229#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pyramid_class_aware_train2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="17" column="3" lean-forward="true" selection-end-line="413" />
+              <folding>
+                <element signature="e#777#787#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pyramid_class_aware_model3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="757" column="21" lean-forward="true" selection-start-line="757" selection-start-column="21" selection-end-line="757" selection-end-column="21" />
+              <folding>
+                <element signature="e#2205#2228#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pyramid_class_aware_train2.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train2.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="45" column="18" lean-forward="true" selection-end-line="59" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pyramid_class_aware_train3.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pyramid_class_aware_train3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+              <folding>
+                <element signature="e#777#787#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pyramid_class_aware_eval3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2156">
+              <caret line="113" column="62" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="62" />
+              <folding>
+                <element signature="e#779#790#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,6 +138,7 @@
       <find>sig</find>
       <find>pyramid_refine</find>
       <find>pyramid_refine_by_decoder</find>
+      <find>predict_class_aware_attention_labels</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -91,6 +163,10 @@
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_feature_fusion_and_class_aware_train.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train2.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model2.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model3.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval3.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.sh" />
       </list>
     </option>
   </component>
@@ -131,7 +207,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tf/tfmodels" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -383,13 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -415,20 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="770">
           <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train2.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="59" column="55" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -476,10 +531,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1518">
+        <state relative-caret-position="-2055">
+          <caret line="928" column="34" lean-forward="true" selection-start-line="928" selection-start-column="34" selection-end-line="928" selection-end-column="34" />
           <folding>
             <element signature="e#2206#2229#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="3" lean-forward="true" selection-end-line="413" />
+          <folding>
+            <element signature="e#777#787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding>
+            <element signature="e#777#787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="24" column="49" selection-end-line="176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2156">
+          <caret line="113" column="62" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="62" />
+          <folding>
+            <element signature="e#779#790#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="757" column="21" lean-forward="true" selection-start-line="757" selection-start-column="21" selection-end-line="757" selection-end-column="21" />
+          <folding>
+            <element signature="e#2205#2228#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train2.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="45" column="18" lean-forward="true" selection-end-line="59" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
         </state>
       </provider>
     </entry>
