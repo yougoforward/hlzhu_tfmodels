@@ -4,6 +4,8 @@ export PYTHONPATH=/home/long/github/tf/hlzhu_tfmodels/research:/home/long/github
 2.experiments command line
 first cd hlzhu_tfmodels/research/deeplab, then run the following scripts.
 
+sh pyramid_class_aware_train3.sh 2>&1 | tee pyramid_class_aware_train3.log
+sh pyramid_class_aware_train2.sh 2>&1 | tee pyramid_class_aware_train2.log
 sh pyramid_class_aware_train.sh 2>&1 | tee pyramid_class_aware_train.log
 
 sh v3plus_train.sh 2>&1 | tee v3plus_train.log
@@ -18,3 +20,5 @@ sh pyramid_feature_fusion_and_class_aware_train.sh 2>&1 | tee pyramid_feature_fu
 sh train.sh 2>&1 | tee train.log
 
 sh class_aware_train.sh 2>&1 | tee class_aware_train.log
+
+

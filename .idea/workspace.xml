@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/hlzhu_experiments.txt" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/hlzhu_experiments.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -89,7 +85,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pyramid_class_aware_train3.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pyramid_class_aware_train3.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="506">
@@ -118,6 +114,15 @@
               <folding>
                 <element signature="e#779#790#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hlzhu_experiments.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/hlzhu_experiments.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="4" selection-start-line="6" selection-end-line="6" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -167,6 +172,7 @@
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.py" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval3.py" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/hlzhu_experiments.txt" />
       </list>
     </option>
   </component>
@@ -403,9 +409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/hlzhu_experiments.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_feature_fusion_add_class_aware_train.sh" />
     <entry file="file://$PROJECT_DIR$/research/deeplab/model.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -597,6 +600,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/hlzhu_experiments.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="4" selection-start-line="6" selection-end-line="6" selection-end-column="74" />
         </state>
       </provider>
     </entry>

@@ -754,7 +754,8 @@ def _get_class_aware_attention_logits(images,
         weight_decay=weight_decay,
         reuse=reuse,
         scope_suffix=output)
-  inter_logits.append(outputs_to_logits[output][:2])
+  outputs_to_logits[output]=outputs_to_logits[output][:2]
+  inter_logits.append(outputs_to_logits)
   return inter_logits
 
 def refine_by_decoder(features,
@@ -1072,8 +1073,10 @@ def pyramid_class_aware_refine_by_decoder(features,
             #         weight_decay=weight_decay,
             #         reuse=reuse,
             #         scope_suffix=output+str(i))
-            inter_logits.append(outputs_to_logits[output][:2])
             decoder_features_list.append(outputs_to_logits[output][0])
+            outputs_to_logits[output]=outputs_to_logits[output][:2]
+            inter_logits.append(outputs_to_logits)
+
 
             # Resize to decoder_height/decoder_width.
 
