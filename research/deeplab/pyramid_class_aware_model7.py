@@ -52,7 +52,7 @@ Alan L. Yuille (* equal contribution)
 (https://arxiv.org/abs/1412.7062)
 """
 import tensorflow as tf
-from deeplab.core import feature_extractor
+from deeplab.core import pyramid_feature_extractor as feature_extractor
 
 slim = tf.contrib.slim
 
@@ -62,7 +62,7 @@ MERGED_LOGITS_SCOPE = 'merged_logits'
 IMAGE_POOLING_SCOPE = 'image_pooling'
 ASPP_SCOPE = 'aspp'
 CONCAT_PROJECTION_SCOPE = 'concat_projection'
-DECODER_SCOPE = 'decoder'
+DECODER_SCOPE = 'pyramid_decoder'
 
 
 def get_extra_layer_scopes(last_layers_contain_logits_only=False):
@@ -228,7 +228,7 @@ def predict_class_aware_attention_labels(images, model_options, image_pyramid=No
 
   predictions = {}
   for output in sorted(outputs_to_scales_to_logits):
-    scales_to_logits = outputs_to_scales_to_logits[output]['softmax']#modify
+    scales_to_logits = outputs_to_scales_to_logits[output]['softmax'][2]#modify
     logits = tf.image.resize_bilinear(
         scales_to_logits[MERGED_LOGITS_SCOPE],
         tf.shape(images)[1:3],
@@ -368,121 +368,6 @@ def multi_scale_logits(images,
 
   return outputs_to_scales_to_logits
 
-def pyramid_feature_fusion_multi_scale_logits(images,
-                       model_options,
-                       image_pyramid,
-                       weight_decay=0.0001,
-                       is_training=False,
-                       fine_tune_batch_norm=False):
-  """Gets the logits for multi-scale inputs.
-
-  The returned logits are all downsampled (due to max-pooling layers)
-  for both training and evaluation.
-
-  Args:
-    images: A tensor of size [batch, height, width, channels].
-    model_options: A ModelOptions instance to configure models.
-    image_pyramid: Input image scales for multi-scale feature extraction.
-    weight_decay: The weight decay for model variables.
-    is_training: Is training or not.
-    fine_tune_batch_norm: Fine-tune the batch norm parameters or not.
-
-  Returns:
-    outputs_to_scales_to_logits: A map of maps from output_type (e.g.,
-      semantic prediction) to a dictionary of multi-scale logits names to
-      logits. For each output_type, the dictionary has keys which
-      correspond to the scales and values which correspond to the logits.
-      For example, if `scales` equals [1.0, 1.5], then the keys would
-      include 'merged_logits', 'logits_1.00' and 'logits_1.50'.
-
-  Raises:
-    ValueError: If model_options doesn't specify crop_size and its
-      add_image_level_feature = True, since add_image_level_feature requires
-      crop_size information.
-  """
-  # Setup default values.
-  if not image_pyramid:
-    image_pyramid = [1.0]
-  crop_height = (
-      model_options.crop_size[0]
-      if model_options.crop_size else tf.shape(images)[1])
-  crop_width = (
-      model_options.crop_size[1]
-      if model_options.crop_size else tf.shape(images)[2])
-
-  # Compute the height, width for the output logits.
-  logits_output_stride = (
-      model_options.decoder_output_stride or model_options.output_stride)
-
-  logits_height = scale_dimension(
-      crop_height,
-      max(1.0, max(image_pyramid)) / logits_output_stride)
-  logits_width = scale_dimension(
-      crop_width,
-      max(1.0, max(image_pyramid)) / logits_output_stride)
-
-  # Compute the logits for each scale in the image pyramid.
-  outputs_to_scales_to_logits = {
-      k: {}
-      for k in model_options.outputs_to_num_classes
-  }
-
-  for image_scale in image_pyramid:
-    if image_scale != 1.0:
-      scaled_height = scale_dimension(crop_height, image_scale)
-      scaled_width = scale_dimension(crop_width, image_scale)
-      scaled_crop_size = [scaled_height, scaled_width]
-      scaled_images = tf.image.resize_bilinear(
-          images, scaled_crop_size, align_corners=True)
-      if model_options.crop_size:
-        scaled_images.set_shape([None, scaled_height, scaled_width, 3])
-    else:
-      scaled_crop_size = model_options.crop_size
-      scaled_images = images
-
-    updated_options = model_options._replace(crop_size=scaled_crop_size)
-    outputs_to_logits = _get_pyramid_feature_fusion__logits(
-        scaled_images,
-        updated_options,
-        weight_decay=weight_decay,
-        reuse=tf.AUTO_REUSE,
-        is_training=is_training,
-        fine_tune_batch_norm=fine_tune_batch_norm)
-
-    # Resize the logits to have the same dimension before merging.
-    for output in sorted(outputs_to_logits):
-      outputs_to_logits[output] = tf.image.resize_bilinear(
-          outputs_to_logits[output], [logits_height, logits_width],
-          align_corners=True)
-
-    # Return when only one input scale.
-    if len(image_pyramid) == 1:
-      for output in sorted(model_options.outputs_to_num_classes):
-        outputs_to_scales_to_logits[output][
-            MERGED_LOGITS_SCOPE] = outputs_to_logits[output]
-      return outputs_to_scales_to_logits
-
-    # Save logits to the output map.
-    for output in sorted(model_options.outputs_to_num_classes):
-      outputs_to_scales_to_logits[output][
-          'logits_%.2f' % image_scale] = outputs_to_logits[output]
-
-  # Merge the logits from all the multi-scale inputs.
-  for output in sorted(model_options.outputs_to_num_classes):
-    # Concatenate the multi-scale logits for each output type.
-    all_logits = [
-        tf.expand_dims(logits, axis=4)
-        for logits in outputs_to_scales_to_logits[output].values()
-    ]
-    all_logits = tf.concat(all_logits, 4)
-    merge_fn = (
-        tf.reduce_max
-        if model_options.merge_method == 'max' else tf.reduce_mean)
-    outputs_to_scales_to_logits[output][MERGED_LOGITS_SCOPE] = merge_fn(
-        all_logits, axis=4)
-
-  return outputs_to_scales_to_logits
-
 def multi_scale_class_aware_attention_logits(images,
                        model_options,
                        image_pyramid,
@@ -538,7 +423,7 @@ def multi_scale_class_aware_attention_logits(images,
 
   # Compute the logits for each scale in the image pyramid.
   outputs_to_scales_to_logits = {
-      k: {'softmax':{},'sigmoid':{}}
+      k: {'softmax':[{},{},{}],'sigmoid':[{},{},{}]}
       for k in model_options.outputs_to_num_classes
   }
 
@@ -556,6 +441,7 @@ def multi_scale_class_aware_attention_logits(images,
       scaled_images = images
 
     updated_options = model_options._replace(crop_size=scaled_crop_size)
+    # generate pyramid logits for softmax loss and sigmoid loss
     outputs_to_logits = _get_class_aware_attention_logits(
         scaled_images,
         updated_options,
@@ -565,51 +451,55 @@ def multi_scale_class_aware_attention_logits(images,
         fine_tune_batch_norm=fine_tune_batch_norm)
 
     # Resize the logits to have the same dimension before merging.
-    for output in sorted(outputs_to_logits):
-      outputs_to_logits[output] = [tf.image.resize_bilinear(
-          output_logits, [logits_height, logits_width],
-          align_corners=True) for output_logits in outputs_to_logits[output]]
+    for i in range(3):
+        for output in sorted(outputs_to_logits[i]):
+          outputs_to_logits[i][output] = [tf.image.resize_bilinear(
+              output_logits, [logits_height, logits_width],
+              align_corners=True) for output_logits in outputs_to_logits[i][output]]
 
     # Return when only one input scale.
     if len(image_pyramid) == 1:
-      for output in sorted(model_options.outputs_to_num_classes):
-        outputs_to_scales_to_logits[output]['softmax'][
-            MERGED_LOGITS_SCOPE] = outputs_to_logits[output][0]
-        outputs_to_scales_to_logits[output]['sigmoid'][
-            MERGED_LOGITS_SCOPE] = outputs_to_logits[output][1]
-      return outputs_to_scales_to_logits
+        for i in range(3):
+            for output in sorted(model_options.outputs_to_num_classes):
+                outputs_to_scales_to_logits[output]['softmax'][i][
+                    MERGED_LOGITS_SCOPE] = outputs_to_logits[i][output][0]
+                outputs_to_scales_to_logits[output]['sigmoid'][i][
+                    MERGED_LOGITS_SCOPE] = outputs_to_logits[i][output][1]
+        return outputs_to_scales_to_logits
 
     # Save logits to the output map.
-    for output in sorted(model_options.outputs_to_num_classes):
-      outputs_to_scales_to_logits[output]['softmax'][
-          'logits_%.2f' % image_scale] = outputs_to_logits[output][0]
-      outputs_to_scales_to_logits[output]['sigmoid'][
-          'logits_%.2f' % image_scale] = outputs_to_logits[output][1]
+    for i in range(3):
+        for output in sorted(model_options.outputs_to_num_classes):
+          outputs_to_scales_to_logits[output]['softmax'][i][
+              'logits_%.2f' % image_scale] = outputs_to_logits[i][output][0]
+          outputs_to_scales_to_logits[output]['sigmoid'][i][
+              'logits_%.2f' % image_scale] = outputs_to_logits[i][output][1]
 
   # Merge the logits from all the multi-scale inputs.
-  for output in sorted(model_options.outputs_to_num_classes):
-    # Concatenate the multi-scale logits for each output type.
-    all_logits = [
-        tf.expand_dims(logits, axis=4)
-        for logits in outputs_to_scales_to_logits[output]['softmax'].values()
-    ]
-    all_logits = tf.concat(all_logits, 4)
-    merge_fn = (
-        tf.reduce_max
-        if model_options.merge_method == 'max' else tf.reduce_mean)
-    outputs_to_scales_to_logits[output]['softmax'][MERGED_LOGITS_SCOPE] = merge_fn(
-        all_logits, axis=4)
+  for i in range(3):
+      for output in sorted(model_options.outputs_to_num_classes):
+        # Concatenate the multi-scale logits for each output type.
+        all_logits = [
+            tf.expand_dims(logits, axis=4)
+            for logits in outputs_to_scales_to_logits[output]['softmax'][i].values()
+        ]
+        all_logits = tf.concat(all_logits, 4)
+        merge_fn = (
+            tf.reduce_max
+            if model_options.merge_method == 'max' else tf.reduce_mean)
+        outputs_to_scales_to_logits[output]['softmax'][i][MERGED_LOGITS_SCOPE] = merge_fn(
+            all_logits, axis=4)
 
-    all_logits = [
-        tf.expand_dims(logits, axis=4)
-        for logits in outputs_to_scales_to_logits[output]['sigmoid'].values()
-    ]
-    all_logits = tf.concat(all_logits, 4)
-    merge_fn = (
-        tf.reduce_max
-        if model_options.merge_method == 'max' else tf.reduce_mean)
-    outputs_to_scales_to_logits[output]['sigmoid'][MERGED_LOGITS_SCOPE] = merge_fn(
-        all_logits, axis=4)
+        all_logits = [
+            tf.expand_dims(logits, axis=4)
+            for logits in outputs_to_scales_to_logits[output]['sigmoid'][i].values()
+        ]
+        all_logits = tf.concat(all_logits, 4)
+        merge_fn = (
+            tf.reduce_max
+            if model_options.merge_method == 'max' else tf.reduce_mean)
+        outputs_to_scales_to_logits[output]['sigmoid'][i][MERGED_LOGITS_SCOPE] = merge_fn(
+            all_logits, axis=4)
 
   return outputs_to_scales_to_logits
 
@@ -737,41 +627,6 @@ def extract_features(images,
 
         return concat_logits, end_points
 
-def class_aware_extract_features(images,
-                     model_options,
-                     weight_decay=0.0001,
-                     reuse=None,
-                     is_training=False,
-                     fine_tune_batch_norm=False):
-  """Extracts features by the particular model_variant.
-
-  Args:
-    images: A tensor of size [batch, height, width, channels].
-    model_options: A ModelOptions instance to configure models.
-    weight_decay: The weight decay for model variables.
-    reuse: Reuse the model variables or not.
-    is_training: Is training or not.
-    fine_tune_batch_norm: Fine-tune the batch norm parameters or not.
-
-  Returns:
-    concat_logits: A tensor of size [batch, feature_height, feature_width,
-      feature_channels], where feature_height/feature_width are determined by
-      the images height/width and output_stride.
-    end_points: A dictionary from components of the network to the corresponding
-      activation.
-  """
-  features, end_points = feature_extractor.extract_features(
-      images,
-      output_stride=model_options.output_stride,
-      multi_grid=model_options.multi_grid,
-      model_variant=model_options.model_variant,
-      depth_multiplier=model_options.depth_multiplier,
-      weight_decay=weight_decay,
-      reuse=reuse,
-      is_training=is_training,
-      fine_tune_batch_norm=fine_tune_batch_norm)
-  return features, end_points
-
 
 def _get_logits(images,
                 model_options,
@@ -838,71 +693,6 @@ def _get_logits(images,
 
   return outputs_to_logits
 
-def _get_pyramid_feature_fusion_logits(images,
-                model_options,
-                weight_decay=0.0001,
-                reuse=None,
-                is_training=False,
-                fine_tune_batch_norm=False):
-  """Gets the logits by atrous/image spatial pyramid pooling.
-
-  Args:
-    images: A tensor of size [batch, height, width, channels].
-    model_options: A ModelOptions instance to configure models.
-    weight_decay: The weight decay for model variables.
-    reuse: Reuse the model variables or not.
-    is_training: Is training or not.
-    fine_tune_batch_norm: Fine-tune the batch norm parameters or not.
-
-  Returns:
-    outputs_to_logits: A map from output_type to logits.
-  """
-  features, end_points = extract_features(
-      images,
-      model_options,
-      weight_decay=weight_decay,
-      reuse=reuse,
-      is_training=is_training,
-      fine_tune_batch_norm=fine_tune_batch_norm)
-
-  if model_options.decoder_output_stride is not None:
-    if model_options.crop_size is None:
-      height = tf.shape(images)[1]
-      width = tf.shape(images)[2]
-    else:
-      height, width = model_options.crop_size
-
-    decoder_height = scale_dimension(height,
-                                     1.0 / model_options.decoder_output_stride)
-    decoder_width = scale_dimension(width,
-                                    1.0 / model_options.decoder_output_stride)
-    features = pyramid_refine_by_decoder(
-        features,
-        end_points,
-        decoder_height=decoder_height,
-        decoder_width=decoder_width,
-        decoder_use_separable_conv=model_options.decoder_use_separable_conv,
-        model_variant=model_options.model_variant,
-        weight_decay=weight_decay,
-        reuse=reuse,
-        is_training=is_training,
-        fine_tune_batch_norm=fine_tune_batch_norm)
-
-
-  outputs_to_logits = {}
-  for output in sorted(model_options.outputs_to_num_classes):
-    outputs_to_logits[output] = get_branch_logits(
-        features,
-        model_options.outputs_to_num_classes[output],
-        model_options.atrous_rates,
-        aspp_with_batch_norm=model_options.aspp_with_batch_norm,
-        kernel_size=model_options.logits_kernel_size,
-        weight_decay=weight_decay,
-        reuse=reuse,
-        scope_suffix=output)
-
-  return outputs_to_logits
-
 def _get_class_aware_attention_logits(images,
                 model_options,
                 weight_decay=0.0001,
@@ -929,7 +719,7 @@ def _get_class_aware_attention_logits(images,
       reuse=reuse,
       is_training=is_training,
       fine_tune_batch_norm=fine_tune_batch_norm)
-
+  inter_logits = []
   if model_options.decoder_output_stride is not None:
     if model_options.crop_size is None:
       height = tf.shape(images)[1]
@@ -940,8 +730,9 @@ def _get_class_aware_attention_logits(images,
                                      1.0 / model_options.decoder_output_stride)
     decoder_width = scale_dimension(width,
                                     1.0 / model_options.decoder_output_stride)
-    features = pyramid_refine_by_decoder(
+    features, inter_logits = pyramid_class_aware_refine_by_decoder(
         features,
+        model_options,
         end_points,
         decoder_height=decoder_height,
         decoder_width=decoder_width,
@@ -956,17 +747,16 @@ def _get_class_aware_attention_logits(images,
   for output in sorted(model_options.outputs_to_num_classes):
     outputs_to_logits[output] = get_class_aware_attention_branch_logits(
         features,
-        model_options,
         model_options.outputs_to_num_classes[output],
         model_options.atrous_rates,
         aspp_with_batch_norm=model_options.aspp_with_batch_norm,
         kernel_size=model_options.logits_kernel_size,
         weight_decay=weight_decay,
-        is_training=is_training,
         reuse=reuse,
         scope_suffix=output)
-
-  return outputs_to_logits
+  outputs_to_logits[output]=outputs_to_logits[output][:2]
+  inter_logits.append(outputs_to_logits)
+  return inter_logits
 
 def refine_by_decoder(features,
                       end_points,
@@ -1036,7 +826,7 @@ def refine_by_decoder(features,
                     end_points[feature_name],
                     48,
                     1,
-                    scope='feature_projection'+ str(i)))
+                    scope='feature_projection' + str(i)))
             # Resize to decoder_height/decoder_width.
             for j, feature in enumerate(decoder_features_list):
               decoder_features_list[j] = tf.image.resize_bilinear(
@@ -1068,7 +858,7 @@ def refine_by_decoder(features,
                   slim.conv2d,
                   decoder_depth,
                   3,
-                  scope='decoder_conv'+ str(i))
+                  scope='decoder_conv' + str(i))
           return decoder_features
 
 def pyramid_refine_by_decoder(features,
@@ -1137,7 +927,7 @@ def pyramid_refine_by_decoder(features,
             decoder_features_list.append(
                 slim.conv2d(
                     end_points[feature_name],
-                    48,
+                    48*(4**(1-i)),
                     1,
                     scope='feature_projection' + str(i)))
             # Resize to decoder_height/decoder_width.
@@ -1157,13 +947,13 @@ def pyramid_refine_by_decoder(features,
                   filters=decoder_depth,
                   rate=1,
                   weight_decay=weight_decay,
-                  scope='decoder_conv0')
+                  scope='fusion'+str(i)+'decoder_conv0')
               decoder_features = split_separable_conv2d(
                   decoder_features,
                   filters=decoder_depth,
                   rate=1,
                   weight_decay=weight_decay,
-                  scope='decoder_conv1')
+                  scope='fusion'+str(i)+'decoder_conv1')
             else:
               num_convs = 2
               decoder_features = slim.repeat(
@@ -1176,7 +966,166 @@ def pyramid_refine_by_decoder(features,
           return decoder_features
 
 
+def pyramid_class_aware_refine_by_decoder(features,
+                      model_options,
+                      end_points,
+                      decoder_height,
+                      decoder_width,
+                      decoder_use_separable_conv=False,
+                      model_variant=None,
+                      weight_decay=0.0001,
+                      reuse=None,
+                      is_training=False,
+                      fine_tune_batch_norm=False):
+  """Adds the decoder to obtain sharper segmentation results.
 
+  Args:
+    features: A tensor of size [batch, features_height, features_width,
+      features_channels].
+    end_points: A dictionary from components of the network to the corresponding
+      activation.
+    decoder_height: The height of decoder feature maps.
+    decoder_width: The width of decoder feature maps.
+    decoder_use_separable_conv: Employ separable convolution for decoder or not.
+    model_variant: Model variant for feature extraction.
+    weight_decay: The weight decay for model variables.
+    reuse: Reuse the model variables or not.
+    is_training: Is training or not.
+    fine_tune_batch_norm: Fine-tune the batch norm parameters or not.
+
+  Returns:
+    Decoder output with size [batch, decoder_height, decoder_width,
+      decoder_channels].
+  """
+  batch_norm_params = {
+      'is_training': is_training and fine_tune_batch_norm,
+      'decay': 0.9997,
+      'epsilon': 1e-5,
+      'scale': True,
+  }
+
+  with slim.arg_scope(
+      [slim.conv2d, slim.separable_conv2d],
+      weights_regularizer=slim.l2_regularizer(weight_decay),
+      activation_fn=tf.nn.relu,
+      normalizer_fn=slim.batch_norm,
+      padding='SAME',
+      stride=1,
+      reuse=reuse):
+    with slim.arg_scope([slim.batch_norm], **batch_norm_params):
+      with tf.variable_scope(DECODER_SCOPE, DECODER_SCOPE, [features]):
+        feature_list = feature_extractor.networks_to_feature_maps[
+            model_variant][feature_extractor.DECODER_END_POINTS]
+        if feature_list is None:
+          tf.logging.info('Not found any decoder end points.')
+          return features
+        else:
+          decoder_features = features
+          # generate label space at pyramid refinement levels
+          inter_logits=[]
+          for i, name in enumerate(feature_list):
+            # decoder_features_list = [decoder_features]
+
+            # MobileNet variants use different naming convention.
+            if 'mobilenet' in model_variant:
+              feature_name = name
+            else:
+              feature_name = '{}/{}'.format(
+                  feature_extractor.name_scope[model_variant], name)
+            outputs_to_logits = {}
+            for output in sorted(model_options.outputs_to_num_classes):
+                if i==0:
+                    outputs_to_logits[output] = get_class_aware_attention_branch_logits1(
+                        decoder_features,
+                        model_options,
+                        model_options.outputs_to_num_classes[output],
+                        model_options.atrous_rates,
+                        aspp_with_batch_norm=model_options.aspp_with_batch_norm,
+                        kernel_size=model_options.logits_kernel_size,
+                        weight_decay=weight_decay,
+                        is_traing=is_training,
+                        reuse=reuse,
+                        scope_suffix=output+str(i))
+                else:
+                    outputs_to_logits[output] = get_class_aware_attention_branch_logits(
+                        decoder_features,
+                        model_options.outputs_to_num_classes[output],
+                        model_options.atrous_rates,
+                        aspp_with_batch_norm=model_options.aspp_with_batch_norm,
+                        kernel_size=model_options.logits_kernel_size,
+                        weight_decay=weight_decay,
+                        reuse=reuse,
+                        scope_suffix=output + str(i))
+
+            decoder_features = outputs_to_logits[output][2]
+            decoder_features_list = [decoder_features]
+            skip_depth=48 * (4 ** (1 - i))
+            skip=slim.conv2d(
+                end_points[feature_name],
+                skip_depth,
+                3,
+                scope='feature_projection' + str(i))
+            # If crop_size is None, we simply do global pooling.
+            image_feature = tf.reduce_mean(decoder_features, axis=[1, 2])[:, tf.newaxis,
+                            tf.newaxis]
+            image_feature = slim.conv2d(image_feature, skip_depth, 1,activation_fn=None,
+      normalizer_fn=None, scope=IMAGE_POOLING_SCOPE+str(i))
+            global_attention= tf.nn.sigmoid(image_feature, name=None)
+
+            decoder_features_list.append(
+                tf.multiply(skip, global_attention, name=None))
+
+            # outputs_to_logits = {}
+            # for output in sorted(model_options.outputs_to_num_classes):
+            #     outputs_to_logits[output] = get_class_aware_attention_branch_logits(
+            #         decoder_features,
+            #         model_options.outputs_to_num_classes[output],
+            #         model_options.atrous_rates,
+            #         aspp_with_batch_norm=model_options.aspp_with_batch_norm,
+            #         kernel_size=model_options.logits_kernel_size,
+            #         weight_decay=weight_decay,
+            #         reuse=reuse,
+            #         scope_suffix=output+str(i))
+
+            # decoder_features_list.append(outputs_to_logits[output][0])
+            outputs_to_logits[output]=outputs_to_logits[output][:2]
+            inter_logits.append(outputs_to_logits)
+
+
+            # Resize to decoder_height/decoder_width.
+
+            for j, feature in enumerate(decoder_features_list):
+              decoder_features_list[j] = tf.image.resize_bilinear(
+                  feature, [scale_dimension(decoder_height,1.0/(2**(1-i))), scale_dimension(decoder_width,1.0/(2**(1-i)))], align_corners=True)
+              h = (None if isinstance(scale_dimension(decoder_height,1.0/(2**(1-i))), tf.Tensor)
+                   else scale_dimension(decoder_height,1.0/(2**(1-i))))
+              w = (None if isinstance(scale_dimension(decoder_width,1.0/(2**(1-i))), tf.Tensor)
+                   else scale_dimension(decoder_width,1.0/(2**(1-i))))
+              decoder_features_list[j].set_shape([None, h, w, None])
+            decoder_depth = 256
+            if decoder_use_separable_conv:
+              decoder_features = split_separable_conv2d(
+                  tf.concat(decoder_features_list, 3),
+                  filters=decoder_depth,
+                  rate=1,
+                  weight_decay=weight_decay,
+                  scope='fusion'+str(i)+'decoder_conv0')
+              decoder_features = split_separable_conv2d(
+                  decoder_features,
+                  filters=decoder_depth,
+                  rate=1,
+                  weight_decay=weight_decay,
+                  scope='fusion'+str(i)+'decoder_conv1')
+            else:
+              num_convs = 2
+              decoder_features = slim.repeat(
+                  tf.concat(decoder_features_list, 3),
+                  num_convs,
+                  slim.conv2d,
+                  decoder_depth,
+                  3,
+                  scope='decoder_conv' + str(i))
+          return decoder_features, inter_logits
 
 
 def get_branch_logits(features,
@@ -1241,7 +1190,7 @@ def get_branch_logits(features,
 
       return tf.add_n(branch_logits)
 
-def get_class_aware_attention_branch_logits(features,
+def get_class_aware_attention_branch_logits1(features,
                       model_options,
                       num_classes,
                       atrous_rates=None,
@@ -1288,9 +1237,7 @@ def get_class_aware_attention_branch_logits(features,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
 
-
-
-
+  features_aspp1=tf.add(features_aspp1, features_aspp2, name=None)
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
   if aspp_with_batch_norm or atrous_rates is None:
@@ -1301,31 +1248,31 @@ def get_class_aware_attention_branch_logits(features,
 
 
 
-  with slim.arg_scope(
-      [slim.conv2d],
-      weights_regularizer=slim.l2_regularizer(weight_decay),
-      weights_initializer=tf.truncated_normal_initializer(stddev=0.01),
-      reuse=reuse):
-    features1 = slim.conv2d(
-          features_aspp2,
-          256,
-          kernel_size=3,
-          rate=1,
-          activation_fn=tf.nn.relu,
-          normalizer_fn=None,
-          scope="class_aware_conv3x3")
-    features2 = slim.conv2d(
-          features1,
-          256,
-          kernel_size=1,
-          rate=1,
-          activation_fn=None,
-          normalizer_fn=None,
-          scope="class_aware_conv1x1")
-    s2 = tf.nn.sigmoid(features2, name=None)
-    features3 = tf.multiply(features_aspp1, s2, name=None)
+  # with slim.arg_scope(
+  #     [slim.conv2d],
+  #     weights_regularizer=slim.l2_regularizer(weight_decay),
+  #     weights_initializer=tf.truncated_normal_initializer(stddev=0.01),
+  #     reuse=reuse):
+  #   features1 = slim.conv2d(
+  #         features_aspp2,
+  #         256,
+  #         kernel_size=3,
+  #         rate=1,
+  #         activation_fn=tf.nn.relu,
+  #         normalizer_fn=None,
+  #         scope="class_aware_conv3x3")
+  #   features2 = slim.conv2d(
+  #         features1,
+  #         256,
+  #         kernel_size=1,
+  #         rate=1,
+  #         activation_fn=None,
+  #         normalizer_fn=None,
+  #         scope="class_aware_conv1x1")
+  #   s2 = tf.nn.sigmoid(features2, name=None)
+  #   features3 = tf.multiply(features_aspp1, s2, name=None)
 
-    with tf.variable_scope(LOGITS_SCOPE_NAME, LOGITS_SCOPE_NAME, [features3]):
+    with tf.variable_scope(LOGITS_SCOPE_NAME, LOGITS_SCOPE_NAME, [features_aspp1]):
       branch_logits = []
       for i, rate in enumerate(atrous_rates):
         scope = scope_suffix
@@ -1334,7 +1281,7 @@ def get_class_aware_attention_branch_logits(features,
 
         branch_logits.append(
             slim.conv2d(
-                features3,
+                features_aspp1,
                 num_classes,
                 kernel_size=kernel_size,
                 rate=rate,
@@ -1344,7 +1291,7 @@ def get_class_aware_attention_branch_logits(features,
       context_sensitive_logits = tf.add_n(branch_logits)
 
 
-    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [features1]):
+    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [features_aspp2]):
       branch_logits = []
       for i, rate in enumerate(atrous_rates):
           scope = scope_suffix
@@ -1353,7 +1300,7 @@ def get_class_aware_attention_branch_logits(features,
 
           branch_logits.append(
               slim.conv2d(
-                  features1,
+                  features_aspp2,
                   num_classes,
                   kernel_size=kernel_size,
                   rate=rate,
@@ -1368,8 +1315,134 @@ def get_class_aware_attention_branch_logits(features,
     class_aware_attention = tf.multiply(submin, s1, name=None)
     addmin = tf.add(class_aware_attention, smin, name=None)
 
-    return [addmin,context_free_score_logits]
+    return [addmin,context_free_score_logits,features_aspp1]
 
+def get_class_aware_attention_branch_logits(features,
+                      num_classes,
+                      atrous_rates=None,
+                      aspp_with_batch_norm=False,
+                      kernel_size=1,
+                      weight_decay=0.0001,
+                      reuse=None,
+                      scope_suffix=''):
+  """Gets the logits from each model's branch.
+
+  The underlying model is branched out in the last layer when atrous
+  spatial pyramid pooling is employed, and all branches are sum-merged
+  to form the final logits.
+
+  Args:
+    features: A float tensor of shape [batch, height, width, channels].
+    num_classes: Number of classes to predict.
+    atrous_rates: A list of atrous convolution rates for last layer.
+    aspp_with_batch_norm: Use batch normalization layers for ASPP.
+    kernel_size: Kernel size for convolution.
+    weight_decay: Weight decay for the model variables.
+    reuse: Reuse model variables or not.
+    scope_suffix: Scope suffix for the model variables.
+
+  Returns:
+    Merged logits with shape [batch, height, width, num_classes].
+
+  Raises:
+    ValueError: Upon invalid input kernel_size value.
+  """
+  f1 = slim.conv2d(
+      features,
+      256,
+      kernel_size=1,
+      rate=1,
+      activation_fn=tf.nn.relu,
+      normalizer_fn=None,
+      scope="class_aware1_conv1x1")
+
+  f2 = slim.conv2d(
+      features,
+      256,
+      kernel_size=1,
+      rate=1,
+      activation_fn=tf.nn.relu,
+      normalizer_fn=None,
+      scope="class_aware2_conv1x1")
+
+  f1 = tf.add(f1, f2, name=None)
+
+  # When using batch normalization with ASPP, ASPP has been applied before
+  # in extract_features, and thus we simply apply 1x1 convolution here.
+  if aspp_with_batch_norm or atrous_rates is None:
+    if kernel_size != 1:
+      raise ValueError('Kernel size must be 1 when atrous_rates is None or '
+                       'using aspp_with_batch_norm. Gets %d.' % kernel_size)
+    atrous_rates = [1]
+
+  with slim.arg_scope(
+      [slim.conv2d],
+      weights_regularizer=slim.l2_regularizer(weight_decay),
+      weights_initializer=tf.truncated_normal_initializer(stddev=0.01),
+      reuse=reuse):
+    # features1 = slim.conv2d(
+    #       features,
+    #       256,
+    #       kernel_size=3,
+    #       rate=1,
+    #       activation_fn=tf.nn.relu,
+    #       normalizer_fn=None,
+    #       scope="class_aware_conv3x3")
+    # features2 = slim.conv2d(
+    #       features,
+    #       256,
+    #       kernel_size=1,
+    #       rate=1,
+    #       activation_fn=None,
+    #       normalizer_fn=None,
+    #       scope="class_aware_conv1x1")
+    # s2 = tf.nn.sigmoid(features2, name=None)
+    # features3 = tf.multiply(features, s2, name=None)
+
+    with tf.variable_scope(LOGITS_SCOPE_NAME, LOGITS_SCOPE_NAME, [f1]):
+      branch_logits = []
+      for i, rate in enumerate(atrous_rates):
+        scope = scope_suffix
+        if i:
+          scope += '_%d' % i
+
+        branch_logits.append(
+            slim.conv2d(
+                f1,
+                num_classes,
+                kernel_size=kernel_size,
+                rate=rate,
+                activation_fn=None,
+                normalizer_fn=None,
+                scope=scope))
+      context_sensitive_logits = tf.add_n(branch_logits)
+
+
+    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [f2]):
+      branch_logits = []
+      for i, rate in enumerate(atrous_rates):
+          scope = scope_suffix
+          if i:
+            scope += '_%d' % i
+
+          branch_logits.append(
+              slim.conv2d(
+                  f2,
+                  num_classes,
+                  kernel_size=kernel_size,
+                  rate=rate,
+                  activation_fn=None,
+                  normalizer_fn=None,
+                  scope=scope))
+      context_free_score_logits = tf.add_n(branch_logits)
+
+    smin = tf.reduce_min(context_sensitive_logits, axis=3, keepdims=True, name=None)
+    submin = tf.subtract(context_sensitive_logits, smin, name=None)
+    s1 = tf.nn.sigmoid(context_free_score_logits, name=None)
+    class_aware_attention = tf.multiply(submin, s1, name=None)
+    addmin = tf.add(class_aware_attention, smin, name=None)
+
+    return [addmin,context_free_score_logits,f1]
 def get_class_aware_attention_branch_logits_old(features,
                       num_classes,
                       atrous_rates=None,
@@ -1413,26 +1486,7 @@ def get_class_aware_attention_branch_logits_old(features,
       weights_regularizer=slim.l2_regularizer(weight_decay),
       weights_initializer=tf.truncated_normal_initializer(stddev=0.01),
       reuse=reuse):
-    features1 = slim.conv2d(
-          features,
-          256,
-          kernel_size=3,
-          rate=1,
-          activation_fn=tf.nn.relu,
-          normalizer_fn=None,
-          scope="class_aware_conv3x3")
-    features2 = slim.conv2d(
-          features1,
-          256,
-          kernel_size=1,
-          rate=1,
-          activation_fn=None,
-          normalizer_fn=None,
-          scope="class_aware_conv1x1")
-    s2 = tf.nn.sigmoid(features2, name=None)
-    features3 = tf.multiply(features, s2, name=None)
-
-    with tf.variable_scope(LOGITS_SCOPE_NAME, LOGITS_SCOPE_NAME, [features3]):
+    with tf.variable_scope(LOGITS_SCOPE_NAME, LOGITS_SCOPE_NAME, [features]):
       branch_logits = []
       for i, rate in enumerate(atrous_rates):
         scope = scope_suffix
@@ -1441,7 +1495,7 @@ def get_class_aware_attention_branch_logits_old(features,
 
         branch_logits.append(
             slim.conv2d(
-                features3,
+                features,
                 num_classes,
                 kernel_size=kernel_size,
                 rate=rate,
@@ -1451,7 +1505,7 @@ def get_class_aware_attention_branch_logits_old(features,
       context_sensitive_logits = tf.add_n(branch_logits)
 
 
-    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [features1]):
+    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [features]):
       branch_logits = []
       for i, rate in enumerate(atrous_rates):
           scope = scope_suffix
@@ -1460,7 +1514,7 @@ def get_class_aware_attention_branch_logits_old(features,
 
           branch_logits.append(
               slim.conv2d(
-                  features1,
+                  features,
                   num_classes,
                   kernel_size=kernel_size,
                   rate=rate,
@@ -1524,6 +1578,7 @@ def split_separable_conv2d(inputs,
           stddev=pointwise_weights_initializer_stddev),
       weights_regularizer=slim.l2_regularizer(weight_decay),
       scope=scope + '_pointwise')
+
 
 def ASPP(features,
                      model_options,
@@ -1628,3 +1683,37 @@ def ASPP(features,
                 scope=CONCAT_PROJECTION_SCOPE + '_dropout')
 
             return concat_logits
+def class_aware_extract_features(images,
+                     model_options,
+                     weight_decay=0.0001,
+                     reuse=None,
+                     is_training=False,
+                     fine_tune_batch_norm=False):
+  """Extracts features by the particular model_variant.
+
+  Args:
+    images: A tensor of size [batch, height, width, channels].
+    model_options: A ModelOptions instance to configure models.
+    weight_decay: The weight decay for model variables.
+    reuse: Reuse the model variables or not.
+    is_training: Is training or not.
+    fine_tune_batch_norm: Fine-tune the batch norm parameters or not.
+
+  Returns:
+    concat_logits: A tensor of size [batch, feature_height, feature_width,
+      feature_channels], where feature_height/feature_width are determined by
+      the images height/width and output_stride.
+    end_points: A dictionary from components of the network to the corresponding
+      activation.
+  """
+  features, end_points = feature_extractor.extract_features(
+      images,
+      output_stride=model_options.output_stride,
+      multi_grid=model_options.multi_grid,
+      model_variant=model_options.model_variant,
+      depth_multiplier=model_options.depth_multiplier,
+      weight_decay=weight_decay,
+      reuse=reuse,
+      is_training=is_training,
+      fine_tune_batch_norm=fine_tune_batch_norm)
+  return features, end_points

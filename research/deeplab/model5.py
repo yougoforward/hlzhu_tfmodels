@@ -962,6 +962,7 @@ def _get_class_aware_attention_logits(images,
         aspp_with_batch_norm=model_options.aspp_with_batch_norm,
         kernel_size=model_options.logits_kernel_size,
         weight_decay=weight_decay,
+        is_training=is_training,
         reuse=reuse,
         scope_suffix=output)
 
@@ -1247,6 +1248,7 @@ def get_class_aware_attention_branch_logits(features,
                       aspp_with_batch_norm=False,
                       kernel_size=1,
                       weight_decay=0.0001,
+                      is_training=False,
                       reuse=None,
                       scope_suffix=''):
   """Gets the logits from each model's branch.
@@ -1274,16 +1276,16 @@ def get_class_aware_attention_branch_logits(features,
   with tf.variable_scope("aspp1","aspp1"):
       features_aspp1 = ASPP(features,
                             model_options,
-                            weight_decay=0.0001,
+                            weight_decay=weight_decay,
                             reuse=reuse,
-                            is_training=True,
+                            is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
   with tf.variable_scope("aspp2", "aspp2"):
       features_aspp2 = ASPP(features,
                             model_options,
-                            weight_decay=0.0001,
+                            weight_decay=weight_decay,
                             reuse=reuse,
-                            is_training=True,
+                            is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
 
 

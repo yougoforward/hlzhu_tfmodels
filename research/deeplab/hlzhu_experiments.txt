@@ -20,5 +20,7 @@ sh pyramid_feature_fusion_and_class_aware_train.sh 2>&1 | tee pyramid_feature_fu
 sh train.sh 2>&1 | tee train.log
 
 sh class_aware_train.sh 2>&1 | tee class_aware_train.log
+sh class_aware_train5.sh 2>&1 | tee class_aware_train5.log
 
-
+sh class_aware_train6.sh 2>&1 | tee class_aware_train6.log
+sh pyramid_class_aware_train6.sh 2>&1 | tee pyramid_class_aware_train6.log
