@@ -1,6 +1,6 @@
 #!/bin/bash
 CUDA_VISIBLE_DEVICES=0,1
-python pyramid_class_aware_train7.py\
+python pyramid_class_aware_train5.py\
     --logtostderr \
     --num_clones=2 \
     --train_split="train_aug"\
@@ -18,10 +18,10 @@ python pyramid_class_aware_train7.py\
     --base_learning_rate=0.007\
     --dataset="pascal_voc_seg"\
     --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/xception/model.ckpt"\
-    --train_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train7_on_trainaug_set/train"\
+    --train_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train5_on_trainaug_set/train"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
-#python pyramid_class_aware_eval7.py\
+#python pyramid_class_aware_eval5.py\
 #    --logtostderr\
 #    --eval_split="val"\
 #    --model_variant="xception_65"\
@@ -29,16 +29,16 @@ python pyramid_class_aware_train7.py\
 #    --atrous_rates=12\
 #    --atrous_rates=18\
 #    --output_stride=16\
-#    --eval_crop_size=513\
-#    --eval_crop_size=513\
 #    --decoder_output_stride=4\
+#    --eval_crop_size=513\
+#    --eval_crop_size=513\
 #    --dataset="pascal_voc_seg"\
-#    --checkpoint_dir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train7_on_trainaug_set/train"\
-#    --eval_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train7_on_trainaug_set/eval"\
+#    --checkpoint_dir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train5_on_trainaug_set/train"\
+#    --eval_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train5_on_trainaug_set/eval"\
 #    --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
 #    --max_number_of_evaluations=1449
 
-python pyramid_class_aware_train7.py\
+python pyramid_class_aware_train5.py\
     --logtostderr\
     --num_clones=2\
     --train_split="train_aug"\
@@ -55,11 +55,11 @@ python pyramid_class_aware_train7.py\
     --fine_tune_batch_norm=false\
     --base_learning_rate=0.001\
     --dataset="pascal_voc_seg"\
-    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/pyramid_class_aware_train7_on_trainaug_set/train/model.ckpt-30000"\
-    --train_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train7_on_trainaug_set/train_finetune"\
+    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/pyramid_class_aware_train5_on_trainaug_set/train/model.ckpt-30000"\
+    --train_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train5_on_trainaug_set/train_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
-python pyramid_class_aware_eval7.py\
+python pyramid_class_aware_eval5.py\
     --logtostderr\
     --eval_split="val"\
     --model_variant="xception_65"\
@@ -67,11 +67,11 @@ python pyramid_class_aware_eval7.py\
     --atrous_rates=12\
     --atrous_rates=18\
     --output_stride=16\
-    --eval_crop_size=513\
-    --eval_crop_size=513\
     --decoder_output_stride=4\
+    --eval_crop_size=513\
+    --eval_crop_size=513\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train7_on_trainaug_set/train_finetune"\
-    --eval_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train7_on_trainaug_set/eval_finetune"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train5_on_trainaug_set/train_finetune"\
+    --eval_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train5_on_trainaug_set/eval_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1449

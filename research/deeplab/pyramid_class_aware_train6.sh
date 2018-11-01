@@ -11,6 +11,7 @@ python pyramid_class_aware_train6.py\
     --output_stride=16\
     --train_crop_size=513\
     --train_crop_size=513\
+    --decoder_output_stride=4\
     --train_batch_size=16\
     --training_number_of_steps=30000\
     --fine_tune_batch_norm=true\
@@ -28,6 +29,7 @@ python pyramid_class_aware_train6.py\
 #    --atrous_rates=12\
 #    --atrous_rates=18\
 #    --output_stride=16\
+#    --decoder_output_stride=4\
 #    --eval_crop_size=513\
 #    --eval_crop_size=513\
 #    --dataset="pascal_voc_seg"\
@@ -47,6 +49,7 @@ python pyramid_class_aware_train6.py\
     --output_stride=16\
     --train_crop_size=513\
     --train_crop_size=513\
+    --decoder_output_stride=4\
     --train_batch_size=16\
     --training_number_of_steps=30000\
     --fine_tune_batch_norm=false\
@@ -64,6 +67,7 @@ python pyramid_class_aware_eval6.py\
     --atrous_rates=12\
     --atrous_rates=18\
     --output_stride=16\
+    --decoder_output_stride=4\
     --eval_crop_size=513\
     --eval_crop_size=513\
     --dataset="pascal_voc_seg"\

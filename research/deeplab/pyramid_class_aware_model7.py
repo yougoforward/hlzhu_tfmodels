@@ -1043,7 +1043,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                         aspp_with_batch_norm=model_options.aspp_with_batch_norm,
                         kernel_size=model_options.logits_kernel_size,
                         weight_decay=weight_decay,
-                        is_traing=is_training,
+                        is_training=is_training,
                         reuse=reuse,
                         scope_suffix=output+str(i))
                 else:

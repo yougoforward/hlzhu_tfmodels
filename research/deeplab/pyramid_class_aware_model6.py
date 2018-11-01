@@ -695,7 +695,7 @@ def _get_logits(images,
 
 def _get_class_aware_attention_logits(images,
                 model_options,
-                weight_decay=0.00005,
+                weight_decay=0.0001,
                 reuse=None,
                 is_training=False,
                 fine_tune_batch_norm=False):
@@ -720,6 +720,7 @@ def _get_class_aware_attention_logits(images,
       is_training=is_training,
       fine_tune_batch_norm=fine_tune_batch_norm)
   inter_logits = []
+  prediction_list=[]
   if model_options.decoder_output_stride is not None:
     if model_options.crop_size is None:
       height = tf.shape(images)[1]
@@ -1151,8 +1152,8 @@ def pyramid_class_aware_refine_by_decoder(features,
                           scale_dimension(decoder_width, 1.0 / (2 ** (1 - i)))], align_corners=True)
             prediction_list = [up_br_prediction]
             # decoder_features_list.append(outputs_to_logits[output][0])
-            # outputs_to_logits[output]=outputs_to_logits[output][:2]
-            # inter_logits.append(outputs_to_logits)
+            outputs_to_logits[output]=outputs_to_logits[output][:2]
+            inter_logits.append(outputs_to_logits)
 
 
             # Resize to decoder_height/decoder_width.
