@@ -754,13 +754,16 @@ def _get_class_aware_attention_logits(images,
         weight_decay=weight_decay,
         reuse=reuse,
         scope_suffix=output)
+    outputs_to_logits[output][0] = boundary_refine(outputs_to_logits[output][0],
+                                                   weight_decay=weight_decay,
+                                                   reuse=reuse,
+                                                   scope='br3_0')
     outputs_to_logits[output][0] = tf.add(outputs_to_logits[output][0], prediction_list[0])
-    prediction = outputs_to_logits[output][0]
-    br_prediction = boundary_refine(prediction,
+    outputs_to_logits[output][0] = boundary_refine(outputs_to_logits[output][0],
                                     weight_decay=weight_decay,
                                     reuse=reuse,
                                     scope='br' + str(3))
-    outputs_to_logits[output][0] = br_prediction
+
   outputs_to_logits[output]=outputs_to_logits[output][:2]
   inter_logits.append(outputs_to_logits)
   return inter_logits
@@ -1099,6 +1102,11 @@ def pyramid_class_aware_refine_by_decoder(features,
                         reuse=reuse,
                         scope_suffix=output + str(i))
 
+                    outputs_to_logits[output][0] = boundary_refine(outputs_to_logits[output][0],
+                                                    weight_decay=weight_decay,
+                                                    reuse=reuse,
+                                                    scope='br' + str(i)+'_0')
+
                     outputs_to_logits[output][0]=tf.add(outputs_to_logits[output][0],prediction_list[0])
 
 
@@ -1133,8 +1141,7 @@ def pyramid_class_aware_refine_by_decoder(features,
             #         reuse=reuse,
             #         scope_suffix=output+str(i))
 
-            prediction=outputs_to_logits[output][0]
-            br_prediction = boundary_refine(prediction,
+            br_prediction = boundary_refine(outputs_to_logits[output][0],
                     weight_decay=weight_decay,
                     reuse=reuse,
                     scope='br'+str(i))
