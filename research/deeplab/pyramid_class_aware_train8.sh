@@ -13,6 +13,7 @@ python pyramid_class_aware_train8.py\
     --train_batch_size=16\
     --decoder_output_stride=4\
     --training_number_of_steps=30000\
+    --last_layer_gradient_multiplier=10\
     --fine_tune_batch_norm=true\
     --base_learning_rate=0.007\
     --dataset="pascal_voc_seg"\
@@ -51,6 +52,7 @@ python pyramid_class_aware_train8.py\
     --train_batch_size=16\
     --decoder_output_stride=4\
     --training_number_of_steps=30000\
+    --last_layer_gradient_multiplier=10\
     --fine_tune_batch_norm=false\
     --base_learning_rate=0.001\
     --dataset="pascal_voc_seg"\
