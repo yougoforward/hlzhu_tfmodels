@@ -24,3 +24,7 @@ sh class_aware_train5.sh 2>&1 | tee class_aware_train5.log
 
 sh class_aware_train6.sh 2>&1 | tee class_aware_train6.log
 sh pyramid_class_aware_train6.sh 2>&1 | tee pyramid_class_aware_train6.log
+
+sh pyramid_class_aware_train8.sh 2>&1 | tee pyramid_class_aware_train8.log
+
+sh class_aware_train7.sh 2>&1 | tee class_aware_train7.log
