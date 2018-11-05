@@ -13,6 +13,7 @@ python class_aware_train7.py\
     --train_batch_size=16\
     --training_number_of_steps=30000\
     --fine_tune_batch_norm=true\
+    --last_layer_gradient_multiplier=10\
     --base_learning_rate=0.007\
     --dataset="pascal_voc_seg"\
     --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/xception/model.ckpt"\
@@ -49,6 +50,7 @@ python class_aware_train7.py\
     --train_batch_size=16\
     --training_number_of_steps=30000\
     --fine_tune_batch_norm=false\
+    --last_layer_gradient_multiplier=10\
     --base_learning_rate=0.001\
     --dataset="pascal_voc_seg"\
     --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/class_aware_train7_on_trainaug_set/train/model.ckpt-30000"\
