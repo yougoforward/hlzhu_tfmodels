@@ -12,6 +12,7 @@ python class_aware_train6.py\
     --train_crop_size=513\
     --train_crop_size=513\
     --train_batch_size=16\
+    --last_layer_gradient_multiplier=10\
     --training_number_of_steps=30000\
     --fine_tune_batch_norm=true\
     --base_learning_rate=0.007\
@@ -48,6 +49,7 @@ python class_aware_train6.py\
     --train_crop_size=513\
     --train_crop_size=513\
     --train_batch_size=16\
+    --last_layer_gradient_multiplier=10\
     --training_number_of_steps=30000\
     --fine_tune_batch_norm=false\
     --base_learning_rate=0.001\
