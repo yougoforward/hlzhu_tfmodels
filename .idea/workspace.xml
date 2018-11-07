@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/research/deeplab/class_aware_eval8.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/research/deeplab/class_aware_train8.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/research/deeplab/class_aware_train8.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/research/deeplab/model8.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model9.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model9.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train9.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train9.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/hlzhu_experiments.txt" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/hlzhu_experiments.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -126,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hlzhu_experiments.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="hlzhu_experiments.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/hlzhu_experiments.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="461">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
         </entry>
@@ -157,7 +152,7 @@
       <file leaf-file-name="pyramid_class_aware_train9.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train9.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
+            <state relative-caret-position="484">
               <caret line="76" column="73" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="73" />
             </state>
           </provider>
@@ -205,10 +200,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_aware_train8.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="class_aware_train8.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train8.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
+            <state relative-caret-position="1584">
               <caret line="72" column="65" selection-start-line="72" selection-start-column="65" selection-end-line="72" selection-end-column="65" />
             </state>
           </provider>
@@ -336,8 +331,8 @@
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train6.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train7.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train9.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/hlzhu_experiments.txt" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train8.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/hlzhu_experiments.txt" />
       </list>
     </option>
   </component>
@@ -714,25 +709,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/hlzhu_experiments.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_eval8.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model9.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train9.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="76" column="73" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="73" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train7.sh">
       <provider selected="true" editor-type-id="text-editor">
@@ -750,8 +731,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train8.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
+        <state relative-caret-position="1584">
           <caret line="72" column="65" selection-start-line="72" selection-start-column="65" selection-end-line="72" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train9.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="76" column="73" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/hlzhu_experiments.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
