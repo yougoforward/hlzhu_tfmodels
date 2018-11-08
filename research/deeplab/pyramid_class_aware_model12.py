@@ -1253,7 +1253,7 @@ def get_class_aware_attention_branch_logits1(features,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
 
-  features_aspp1=tf.add(features_aspp1, features_aspp2, name=None)
+  features_fusion=tf.add(features_aspp1, features_aspp2, name=None)
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
   if aspp_with_batch_norm or atrous_rates is None:
@@ -1331,7 +1331,7 @@ def get_class_aware_attention_branch_logits1(features,
     class_aware_attention = tf.multiply(submin, s1, name=None)
     addmin = tf.add(class_aware_attention, smin, name=None)
 
-    return [addmin,context_free_score_logits, context_sensitive_logits, features_aspp1]
+    return [addmin,context_free_score_logits, context_sensitive_logits, features_fusion]
 
 def get_class_aware_attention_branch_logits(features,
                       num_classes,
@@ -1381,7 +1381,7 @@ def get_class_aware_attention_branch_logits(features,
       normalizer_fn=None,
       scope="class_aware2_conv1x1")
 
-  f1 = tf.add(f1, f2, name=None)
+  f1_fusion = tf.add(f1, f2, name=None)
 
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
@@ -1458,7 +1458,7 @@ def get_class_aware_attention_branch_logits(features,
     class_aware_attention = tf.multiply(submin, s1, name=None)
     addmin = tf.add(class_aware_attention, smin, name=None)
 
-    return [addmin,context_free_score_logits, context_sensitive_logits,f1]
+    return [addmin,context_free_score_logits, context_sensitive_logits,f1_fusion]
 def get_class_aware_attention_branch_logits_old(features,
                       num_classes,
                       atrous_rates=None,
