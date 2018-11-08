@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval10.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model10.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train10.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train10.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train9.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train9.sh" afterDir="false" />
-    </list>
+    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -158,11 +152,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pyramid_class_aware_train9.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pyramid_class_aware_train9.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train9.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1518">
-              <caret line="69" column="22" lean-forward="true" selection-end-line="79" />
+            <state relative-caret-position="154">
+              <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -170,8 +164,24 @@
       <file leaf-file-name="pyramid_class_aware_train10.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train10.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-829">
-              <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+            <state relative-caret-position="88">
+              <caret line="4" column="49" lean-forward="true" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/build_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-462" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="convert_cityscapes.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/convert_cityscapes.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="38" column="11" selection-start-line="38" selection-end-line="38" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -384,6 +394,13 @@
               <item name="research" type="462c0819:PsiDirectoryNode" />
               <item name="deeplab" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hlzhu_tfmodels" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hlzhu_tfmodels" type="462c0819:PsiDirectoryNode" />
+              <item name="research" type="462c0819:PsiDirectoryNode" />
+              <item name="deeplab" type="462c0819:PsiDirectoryNode" />
+              <item name="datasets" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -451,20 +468,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="33" selection-end-line="412" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_eval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="26" selection-end-line="176" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_eval2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -757,17 +760,29 @@
     <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model10.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train10.sh">
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train9.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-829">
-          <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+        <state relative-caret-position="154">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train9.sh">
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train10.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="69" column="22" lean-forward="true" selection-end-line="79" />
+        <state relative-caret-position="88">
+          <caret line="4" column="49" lean-forward="true" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/build_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-462" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/convert_cityscapes.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="38" column="11" selection-start-line="38" selection-end-line="38" selection-end-column="11" />
         </state>
       </provider>
     </entry>
