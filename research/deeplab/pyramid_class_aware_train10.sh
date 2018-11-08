@@ -1,6 +1,10 @@
 #!/bin/bash
-CUDA_VISIBLE_DEVICES=0,1
-python pyramid_class_aware_train10.py\
+cd ..
+CURRENT_DIR=$(pwd)
+export PYTHONPATH=$PYTHONPATH:'pwd':'pwd'/slim
+export PYTHONPATH=$PYTHONPATH:'pwd':'pwd'/deeplab
+cd ./deeplab
+CUDA_VISIBLE_DEVICES=6,7 python pyramid_class_aware_train10.py\
     --logtostderr \
     --num_clones=2 \
     --train_split="train_aug"\
@@ -22,7 +26,7 @@ python pyramid_class_aware_train10.py\
     --train_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train10_on_trainaug_set/train"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
-#python pyramid_class_aware_eval6.py\
+#CUDA_VISIBLE_DEVICES=6,7 python pyramid_class_aware_eval6.py\
 #    --logtostderr\
 #    --eval_split="val"\
 #    --model_variant="xception_65"\
@@ -38,7 +42,7 @@ python pyramid_class_aware_train10.py\
 #    --eval_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train6_on_trainaug_set/eval"\
 #    --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
 #    --max_number_of_evaluations=1449
-python pyramid_class_aware_train10.py\
+CUDA_VISIBLE_DEVICES=6,7 python pyramid_class_aware_train10.py\
     --logtostderr \
     --num_clones=2 \
     --train_split="train_aug"\
@@ -61,7 +65,7 @@ python pyramid_class_aware_train10.py\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
 
-python pyramid_class_aware_eval10.py\
+CUDA_VISIBLE_DEVICES=6,7 python pyramid_class_aware_eval10.py\
     --logtostderr\
     --eval_split="val"\
     --model_variant="xception_65"\
