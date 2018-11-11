@@ -33,5 +33,6 @@ sh pyramid_class_aware_train7.sh 2>&1 | tee pyramid_class_aware_train7.log
 
 sh class_aware_train6.sh 2>&1 | tee class_aware_train6.log
 
-sh class_aware_train8.sh 2>&1 | tee class_aware_train8.log
+CUDA_VISIBLE_DEVICES=6,7 class_aware_train8.sh 2>&1 | tee class_aware_train8.log
 sh pyramid_class_aware_train9.sh 2>&1 | tee pyramid_class_aware_train9.log
+CUDA_VISIBLE_DEVICES=6,7 sh pyramid_class_aware_train13.sh 2>&1 | tee pyramid_class_aware_train13.log
