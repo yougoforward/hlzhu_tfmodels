@@ -73,7 +73,7 @@ python pyramid_class_aware_train16.py\
     --multi_grid=4\
     --training_number_of_steps=30000\
     --fine_tune_batch_norm=false\
-    --base_learning_rate=0.001\
+    --base_learning_rate=0.0001\
     --weight_decay=0.0001\
     --aspp_with_batch_norm=true\
     --aspp_with_separable_conv=false\

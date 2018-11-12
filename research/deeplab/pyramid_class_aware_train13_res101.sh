@@ -53,7 +53,7 @@ python pyramid_class_aware_eval13.py\
     --checkpoint_dir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train13_res101_on_trainaug_set/train"\
     --eval_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train13_res101_on_trainaug_set/eval"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
-    --max_number_of_evaluations=1449
+    --max_number_of_evaluations=1
 
 python pyramid_class_aware_train13.py\
     --logtostderr\
@@ -104,4 +104,4 @@ python pyramid_class_aware_eval13.py\
     --checkpoint_dir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train13_res101_on_trainaug_set/train_finetune"\
     --eval_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train13_res101_on_trainaug_set/eval_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
-    --max_number_of_evaluations=1449
+    --max_number_of_evaluations=1
