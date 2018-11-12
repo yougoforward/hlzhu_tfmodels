@@ -4,7 +4,7 @@ CURRENT_DIR=$(pwd)
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
-python pyramid_class_aware_train13.py\
+python class_aware_train15.py\
     --logtostderr \
     --num_clones=2 \
     --train_split="train_aug"\
@@ -13,13 +13,12 @@ python pyramid_class_aware_train13.py\
     --atrous_rates=12\
     --atrous_rates=18\
     --output_stride=16\
-    --multi_grid=1\
-    --multi_grid=2\
-    --multi_grid=4\
     --train_crop_size=513\
     --train_crop_size=513\
     --train_batch_size=16\
-    --decoder_output_stride=4\
+    --multi_grid=1\
+    --multi_grid=2\
+    --multi_grid=4\
     --training_number_of_steps=30000\
     --fine_tune_batch_norm=true\
     --base_learning_rate=0.007\
@@ -29,10 +28,10 @@ python pyramid_class_aware_train13.py\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
     --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/resnet_v1_50/model.ckpt"\
-    --train_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train13_res50_on_trainaug_set/train"\
+    --train_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_res50_multigrad_on_trainaug_set/train"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
-python pyramid_class_aware_eval13.py\
+python class_aware_eval15.py\
     --logtostderr\
     --eval_split="val"\
     --model_variant="resnet_v1_50_beta"\
@@ -43,19 +42,18 @@ python pyramid_class_aware_eval13.py\
     --multi_grid=1\
     --multi_grid=2\
     --multi_grid=4\
-    --decoder_output_stride=4\
     --eval_crop_size=513\
     --eval_crop_size=513\
     --aspp_with_batch_norm=true\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train13_res50_on_trainaug_set/train"\
-    --eval_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train13_res50_on_trainaug_set/eval"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp/class_aware_train15_res50_multigrad_on_trainaug_set/train"\
+    --eval_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_res50_multigrad_on_trainaug_set/eval"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 
-python pyramid_class_aware_train13.py\
+python class_aware_train15.py\
     --logtostderr\
     --num_clones=2 \
     --train_split="train_aug"\
@@ -64,13 +62,12 @@ python pyramid_class_aware_train13.py\
     --atrous_rates=12\
     --atrous_rates=18\
     --output_stride=16\
-    --decoder_output_stride=4\
-    --train_crop_size=513\
-    --train_crop_size=513\
-    --train_batch_size=16\
     --multi_grid=1\
     --multi_grid=2\
     --multi_grid=4\
+    --train_crop_size=513\
+    --train_crop_size=513\
+    --train_batch_size=16\
     --training_number_of_steps=30000\
     --fine_tune_batch_norm=false\
     --base_learning_rate=0.001\
@@ -79,11 +76,11 @@ python pyramid_class_aware_train13.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/pyramid_class_aware_train13_res50_on_trainaug_set/train/model.ckpt-30000"\
-    --train_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train13_res50_on_trainaug_set/train_finetune"\
+    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/class_aware_train15_res50_multigrad_on_trainaug_set/train/model.ckpt-30000"\
+    --train_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_res50_multigrad_on_trainaug_set/train_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
-python pyramid_class_aware_eval13.py\
+python class_aware_eval15.py\
     --logtostderr\
     --eval_split="val"\
     --model_variant="resnet_v1_50_beta"\
@@ -94,14 +91,13 @@ python pyramid_class_aware_eval13.py\
     --multi_grid=1\
     --multi_grid=2\
     --multi_grid=4\
-    --decoder_output_stride=4\
     --eval_crop_size=513\
     --eval_crop_size=513\
     --aspp_with_batch_norm=true\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train13_res50_on_trainaug_set/train_finetune"\
-    --eval_logdir="datasets/pascal_voc_seg/exp/pyramid_class_aware_train13_res50_on_trainaug_set/eval_finetune"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp/class_aware_train15_res50_multigrad_on_trainaug_set/train_finetune"\
+    --eval_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_res50_multigrad_on_trainaug_set/eval_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
