@@ -1348,7 +1348,7 @@ def get_class_aware_attention_branch_logits1(features,
           rate=1,
           activation_fn=None,
           normalizer_fn=None,
-          scope="class_aware_attention")
+          scope=scope+"class_aware_attention")
 
     # smin = tf.reduce_min(context_sensitive_logits, axis=3, keepdims=True, name=None)
     # submin = tf.subtract(context_sensitive_logits, smin, name=None)
@@ -1395,7 +1395,7 @@ def get_class_aware_attention_branch_logits(features,
       rate=1,
       activation_fn=tf.nn.relu,
       normalizer_fn=None,
-      scope="class_aware1_conv1x1")
+      scope=scope_suffix+"class_aware1_conv1x1")
 
   f2 = slim.conv2d(
       features,
@@ -1404,7 +1404,7 @@ def get_class_aware_attention_branch_logits(features,
       rate=1,
       activation_fn=tf.nn.relu,
       normalizer_fn=None,
-      scope="class_aware2_conv1x1")
+      scope=scope_suffix+"class_aware2_conv1x1")
 
   f2 = tf.concat([f1, f2],axis=3, name=None)
 
@@ -1483,7 +1483,7 @@ def get_class_aware_attention_branch_logits(features,
           rate=1,
           activation_fn=None,
           normalizer_fn=None,
-          scope="class_aware_attention")
+          scope=scope+"class_aware_attention")
     # smin = tf.reduce_min(context_sensitive_logits, axis=3, keepdims=True, name=None)
     # submin = tf.subtract(context_sensitive_logits, smin, name=None)
     s1 = tf.nn.sigmoid(class_aware_attention, name=None)
