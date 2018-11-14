@@ -104,13 +104,15 @@ networks_to_feature_maps = {
         DECODER_END_POINTS: ['block1/unit_2/bottleneck_v1/conv3'],
     },
     'resnet_v1_50_beta': {
-        DECODER_END_POINTS: ['block1/unit_2/bottleneck_v1/conv3'],
+        DECODER_END_POINTS: ['block2/unit_3/bottleneck_v1/conv3',
+                             'block1/unit_2/bottleneck_v1/conv3'],
     },
     'resnet_v1_101': {
         DECODER_END_POINTS: ['block1/unit_2/bottleneck_v1/conv3'],
     },
     'resnet_v1_101_beta': {
-        DECODER_END_POINTS: ['block1/unit_2/bottleneck_v1/conv3'],
+        DECODER_END_POINTS: ['block2/unit_3/bottleneck_v1/conv3',
+                             'block1/unit_2/bottleneck_v1/conv3'],
     },
     'xception_41': {
         DECODER_END_POINTS: [
