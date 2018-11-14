@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/../tf/tfmodels/research/deeplab/model.py" description="features, end_points = extract_features(" line="759" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval13.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval13.py" afterDir="false" />
-    </list>
+    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +17,7 @@
       <file leaf-file-name="pyramid_class_aware_train13_res50.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13_res50.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-704">
+            <state relative-caret-position="-1203">
               <caret line="31" column="97" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="97" />
             </state>
           </provider>
@@ -117,7 +115,9 @@
       </file>
       <file leaf-file-name="v3plustrain.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/v3plustrain.sh">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-462" />
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="class_aware_train14_res50.sh" pinned="false" current-in-tab="false">
@@ -152,11 +152,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="pyramid_class_aware_eval13.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pyramid_class_aware_eval13.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval13.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="161" column="3" selection-start-line="161" selection-start-column="3" selection-end-line="168" selection-end-column="52" />
+            <state relative-caret-position="326">
+              <caret line="164" column="33" lean-forward="true" selection-start-line="164" selection-start-column="33" selection-end-line="164" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -251,8 +251,8 @@
       <file leaf-file-name="pyramid_class_aware_train13.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="80" column="21" selection-end-line="94" selection-end-column="33" />
+            <state relative-caret-position="-719">
+              <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -263,6 +263,34 @@
             <state relative-caret-position="-433">
               <caret line="45" column="30" selection-end-line="106" selection-end-column="33" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pyramid_feature_extractor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/core/pyramid_feature_extractor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="105" column="18" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="v3_v3plus_train.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/v3_v3plus_train.sh">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="v3plus_class_aware_train.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/v3plus_class_aware_train.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-594" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="v3plus_train.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/v3plus_train.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-726" />
           </provider>
         </entry>
       </file>
@@ -335,7 +363,6 @@
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13_res50.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train14_res50.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13_res101.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train14_15_res50.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train16_res101.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train15_res50.sh" />
@@ -352,6 +379,7 @@
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train17_res50.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train18_res50.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval13.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13.sh" />
       </list>
     </option>
   </component>
@@ -389,6 +417,13 @@
               <item name="hlzhu_tfmodels" type="462c0819:PsiDirectoryNode" />
               <item name="research" type="462c0819:PsiDirectoryNode" />
               <item name="deeplab" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hlzhu_tfmodels" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hlzhu_tfmodels" type="462c0819:PsiDirectoryNode" />
+              <item name="research" type="462c0819:PsiDirectoryNode" />
+              <item name="deeplab" type="462c0819:PsiDirectoryNode" />
               <item name="datasets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -403,6 +438,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/research/deeplab/core" />
       <recent name="$PROJECT_DIR$/research/deeplab" />
     </key>
   </component>
@@ -487,26 +523,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train8.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/model3.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model4.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20108">
-          <caret line="915" column="37" selection-start-line="915" selection-start-column="37" selection-end-line="915" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -617,34 +633,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="80" column="21" selection-end-line="94" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/v3plustrain.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train15_res50.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13_res101.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-433">
-          <caret line="45" column="30" selection-end-line="106" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13_res50.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-704">
-          <caret line="31" column="97" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="97" />
         </state>
       </provider>
     </entry>
@@ -787,6 +779,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval17.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval13.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="164" column="33" lean-forward="true" selection-start-line="164" selection-start-column="33" selection-end-line="164" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid13.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -794,15 +796,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval17.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval13.py">
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="161" column="3" selection-start-line="161" selection-start-column="3" selection-end-line="168" selection-end-column="52" />
+        <state relative-caret-position="-719">
+          <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13_res50.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1203">
+          <caret line="31" column="97" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13_res101.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-433">
+          <caret line="45" column="30" selection-end-line="106" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/core/pyramid_feature_extractor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="105" column="18" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/v3plus_class_aware_train.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-594" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/v3plus_train.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-726" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/v3plustrain.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-462" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/v3_v3plus_train.sh">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
