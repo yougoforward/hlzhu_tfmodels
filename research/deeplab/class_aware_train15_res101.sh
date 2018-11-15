@@ -27,7 +27,7 @@ python class_aware_train15.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/resnet_v1_50/model.ckpt"\
+    --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/resnet_v1_101/model.ckpt"\
     --train_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_res101_multigrad_on_trainaug_set/train"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
