@@ -34,7 +34,7 @@ python class_aware_train15.py\
 python class_aware_eval15.py\
     --logtostderr\
     --eval_split="val"\
-    --model_variant="resnet_v1_50_beta"\
+    --model_variant="resnet_v1_101_beta"\
     --atrous_rates=6\
     --atrous_rates=12\
     --atrous_rates=18\
