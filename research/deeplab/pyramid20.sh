@@ -13,11 +13,13 @@
 
 #sh pyramid_class_aware_train16_res101.sh 2>&1 | tee pyramid_class_aware_train16_res101.log
 
-sh pyramid_class_aware_train22_res50.sh 2>&1 | tee pyramid_class_aware_train22_res50.log
+sh pyramid_class_aware_train21.sh 2>&1 | tee pyramid_class_aware_train21.log
 
-sh pyramid_class_aware_train20_res50.sh 2>&1 | tee pyramid_class_aware_train20_res50.log
-
-sh pyramid_class_aware_train20.sh 2>&1 | tee pyramid_class_aware_train20.log
+#sh pyramid_class_aware_train22_res50.sh 2>&1 | tee pyramid_class_aware_train22_res50.log
+#
+#sh pyramid_class_aware_train20_res50.sh 2>&1 | tee pyramid_class_aware_train20_res50.log
+#
+#sh pyramid_class_aware_train20.sh 2>&1 | tee pyramid_class_aware_train20.log
 
 
 
