@@ -1521,8 +1521,9 @@ def ASPP(features,
                 branch_logits.append(image_feature)
 
             # Employ a 1x1 convolution.
-            branch_logits.append(slim.conv2d(features, depth, 1,
+            branch_logits.append(slim.conv2d(features, 512, 1,
                                              scope=ASPP_SCOPE + str(0)))
+            depth = 128
 
             if model_options.atrous_rates:
                 # Employ 3x3 convolutions with different atrous rates.
