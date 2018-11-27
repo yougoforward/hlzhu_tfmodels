@@ -4,7 +4,7 @@ CURRENT_DIR=$(pwd)
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
-python class_aware_train15.py\
+python class_aware_train15_loss2.py\
     --logtostderr \
     --num_clones=2 \
     --train_split="train_aug"\
@@ -31,7 +31,7 @@ python class_aware_train15.py\
     --train_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_loss2_res50_multigrad_on_trainaug_set/train"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
-python class_aware_eval15.py\
+python class_aware_eval15_loss2.py\
     --logtostderr\
     --eval_split="val"\
     --model_variant="resnet_v1_50_beta"\
@@ -53,7 +53,7 @@ python class_aware_eval15.py\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 
-python class_aware_train15.py\
+python class_aware_train15_loss2.py\
     --logtostderr\
     --num_clones=2 \
     --train_split="train_aug"\
@@ -80,7 +80,7 @@ python class_aware_train15.py\
     --train_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_loss2_res50_multigrad_on_trainaug_set/train_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
-python class_aware_eval15.py\
+python class_aware_eval15_loss2.py\
     --logtostderr\
     --eval_split="val"\
     --model_variant="resnet_v1_50_beta"\
