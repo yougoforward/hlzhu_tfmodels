@@ -4,11 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/../tf/tfmodels/research/deeplab/model.py" description="features, end_points = extract_features(" line="760" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model15_add2.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/model15_add2.py" afterDir="false" />
-    </list>
+    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,17 +17,17 @@
       <file leaf-file-name="cam15.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/cam15.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="28" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="28" />
+            <state relative-caret-position="88">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model15.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="model15.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/model15.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4572">
-              <caret line="1302" column="52" lean-forward="true" selection-start-line="1302" selection-start-column="52" selection-end-line="1302" selection-end-column="52" />
+            <state relative-caret-position="268">
+              <caret line="1522" column="39" lean-forward="true" selection-start-line="1522" selection-start-column="39" selection-end-line="1522" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -48,7 +44,7 @@
       <file leaf-file-name="model15_loss2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/model15_loss2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4902">
+            <state relative-caret-position="-1866">
               <caret line="1294" column="40" lean-forward="true" selection-start-line="1294" selection-start-column="40" selection-end-line="1294" selection-end-column="40" />
             </state>
           </provider>
@@ -57,13 +53,13 @@
       <file leaf-file-name="model15_add2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/model15_add2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-590">
+            <state relative-caret-position="1918">
               <caret line="1393" column="51" selection-start-line="1393" selection-start-column="27" selection-end-line="1393" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_aware_train15_add2.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="class_aware_train15_add2.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1298">
@@ -200,10 +196,10 @@
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model23.py" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid20.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid21.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/cam15.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/model15_add2.py" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/cam15.sh" />
       </list>
     </option>
   </component>
@@ -611,20 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/model15_add2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-590">
-          <caret line="1393" column="51" selection-start-line="1393" selection-start-column="27" selection-end-line="1393" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1298">
-          <caret line="86" column="21" lean-forward="true" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7">
@@ -639,20 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/cam15.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/model15_loss2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4902">
-          <caret line="1294" column="40" lean-forward="true" selection-start-line="1294" selection-start-column="40" selection-end-line="1294" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_res50.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7">
@@ -662,8 +630,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/model15.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4572">
-          <caret line="1302" column="52" lean-forward="true" selection-start-line="1302" selection-start-column="52" selection-end-line="1302" selection-end-column="52" />
+        <state relative-caret-position="268">
+          <caret line="1522" column="39" lean-forward="true" selection-start-line="1522" selection-start-column="39" selection-end-line="1522" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/cam15.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/model15_loss2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1866">
+          <caret line="1294" column="40" lean-forward="true" selection-start-line="1294" selection-start-column="40" selection-end-line="1294" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/model15_add2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1918">
+          <caret line="1393" column="51" selection-start-line="1393" selection-start-column="27" selection-end-line="1393" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1298">
+          <caret line="86" column="21" lean-forward="true" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
         </state>
       </provider>
     </entry>
