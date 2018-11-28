@@ -1432,6 +1432,12 @@ def merge2aspp(features,
     :param fine_tune_batch_norm:
     :return:
     """
+    batch_norm_params = {
+        'is_training': is_training and fine_tune_batch_norm,
+        'decay': 0.9997,
+        'epsilon': 1e-5,
+        'scale': True,
+    }
     with slim.arg_scope(
             [slim.conv2d, slim.separable_conv2d],
             weights_regularizer=slim.l2_regularizer(weight_decay),
