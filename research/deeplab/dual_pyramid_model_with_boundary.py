@@ -1152,8 +1152,8 @@ def pyramid_class_aware_refine_by_decoder(features,
                                             scope='br' + str(i))
             outputs_to_logits[output][0] = br_prediction
             up_br_prediction = tf.image.resize_bilinear(
-                br_prediction, [scale_dimension(decoder_height, 1.0 / (2 ** (1 - i))),
-                                scale_dimension(decoder_width, 1.0 / (2 ** (1 - i)))], align_corners=True)
+                br_prediction, [scale_dimension(decoder_height, 1.0 / (2 ** (i))),
+                                scale_dimension(decoder_width, 1.0 / (2 ** (i)))], align_corners=True)
             prediction_list = [up_br_prediction]
             # decoder_features_list.append(outputs_to_logits[output][0])
 
