@@ -1005,6 +1005,8 @@ def boundary_refine(prediction,
         [slim.conv2d],
         weights_regularizer=slim.l2_regularizer(weight_decay),
         weights_initializer=tf.truncated_normal_initializer(stddev=0.01),
+        biases_initializer=tf.zeros_initializer(),
+        biases_regularizer=None,
         reuse=reuse):
       num_class=21
       features1 = slim.conv2d(
