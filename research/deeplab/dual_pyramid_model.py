@@ -450,6 +450,7 @@ def multi_scale_class_aware_attention_logits(images,
         reuse=tf.AUTO_REUSE,
         is_training=is_training,
         fine_tune_batch_norm=fine_tune_batch_norm)
+
     ss=2
     # Resize the logits to have the same dimension before merging.
     for i in range(ss):
@@ -761,16 +762,17 @@ def _get_class_aware_attention_logits(images,
 
   outputs_to_logits = {}
   for output in sorted(model_options.outputs_to_num_classes):
-    outputs_to_logits[output] = get_branch_logits(
+    outputs_to_logits[output] = get_class_aware_attention_branch_logits(
         features,
         model_options.outputs_to_num_classes[output],
         model_options.atrous_rates,
         aspp_with_batch_norm=model_options.aspp_with_batch_norm,
         kernel_size=model_options.logits_kernel_size,
         weight_decay=weight_decay,
+        is_training=is_training,
         reuse=reuse,
         scope_suffix=output)
-  # outputs_to_logits[output]=outputs_to_logits[output][:-1]
+  outputs_to_logits[output]=outputs_to_logits[output][:-2]
   inter_logits.append(outputs_to_logits)
   return inter_logits
 
@@ -1096,17 +1098,6 @@ def pyramid_class_aware_refine_by_decoder(features,
             #     tf.multiply(skip, global_attention, name=None))
             decoder_features_list1.append(skip)
             decoder_features_list2.append(skip)
-            # outputs_to_logits = {}
-            # for output in sorted(model_options.outputs_to_num_classes):
-            #     outputs_to_logits[output] = get_class_aware_attention_branch_logits(
-            #         decoder_features,
-            #         model_options.outputs_to_num_classes[output],
-            #         model_options.atrous_rates,
-            #         aspp_with_batch_norm=model_options.aspp_with_batch_norm,
-            #         kernel_size=model_options.logits_kernel_size,
-            #         weight_decay=weight_decay,
-            #         reuse=reuse,
-            #         scope_suffix=output+str(i))
 
             # decoder_features_list.append(outputs_to_logits[output][0])
 
