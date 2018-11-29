@@ -19,7 +19,7 @@ python merge2aspp_train.py\
     --train_crop_size=513\
     --train_crop_size=513\
     --train_batch_size=16\
-    --training_number_of_steps=40000\
+    --training_number_of_steps=30000\
     --fine_tune_batch_norm=true\
     --base_learning_rate=0.007\
     --weight_decay=0.0001\
