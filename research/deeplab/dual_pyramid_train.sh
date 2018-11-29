@@ -20,6 +20,7 @@ python dual_pyramid_train.py\
     --train_crop_size=513\
     --train_batch_size=16\
     --decoder_output_stride=4\
+    --last_layer_gradient_multiplier=10.0\
     --training_number_of_steps=30000\
     --fine_tune_batch_norm=true\
     --base_learning_rate=0.007\
