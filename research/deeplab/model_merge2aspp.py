@@ -1494,6 +1494,8 @@ def merge2aspp(features,
             branch_logits1.append(conv1x1)
             branch_logits2.append(conv1x1)
 
+            depth = 128
+
             if model_options.atrous_rates:
                 # Employ 3x3 convolutions with different atrous rates.
                 for i, rate in enumerate(model_options.atrous_rates, 1):
@@ -1510,16 +1512,6 @@ def merge2aspp(features,
                             features, depth, 3, rate=rate, scope=scope)
                     branch_logits1.append(aspp_features)
 
-            # Merge branch logits.
-            concat_logits1 = tf.concat(branch_logits1, 3)
-            concat_logits1 = slim.conv2d(
-                concat_logits1, depth, 1, scope=CONCAT_PROJECTION_SCOPE)
-            concat_logits1 = slim.dropout(
-                concat_logits1,
-                keep_prob=0.9,
-                is_training=is_training,
-                scope=CONCAT_PROJECTION_SCOPE + '_dropout')
-
             if model_options.atrous_rates:
                 # Employ 3x3 convolutions with different atrous rates.
                 for i, rate in enumerate(model_options.atrous_rates, 1):
@@ -1535,6 +1527,18 @@ def merge2aspp(features,
                         aspp_features = slim.conv2d(
                             features, depth, 3, rate=rate, scope=scope)
                     branch_logits2.append(aspp_features)
+
+
+            # Merge branch logits.
+            concat_logits1 = tf.concat(branch_logits1, 3)
+            concat_logits1 = slim.conv2d(
+                concat_logits1, depth, 1, scope=CONCAT_PROJECTION_SCOPE)
+            concat_logits1 = slim.dropout(
+                concat_logits1,
+                keep_prob=0.9,
+                is_training=is_training,
+                scope=CONCAT_PROJECTION_SCOPE + '_dropout')
+
 
             # Merge branch logits.
             concat_logits2 = tf.concat(branch_logits2, 3)
