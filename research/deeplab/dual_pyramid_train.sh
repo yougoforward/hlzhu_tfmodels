@@ -21,7 +21,7 @@ python dual_pyramid_train.py\
     --train_batch_size=16\
     --decoder_output_stride=4\
     --last_layer_gradient_multiplier=10.0\
-    --training_number_of_steps=30000\
+    --training_number_of_steps=40000\
     --fine_tune_batch_norm=true\
     --base_learning_rate=0.007\
     --weight_decay=0.0001\
@@ -80,7 +80,7 @@ python dual_pyramid_train.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train/model.ckpt-30000"\
+    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train/model.ckpt-40000"\
     --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
