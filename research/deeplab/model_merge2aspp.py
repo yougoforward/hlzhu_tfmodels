@@ -1489,7 +1489,7 @@ def merge2aspp(features,
                 branch_logits2.append(image_feature)
 
             # Employ a 1x1 convolution.
-            conv1x1 = slim.conv2d(features, 512, 1,
+            conv1x1 = slim.conv2d(features, depth, 1,
                                   scope=ASPP_SCOPE + str(0))
             branch_logits1.append(conv1x1)
             branch_logits2.append(conv1x1)
