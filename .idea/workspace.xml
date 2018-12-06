@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model_merge2aspp.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/model_merge2aspp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model_merge2aspp256.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/model_merge2aspp256.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/model15_add2.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/model15_add2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,7 +30,7 @@
       <file leaf-file-name="model15.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/model15.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24574">
+            <state relative-caret-position="-9148">
               <caret line="1118" column="2" selection-start-line="1118" selection-start-column="2" selection-end-line="1123" selection-end-column="3" />
             </state>
           </provider>
@@ -65,17 +66,17 @@
       <file leaf-file-name="model15_add2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/model15_add2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30624">
-              <caret line="1393" column="51" selection-start-line="1393" selection-start-column="27" selection-end-line="1393" selection-end-column="51" />
+            <state relative-caret-position="356">
+              <caret line="1541" lean-forward="true" selection-start-line="1541" selection-end-line="1541" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_aware_train15_add2.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="class_aware_train15_add2.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="86" selection-end-column="21" />
+            <state relative-caret-position="403">
+              <caret line="100" column="113" selection-start-line="100" selection-start-column="113" selection-end-line="100" selection-end-column="113" />
             </state>
           </provider>
         </entry>
@@ -83,8 +84,8 @@
       <file leaf-file-name="merge2aspp_train.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp_train.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="43" column="19" lean-forward="true" selection-end-line="102" selection-end-column="33" />
+            <state relative-caret-position="946">
+              <caret line="43" column="19" selection-end-line="102" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -92,7 +93,7 @@
       <file leaf-file-name="merge2aspp256_train.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp256_train.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
+            <state relative-caret-position="2200">
               <caret line="100" column="60" selection-start-line="100" selection-start-column="60" selection-end-line="100" selection-end-column="60" />
             </state>
           </provider>
@@ -101,8 +102,8 @@
       <file leaf-file-name="merge2aspp_eval.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp_eval.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="17" column="3" lean-forward="true" selection-end-line="176" />
+            <state relative-caret-position="374">
+              <caret line="17" column="3" selection-end-line="176" />
               <folding>
                 <element signature="e#779#790#0" expanded="true" />
               </folding>
@@ -113,8 +114,8 @@
       <file leaf-file-name="merge2aspp256_eval.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp256_eval.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="396">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#779#790#0" expanded="true" />
               </folding>
@@ -126,7 +127,7 @@
         <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp_train.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="17" column="3" lean-forward="true" selection-end-line="421" />
+              <caret line="17" column="3" selection-end-line="421" />
             </state>
           </provider>
         </entry>
@@ -134,8 +135,8 @@
       <file leaf-file-name="merge2aspp256_train.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp256_train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+            <state relative-caret-position="550">
+              <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -161,8 +162,8 @@
       <file leaf-file-name="dual_pyramid_train.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="201" column="53" lean-forward="true" selection-start-line="201" selection-start-column="53" selection-end-line="201" selection-end-column="53" />
+            <state relative-caret-position="4268">
+              <caret line="201" column="53" selection-start-line="201" selection-start-column="53" selection-end-line="201" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -170,7 +171,7 @@
       <file leaf-file-name="dual_pyramid_model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../tf/tfmodels/research/deeplab/dual_pyramid_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-172">
+            <state relative-caret-position="39468">
               <caret line="1796" column="23" selection-start-line="1796" selection-start-column="23" selection-end-line="1796" selection-end-column="23" />
               <folding>
                 <element signature="e#2205#2228#0" expanded="true" />
@@ -191,7 +192,7 @@
       <file leaf-file-name="dual_pyramid_model_with_boundary.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_with_boundary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
+            <state relative-caret-position="40480">
               <caret line="1842" column="52" selection-start-line="1842" selection-start-column="52" selection-end-line="1842" selection-end-column="52" />
               <folding>
                 <element signature="e#2205#2228#0" expanded="true" />
@@ -220,15 +221,13 @@
       </file>
       <file leaf-file-name="dual_pyramid_eval.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_eval.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2376" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="dual_pyramid_train_with_boundary.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_with_boundary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
+            <state relative-caret-position="5324">
               <caret line="249" column="33" selection-start-line="249" selection-start-column="33" selection-end-line="249" selection-end-column="33" />
             </state>
           </provider>
@@ -237,7 +236,7 @@
       <file leaf-file-name="dual_pyramid_train.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-910">
+            <state relative-caret-position="484">
               <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
             </state>
           </provider>
@@ -251,7 +250,7 @@
       <file leaf-file-name="dual_pyramid_model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
+            <state relative-caret-position="39468">
               <caret line="1796" column="23" selection-start-line="1796" selection-start-column="23" selection-end-line="1796" selection-end-column="23" />
             </state>
           </provider>
@@ -260,13 +259,13 @@
       <file leaf-file-name="model_merge2aspp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/model_merge2aspp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
+            <state relative-caret-position="32780">
               <caret line="1491" column="49" selection-start-line="1491" selection-start-column="49" selection-end-line="1491" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model_merge2aspp256.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="model_merge2aspp256.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/model_merge2aspp256.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="224">
@@ -278,7 +277,7 @@
       <file leaf-file-name="dual_pyramid_train_with_boundary.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_with_boundary.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
+            <state relative-caret-position="1518">
               <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
             </state>
           </provider>
@@ -341,8 +340,6 @@
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model23.py" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid20.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid21.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/model15_add2.py" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/cam15.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid13.sh" />
@@ -362,6 +359,8 @@
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" />
         <option value="$PROJECT_DIR$/research/deeplab/model_merge2aspp.py" />
         <option value="$PROJECT_DIR$/research/deeplab/model_merge2aspp256.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/model15_add2.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh" />
       </list>
     </option>
   </component>
@@ -461,21 +460,21 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Run" order="6" />
-      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Python Console" order="0" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.32972974" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Python Console" order="0" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -633,31 +632,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/model15_add2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30624">
-          <caret line="1393" column="51" selection-start-line="1393" selection-start-column="27" selection-end-line="1393" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="86" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_res50.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2200">
           <caret line="100" column="105" selection-start-line="100" selection-start-column="105" selection-end-line="100" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/model15.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24574">
-          <caret line="1118" column="2" selection-start-line="1118" selection-start-column="2" selection-end-line="1123" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -728,35 +706,33 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_eval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2376" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-910">
+        <state relative-caret-position="484">
           <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_with_boundary.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
+        <state relative-caret-position="1518">
           <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_with_boundary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
+        <state relative-caret-position="5324">
           <caret line="249" column="33" selection-start-line="249" selection-start-column="33" selection-end-line="249" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp_eval.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="17" column="3" lean-forward="true" selection-end-line="176" />
+        <state relative-caret-position="374">
+          <caret line="17" column="3" selection-end-line="176" />
           <folding>
             <element signature="e#779#790#0" expanded="true" />
           </folding>
@@ -765,8 +741,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp256_eval.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="396">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#779#790#0" expanded="true" />
           </folding>
@@ -776,41 +752,41 @@
     <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp_train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="17" column="3" lean-forward="true" selection-end-line="421" />
+          <caret line="17" column="3" selection-end-line="421" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp256_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        <state relative-caret-position="550">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp_train.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="43" column="19" lean-forward="true" selection-end-line="102" selection-end-column="33" />
+        <state relative-caret-position="946">
+          <caret line="43" column="19" selection-end-line="102" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp256_train.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
+        <state relative-caret-position="2200">
           <caret line="100" column="60" selection-start-line="100" selection-start-column="60" selection-end-line="100" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="201" column="53" lean-forward="true" selection-start-line="201" selection-start-column="53" selection-end-line="201" selection-end-column="53" />
+        <state relative-caret-position="4268">
+          <caret line="201" column="53" selection-start-line="201" selection-start-column="53" selection-end-line="201" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../tf/tfmodels/research/deeplab/dual_pyramid_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-172">
+        <state relative-caret-position="39468">
           <caret line="1796" column="23" selection-start-line="1796" selection-start-column="23" selection-end-line="1796" selection-end-column="23" />
           <folding>
             <element signature="e#2205#2228#0" expanded="true" />
@@ -827,14 +803,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
+        <state relative-caret-position="39468">
           <caret line="1796" column="23" selection-start-line="1796" selection-start-column="23" selection-end-line="1796" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_with_boundary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
+        <state relative-caret-position="40480">
           <caret line="1842" column="52" selection-start-line="1842" selection-start-column="52" selection-end-line="1842" selection-end-column="52" />
           <folding>
             <element signature="e#2205#2228#0" expanded="true" />
@@ -844,7 +820,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/model_merge2aspp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
+        <state relative-caret-position="32780">
           <caret line="1491" column="49" selection-start-line="1491" selection-start-column="49" selection-end-line="1491" selection-end-column="49" />
         </state>
       </provider>
@@ -853,6 +829,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="1491" column="49" selection-start-line="1491" selection-start-column="49" selection-end-line="1491" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/model15_add2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="1541" lean-forward="true" selection-start-line="1541" selection-end-line="1541" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/model15.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9148">
+          <caret line="1118" column="2" selection-start-line="1118" selection-start-column="2" selection-end-line="1123" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="100" column="113" selection-start-line="100" selection-start-column="113" selection-end-line="100" selection-end-column="113" />
         </state>
       </provider>
     </entry>
