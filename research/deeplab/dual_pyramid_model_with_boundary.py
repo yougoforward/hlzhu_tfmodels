@@ -1154,8 +1154,8 @@ def pyramid_class_aware_refine_by_decoder(features,
                                             scope='br' + str(i))
             outputs_to_logits[output][0] = br_prediction
             up_br_prediction = tf.image.resize_bilinear(
-                br_prediction, [scale_dimension(decoder_height, 1.0 / (2 ** (i))),
-                                scale_dimension(decoder_width, 1.0 / (2 ** (i)))], align_corners=True)
+                br_prediction, [scale_dimension(decoder_height, 1.0 / (2 ** (1 - i))),
+                                scale_dimension(decoder_width, 1.0 / (2 ** (1 - i)))], align_corners=True)
             prediction_list = [up_br_prediction]
             # decoder_features_list.append(outputs_to_logits[output][0])
 
@@ -1343,7 +1343,7 @@ def get_class_aware_attention_branch_logits1(features,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
 
-  features_aspp2 = tf.add(features_aspp1, features_aspp2, name=None)
+  features_aspp2_fuse = tf.add(features_aspp1, features_aspp2, name=None)
   # features_aspp2=tf.concat([features_aspp1, features_aspp2],axis=3, name=None)
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
@@ -1381,7 +1381,7 @@ def get_class_aware_attention_branch_logits1(features,
           scope=scope+"class_sensitive_attention")
 
 
-    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [features_aspp2]):
+    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [features_aspp2_fuse]):
       branch_logits = []
       for i, rate in enumerate(atrous_rates):
           scope = scope_suffix
@@ -1390,7 +1390,7 @@ def get_class_aware_attention_branch_logits1(features,
 
           branch_logits.append(
               slim.conv2d(
-                  features_aspp2,
+                  features_aspp2_fuse,
                   num_classes,
                   kernel_size=kernel_size,
                   rate=rate,
@@ -1399,7 +1399,7 @@ def get_class_aware_attention_branch_logits1(features,
                   scope=scope))
       context_free_score_logits = tf.add_n(branch_logits)
       class_aware_attention=slim.conv2d(
-          features_aspp2,
+          features_aspp2_fuse,
           num_classes,
           kernel_size=1,
           rate=1,
@@ -1497,7 +1497,7 @@ def get_class_aware_attention_branch_logits(features,
   #             rate=1,
   #             scope=scope_suffix + "f22")
   f1,f2=features[0],features[1]
-  f2 = tf.add(f1, f2, name=None)
+  f2_fuse = tf.add(f1, f2, name=None)
   # f2 = tf.concat([f1, f2],axis=3, name=None)
 
   # When using batch normalization with ASPP, ASPP has been applied before
@@ -1541,7 +1541,7 @@ def get_class_aware_attention_branch_logits(features,
           scope=scope+"class_sensitive_attention")
 
 
-    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [f2]):
+    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [f2_fuse]):
       branch_logits = []
       for i, rate in enumerate(atrous_rates):
           scope = scope_suffix
@@ -1550,7 +1550,7 @@ def get_class_aware_attention_branch_logits(features,
 
           branch_logits.append(
               slim.conv2d(
-                  f2,
+                  f2_fuse,
                   num_classes,
                   kernel_size=kernel_size,
                   rate=rate,
@@ -1559,7 +1559,7 @@ def get_class_aware_attention_branch_logits(features,
                   scope=scope))
       context_free_score_logits = tf.add_n(branch_logits)
       class_aware_attention = slim.conv2d(
-          f2,
+          f2_fuse,
           num_classes,
           kernel_size=1,
           rate=1,
@@ -1794,8 +1794,6 @@ def ASPP2(features,
             stride=1,
             reuse=reuse):
         with slim.arg_scope([slim.batch_norm], **batch_norm_params):
-            features=slim.conv2d(features, 512, 1,
-                        scope=ASPP_SCOPE + '_reduce')
             depth = 256
             branch_logits = []
 
@@ -1854,7 +1852,7 @@ def ASPP2(features,
                         aspp_features = slim.conv2d(
                             features, depth, 3, rate=rate, scope=scope)
                     branch_logits.append(aspp_features)
-
+            depth = 256
             # Merge branch logits.
             concat_logits = tf.concat(branch_logits, 3)
             concat_logits = slim.conv2d(

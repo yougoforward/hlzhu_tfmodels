@@ -132,7 +132,7 @@ def predict_labels_multi_scale(images,
 
   for i, image_scale in enumerate(eval_scales):
     with tf.variable_scope(tf.get_variable_scope(), reuse=True if i else None):
-      outputs_to_scales_to_logits = multi_scale_logits(
+      outputs_to_scales_to_logits = multi_scale_class_aware_attention_logits(
           images,
           model_options=model_options,
           image_pyramid=[image_scale],
@@ -141,7 +141,7 @@ def predict_labels_multi_scale(images,
 
     if add_flipped_images:
       with tf.variable_scope(tf.get_variable_scope(), reuse=True):
-        outputs_to_scales_to_logits_reversed = multi_scale_logits(
+        outputs_to_scales_to_logits_reversed = multi_scale_class_aware_attention_logits(
             tf.reverse_v2(images, [2]),
             model_options=model_options,
             image_pyramid=[image_scale],
@@ -149,7 +149,7 @@ def predict_labels_multi_scale(images,
             fine_tune_batch_norm=False)
 
     for output in sorted(outputs_to_scales_to_logits):
-      scales_to_logits = outputs_to_scales_to_logits[output]
+      scales_to_logits = outputs_to_scales_to_logits[output]['softmax']#modify
       logits = tf.image.resize_bilinear(
           scales_to_logits[MERGED_LOGITS_SCOPE],
           tf.shape(images)[1:3],
@@ -159,7 +159,7 @@ def predict_labels_multi_scale(images,
 
       if add_flipped_images:
         scales_to_logits_reversed = (
-            outputs_to_scales_to_logits_reversed[output])
+            outputs_to_scales_to_logits_reversed[output]['softmax'])
         logits_reversed = tf.image.resize_bilinear(
             tf.reverse_v2(scales_to_logits_reversed[MERGED_LOGITS_SCOPE], [2]),
             tf.shape(images)[1:3],

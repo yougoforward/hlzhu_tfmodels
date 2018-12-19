@@ -1532,23 +1532,23 @@ def merge2aspp(features,
             # Merge branch logits.
             concat_logits1 = tf.concat(branch_logits1, 3)
             concat_logits1 = slim.conv2d(
-                concat_logits1, depth, 1, scope=CONCAT_PROJECTION_SCOPE+'1')
+                concat_logits1, depth, 1, scope=CONCAT_PROJECTION_SCOPE)
             concat_logits1 = slim.dropout(
                 concat_logits1,
                 keep_prob=0.9,
                 is_training=is_training,
-                scope=CONCAT_PROJECTION_SCOPE+'1' + '_dropout')
+                scope=CONCAT_PROJECTION_SCOPE + '_dropout')
 
 
             # Merge branch logits.
             concat_logits2 = tf.concat(branch_logits2, 3)
             concat_logits2 = slim.conv2d(
-                concat_logits2, depth, 1, scope=CONCAT_PROJECTION_SCOPE+'2')
+                concat_logits2, depth, 1, scope=CONCAT_PROJECTION_SCOPE)
             concat_logits2 = slim.dropout(
                 concat_logits2,
                 keep_prob=0.9,
                 is_training=is_training,
-                scope=CONCAT_PROJECTION_SCOPE+'2' + '_dropout')
+                scope=CONCAT_PROJECTION_SCOPE + '_dropout')
     return concat_logits1,concat_logits2
 
 def ASPP(features,

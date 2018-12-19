@@ -20,7 +20,6 @@ python dual_pyramid_train.py\
     --train_crop_size=513\
     --train_batch_size=16\
     --decoder_output_stride=4\
-    --last_layer_gradient_multiplier=1.0\
     --training_number_of_steps=30000\
     --fine_tune_batch_norm=true\
     --base_learning_rate=0.007\
@@ -105,4 +104,4 @@ python dual_pyramid_eval.py\
     --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train_finetune"\
     --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/eval_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
-    --max_number_of_evaluations=1
+    --max_number_of_evaluations=1#!/usr/bin/env bash
