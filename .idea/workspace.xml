@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/../tf/tfmodels/research/deeplab/model.py" description="features, end_points = extract_features(" line="760" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/research/deeplab/merge2aspp.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/merge2aspp.sh" afterDir="false" />
-    </list>
+    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,11 +54,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model_merge2aspp.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="model_merge2aspp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/model_merge2aspp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-111">
+            <state relative-caret-position="87">
               <caret line="1539" column="45" selection-start-line="1539" selection-start-column="45" selection-end-line="1539" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model13.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/model13.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="1538" column="39" lean-forward="true" selection-start-line="1538" selection-start-column="39" selection-end-line="1538" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -448,13 +455,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train20.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="94" column="33" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7">
@@ -781,8 +781,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/model_merge2aspp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-111">
+        <state relative-caret-position="87">
           <caret line="1539" column="45" selection-start-line="1539" selection-start-column="45" selection-end-line="1539" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/model13.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="1538" column="39" lean-forward="true" selection-start-line="1538" selection-start-column="39" selection-end-line="1538" selection-end-column="39" />
         </state>
       </provider>
     </entry>

@@ -104,4 +104,4 @@ python dual_pyramid_eval.py\
     --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train_finetune"\
     --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/eval_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
-    --max_number_of_evaluations=1#!/usr/bin/env bash
+    --max_number_of_evaluations=1
