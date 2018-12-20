@@ -229,7 +229,7 @@ def predict_class_aware_attention_labels(images, model_options, image_pyramid=No
 
   predictions = {}
   for output in sorted(outputs_to_scales_to_logits):
-    scales_to_logits = outputs_to_scales_to_logits[output]['softmax'][0]#modify
+    scales_to_logits = outputs_to_scales_to_logits[output]['softmax'][1]#modify
     logits = tf.image.resize_bilinear(
         scales_to_logits[MERGED_LOGITS_SCOPE],
         tf.shape(images)[1:3],
@@ -1154,8 +1154,8 @@ def pyramid_class_aware_refine_by_decoder(features,
                                             scope='br' + str(i))
             outputs_to_logits[output][0] = br_prediction
             up_br_prediction = tf.image.resize_bilinear(
-                br_prediction, [scale_dimension(decoder_height, 1.0 / (2 ** (1 - i))),
-                                scale_dimension(decoder_width, 1.0 / (2 ** (1 - i)))], align_corners=True)
+                br_prediction, [scale_dimension(decoder_height, 1.0 / (2 ** (i))),
+                                scale_dimension(decoder_width, 1.0 / (2 ** (i)))], align_corners=True)
             prediction_list = [up_br_prediction]
             # decoder_features_list.append(outputs_to_logits[output][0])
 
