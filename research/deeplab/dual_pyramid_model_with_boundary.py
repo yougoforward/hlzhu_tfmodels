@@ -424,7 +424,7 @@ def multi_scale_class_aware_attention_logits(images,
 
   # Compute the logits for each scale in the image pyramid.
   outputs_to_scales_to_logits = {
-      k: {'softmax':[{},{},{}],'sigmoid':[{},{},{}],'softmax1':[{},{},{}]}
+      k: {'softmax':[{},{},{}],'sigmoid':[{},{},{}],'softmax1':[{},{},{}],'softmax2':[{},{},{}]}
       for k in model_options.outputs_to_num_classes
   }
 
@@ -469,6 +469,8 @@ def multi_scale_class_aware_attention_logits(images,
                     MERGED_LOGITS_SCOPE] = outputs_to_logits[i][output][1]
                 outputs_to_scales_to_logits[output]['softmax1'][i][
                     MERGED_LOGITS_SCOPE] = outputs_to_logits[i][output][2]
+                outputs_to_scales_to_logits[output]['softmax2'][i][
+                    MERGED_LOGITS_SCOPE] = outputs_to_logits[i][output][3]
         return outputs_to_scales_to_logits
 
     # Save logits to the output map.
@@ -480,6 +482,8 @@ def multi_scale_class_aware_attention_logits(images,
               'logits_%.2f' % image_scale] = outputs_to_logits[i][output][1]
           outputs_to_scales_to_logits[output]['softmax1'][i][
               'logits_%.2f' % image_scale] = outputs_to_logits[i][output][2]
+          outputs_to_scales_to_logits[output]['softmax2'][i][
+              'logits_%.2f' % image_scale] = outputs_to_logits[i][output][3]
 
   # Merge the logits from all the multi-scale inputs.
   for i in range(ss):
@@ -516,6 +520,17 @@ def multi_scale_class_aware_attention_logits(images,
             tf.reduce_max
             if model_options.merge_method == 'max' else tf.reduce_mean)
         outputs_to_scales_to_logits[output]['softmax1'][i][MERGED_LOGITS_SCOPE] = merge_fn(
+            all_logits, axis=4)
+
+        all_logits = [
+            tf.expand_dims(logits, axis=4)
+            for logits in outputs_to_scales_to_logits[output]['softmax2'][i].values()
+        ]
+        all_logits = tf.concat(all_logits, 4)
+        merge_fn = (
+            tf.reduce_max
+            if model_options.merge_method == 'max' else tf.reduce_mean)
+        outputs_to_scales_to_logits[output]['softmax2'][i][MERGED_LOGITS_SCOPE] = merge_fn(
             all_logits, axis=4)
 
   return outputs_to_scales_to_logits
@@ -771,6 +786,7 @@ def _get_class_aware_attention_logits(images,
         weight_decay=weight_decay,
         reuse=reuse,
         scope_suffix=output)
+    outputs_to_logits[output].insert(3, outputs_to_logits[output][0])
     outputs_to_logits[output][0] = boundary_refine(outputs_to_logits[output][0],
                                                    weight_decay=weight_decay,
                                                    reuse=reuse,
@@ -1118,6 +1134,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                         is_training=is_training,
                         reuse=reuse,
                         scope_suffix=output + str(i))
+                    outputs_to_logits[output].insert(3,outputs_to_logits[output][0])
                     outputs_to_logits[output][0] = boundary_refine(outputs_to_logits[output][0],
                                                                    weight_decay=weight_decay,
                                                                    reuse=reuse,
@@ -1148,6 +1165,7 @@ def pyramid_class_aware_refine_by_decoder(features,
             decoder_features_list1.append(skip)
             decoder_features_list2.append(skip)
 
+            outputs_to_logits[output].insert(3, outputs_to_logits[output][0])
             br_prediction = boundary_refine(outputs_to_logits[output][0],
                                             weight_decay=weight_decay,
                                             reuse=reuse,
