@@ -792,7 +792,7 @@ def _get_class_aware_attention_logits(images,
                                                    weight_decay=weight_decay,
                                                    reuse=reuse,
                                                    scope='br3_0')
-    outputs_to_logits[output][0] = tf.add(outputs_to_logits[output][0], prediction_list[0])
+    # outputs_to_logits[output][0] = tf.add(outputs_to_logits[output][0], prediction_list[0])
     outputs_to_logits[output][0] = boundary_refine(outputs_to_logits[output][0],
                                                    weight_decay=weight_decay,
                                                    reuse=reuse,
@@ -1136,7 +1136,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                         reuse=reuse,
                         scope_suffix=output + str(i))
                     outputs_to_logits[output].insert(3,outputs_to_logits[output][0])
-                    outputs_to_logits[output][0] = tf.stop_gradient(outputs_to_logits[output][0])
+                    # outputs_to_logits[output][0] = tf.stop_gradient(outputs_to_logits[output][0])
                     outputs_to_logits[output][0] = boundary_refine(outputs_to_logits[output][0],
                                                                    weight_decay=weight_decay,
                                                                    reuse=reuse,
