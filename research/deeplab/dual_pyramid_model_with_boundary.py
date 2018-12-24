@@ -1236,21 +1236,29 @@ def pyramid_class_aware_refine_by_decoder(features,
                   weight_decay=weight_decay,
                   scope='fusion'+str(i)+'decoder_conv1')
             else:
-              num_convs = 2
-              decoder_features1 = slim.repeat(
-                  tf.concat(decoder_features_list1, 3),
-                  num_convs,
-                  slim.conv2d,
-                  decoder_depth,
-                  3,
-                  scope='fusion1_conv' + str(i))
-              decoder_features2 = slim.repeat(
-                  tf.concat(decoder_features_list2, 3),
-                  num_convs,
-                  slim.conv2d,
-                  decoder_depth,
-                  3,
-                  scope='fusion2_conv' + str(i))
+              # num_convs = 2
+              # decoder_features1 = slim.repeat(
+              #     tf.concat(decoder_features_list1, 3),
+              #     num_convs,
+              #     slim.conv2d,
+              #     decoder_depth,
+              #     3,
+              #     scope='fusion1_conv' + str(i))
+              # decoder_features2 = slim.repeat(
+              #     tf.concat(decoder_features_list2, 3),
+              #     num_convs,
+              #     slim.conv2d,
+              #     decoder_depth,
+              #     3,
+              #     scope='fusion2_conv' + str(i))
+              decoder_features1 = slim.conv2d(
+                  tf.concat(decoder_features_list1, 3), decoder_depth, 3, scope='fusion1' + str(i) + 'decoder_conv0')
+              decoder_features1 = slim.conv2d(
+                  decoder_features1, decoder_depth, 1, scope='fusion1_conv' + str(i) + 'decoder_conv1')
+              decoder_features2 = slim.conv2d(
+                  tf.concat(decoder_features_list2, 3), decoder_depth, 3, scope='fusion2' + str(i) + 'decoder_conv0')
+              decoder_features2 = slim.conv2d(
+                  decoder_features2, decoder_depth, 1, scope='fusion2_conv' + str(i) + 'decoder_conv1')
 
           return [decoder_features1,decoder_features2], inter_logits, prediction_list
 
