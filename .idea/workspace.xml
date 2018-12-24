@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -129,8 +130,8 @@
       <file leaf-file-name="dual_pyramid_model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39468">
-              <caret line="1796" column="23" selection-start-line="1796" selection-start-column="23" selection-end-line="1796" selection-end-column="23" />
+            <state relative-caret-position="950">
+              <caret line="1371" column="117" selection-start-line="1371" selection-start-column="117" selection-end-line="1371" selection-end-column="117" />
             </state>
           </provider>
         </entry>
@@ -147,8 +148,8 @@
       <file leaf-file-name="dual_pyramid_train.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="96" column="30" lean-forward="true" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
+            <state relative-caret-position="249">
+              <caret line="97" column="25" lean-forward="true" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -336,7 +337,6 @@
         <option value="$PROJECT_DIR$/research/deeplab/merge2aspp256_eval.py" />
         <option value="$PROJECT_DIR$/research/deeplab/merge2aspp256_train.py" />
         <option value="$PROJECT_DIR$/../tf/tfmodels/research/deeplab/dual_pyramid_model.py" />
-        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" />
         <option value="$PROJECT_DIR$/research/deeplab/model15_add2.py" />
         <option value="$PROJECT_DIR$/research/deeplab/model_merge2aspp.py" />
         <option value="$PROJECT_DIR$/research/deeplab/model_merge2aspp256.py" />
@@ -352,6 +352,7 @@
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_with_boundary.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_with_boundary.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_with_boundary.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh" />
       </list>
     </option>
@@ -431,14 +432,14 @@
     <frame x="65" y="24" width="1855" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Python Console" order="0" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.32972974" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.32972974" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -669,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39468">
-          <caret line="1796" column="23" selection-start-line="1796" selection-start-column="23" selection-end-line="1796" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -768,6 +762,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="1371" column="117" selection-start-line="1371" selection-start-column="117" selection-end-line="1371" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -777,8 +778,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="96" column="30" lean-forward="true" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
+        <state relative-caret-position="249">
+          <caret line="97" column="25" lean-forward="true" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
         </state>
       </provider>
     </entry>
