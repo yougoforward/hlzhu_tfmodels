@@ -1103,6 +1103,9 @@ def pyramid_class_aware_refine_by_decoder(features,
             # decoder_features_list.append(outputs_to_logits[output][0])
 
             outputs_to_logits[output]=outputs_to_logits[output][:-2]
+            outputs_to_logits[output][0] = tf.image.resize_bilinear(
+                outputs_to_logits[output][0], [scale_dimension(decoder_height, 1.0 / (2 ** (i))),
+                                scale_dimension(decoder_width, 1.0 / (2 ** (i)))], align_corners=True)
             inter_logits.append(outputs_to_logits)
 
 
