@@ -799,6 +799,7 @@ def _get_class_aware_attention_logits(images,
                                                    scope='br' + str(3))
   outputs_to_logits[output]=outputs_to_logits[output][:-2]
   inter_logits.append(outputs_to_logits)
+  inter_logits[1][output][0] += inter_logits[0][output][0]
   return inter_logits
 
 def refine_by_decoder(features,
@@ -1181,6 +1182,9 @@ def pyramid_class_aware_refine_by_decoder(features,
             # decoder_features_list.append(outputs_to_logits[output][0])
 
             outputs_to_logits[output]=outputs_to_logits[output][:-2]
+            outputs_to_logits[output][0] = tf.image.resize_bilinear(
+                outputs_to_logits[output][0], [scale_dimension(decoder_height, 1.0 / (2 ** (i))),
+                                               scale_dimension(decoder_width, 1.0 / (2 ** (i)))], align_corners=True)
             inter_logits.append(outputs_to_logits)
 
 

@@ -1134,7 +1134,7 @@ def pyramid_class_aware_refine_by_decoder(features,
 
 
 
-            decoder_depth = 256
+            decoder_depth = 128
             if decoder_use_separable_conv:
               decoder_features1 = split_separable_conv2d(
                   tf.concat(decoder_features_list1, 3),

@@ -29,7 +29,7 @@ python dual_pyramid_train.py\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
     --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/resnet_v1_50/model.ckpt"\
-    --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train6"\
+    --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train7"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
 python dual_pyramid_eval.py\
@@ -50,8 +50,8 @@ python dual_pyramid_eval.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train6"\
-    --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/eval6"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train7"\
+    --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/eval7"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 
@@ -79,8 +79,8 @@ python dual_pyramid_train.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train6/model.ckpt-30000"\
-    --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train_finetune6"\
+    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train7/model.ckpt-30000"\
+    --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train_finetune7"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
 python dual_pyramid_eval.py\
@@ -101,7 +101,7 @@ python dual_pyramid_eval.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train_finetune6"\
-    --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/eval_finetune6"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/train_finetune7"\
+    --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_res50_on_trainaug_set/eval_finetune7"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
