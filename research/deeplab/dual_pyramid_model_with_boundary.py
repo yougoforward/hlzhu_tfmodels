@@ -788,18 +788,18 @@ def _get_class_aware_attention_logits(images,
         scope_suffix=output)
     outputs_to_logits[output].insert(3, outputs_to_logits[output][0])
     # outputs_to_logits[output][0] = tf.stop_gradient(outputs_to_logits[output][0])
-    outputs_to_logits[output][0] = boundary_refine(outputs_to_logits[output][0],
-                                                   weight_decay=weight_decay,
-                                                   reuse=reuse,
-                                                   scope='br3_0')
-    outputs_to_logits[output][0] = tf.add(outputs_to_logits[output][0], prediction_list[0])
-    outputs_to_logits[output][0] = boundary_refine(outputs_to_logits[output][0],
-                                                   weight_decay=weight_decay,
-                                                   reuse=reuse,
-                                                   scope='br' + str(3))
+    # outputs_to_logits[output][0] = boundary_refine(outputs_to_logits[output][0],
+    #                                                weight_decay=weight_decay,
+    #                                                reuse=reuse,
+    #                                                scope='br3_0')
+    # outputs_to_logits[output][0] = tf.add(outputs_to_logits[output][0], prediction_list[0])
+    # outputs_to_logits[output][0] = boundary_refine(outputs_to_logits[output][0],
+    #                                                weight_decay=weight_decay,
+    #                                                reuse=reuse,
+    #                                                scope='br' + str(3))
   outputs_to_logits[output]=outputs_to_logits[output][:-2]
   inter_logits.append(outputs_to_logits)
-  # inter_logits[1][output][0] += inter_logits[0][output][0]
+  inter_logits[1][output][0] += inter_logits[0][output][0]
   return inter_logits
 
 def refine_by_decoder(features,
@@ -1112,6 +1112,7 @@ def pyramid_class_aware_refine_by_decoder(features,
               feature_name = '{}/{}'.format(
                   feature_extractor.name_scope[model_variant], name)
             outputs_to_logits = {}
+            prediction_list =[]
             for output in sorted(model_options.outputs_to_num_classes):
                 if i==0:
                     outputs_to_logits[output] = get_class_aware_attention_branch_logits1(
@@ -1138,19 +1139,20 @@ def pyramid_class_aware_refine_by_decoder(features,
                         scope_suffix=output + str(i))
                     outputs_to_logits[output].insert(3,outputs_to_logits[output][0])
                     # outputs_to_logits[output][0] = tf.stop_gradient(outputs_to_logits[output][0])
-                    outputs_to_logits[output][0] = boundary_refine(outputs_to_logits[output][0],
-                                                                   weight_decay=weight_decay,
-                                                                   reuse=reuse,
-                                                                   scope='br' + str(i) + '_0')
-
-                    outputs_to_logits[output][0] = tf.add(outputs_to_logits[output][0], prediction_list[0])
+                    # outputs_to_logits[output][0] = boundary_refine(outputs_to_logits[output][0],
+                    #                                                weight_decay=weight_decay,
+                    #                                                reuse=reuse,
+                    #                                                scope='br' + str(i) + '_0')
+                    #
+                    # outputs_to_logits[output][0] = tf.add(outputs_to_logits[output][0], prediction_list[0])
 
             decoder_features1 = outputs_to_logits[output][-2]
             decoder_features2 = outputs_to_logits[output][-1]
             decoder_features_list1 = [decoder_features1]
             decoder_features_list2 = [decoder_features2]
 
-            skip_depth=48 * (4 ** (i))
+            # skip_depth=48 * (4 ** (i))
+            skip_depth=256
             skip=slim.conv2d(
                 end_points[feature_name],
                 skip_depth,
@@ -1170,21 +1172,23 @@ def pyramid_class_aware_refine_by_decoder(features,
 
             outputs_to_logits[output].insert(3, outputs_to_logits[output][0])
             # outputs_to_logits[output][0] = tf.stop_gradient(outputs_to_logits[output][0])
-            br_prediction = boundary_refine(outputs_to_logits[output][0],
-                                            weight_decay=weight_decay,
-                                            reuse=reuse,
-                                            scope='br' + str(i))
-            outputs_to_logits[output][0] = br_prediction
-            up_br_prediction = tf.image.resize_bilinear(
-                br_prediction, [scale_dimension(decoder_height, 1.0 / (2 ** (i))),
-                                scale_dimension(decoder_width, 1.0 / (2 ** (i)))], align_corners=True)
-            prediction_list = [up_br_prediction]
+
+            # br_prediction = boundary_refine(outputs_to_logits[output][0],
+            #                                 weight_decay=weight_decay,
+            #                                 reuse=reuse,
+            #                                 scope='br' + str(i))
+            # outputs_to_logits[output][0] = br_prediction
+            # up_br_prediction = tf.image.resize_bilinear(
+            #     br_prediction, [scale_dimension(decoder_height, 1.0 / (2 ** (i))),
+            #                     scale_dimension(decoder_width, 1.0 / (2 ** (i)))], align_corners=True)
+            # prediction_list = [up_br_prediction]
+
             # decoder_features_list.append(outputs_to_logits[output][0])
 
             outputs_to_logits[output]=outputs_to_logits[output][:-2]
-            # outputs_to_logits[output][0] = tf.image.resize_bilinear(
-            #     outputs_to_logits[output][0], [scale_dimension(decoder_height, 1.0 / (2 ** (i))),
-            #                                    scale_dimension(decoder_width, 1.0 / (2 ** (i)))], align_corners=True)
+            outputs_to_logits[output][0] = tf.image.resize_bilinear(
+                outputs_to_logits[output][0], [scale_dimension(decoder_height, 1.0 / (2 ** (i))),
+                                               scale_dimension(decoder_width, 1.0 / (2 ** (i)))], align_corners=True)
             inter_logits.append(outputs_to_logits)
 
 
@@ -1240,21 +1244,47 @@ def pyramid_class_aware_refine_by_decoder(features,
                   weight_decay=weight_decay,
                   scope='fusion'+str(i)+'decoder_conv1')
             else:
-              num_convs = 2
-              decoder_features1 = slim.repeat(
-                  tf.concat(decoder_features_list1, 3),
-                  num_convs,
-                  slim.conv2d,
-                  decoder_depth,
-                  3,
-                  scope='fusion1_conv' + str(i))
-              decoder_features2 = slim.repeat(
-                  tf.concat(decoder_features_list2, 3),
-                  num_convs,
-                  slim.conv2d,
-                  decoder_depth,
-                  3,
-                  scope='fusion2_conv' + str(i))
+                # If crop_size is None, we simply do global pooling.
+                image_feature1 = tf.reduce_mean(tf.concat(decoder_features_list1,3), axis=[1, 2])[:, tf.newaxis,
+                                tf.newaxis]
+                image_feature1 = slim.conv2d(image_feature1, skip_depth, 1, activation_fn=tf.nn.relu,
+                                            normalizer_fn=None, scope=IMAGE_POOLING_SCOPE + str(i)+'_fuse1_conv1x1_0')
+                image_feature1 = slim.conv2d(image_feature1, skip_depth, 1, activation_fn=None,
+                                            normalizer_fn=None, scope=IMAGE_POOLING_SCOPE + str(i) + '_fuse1_conv1x1_1')
+                global_attention1 = tf.nn.sigmoid(image_feature1, name=None)
+                skip_features1 = tf.multiply(decoder_features_list1[1], global_attention1, name=None)
+
+                decoder_features1=tf.add(decoder_features_list1[0], skip_features1, name=None)
+
+
+
+                image_feature2 = tf.reduce_mean(tf.concat(decoder_features_list2,3), axis=[1, 2])[:, tf.newaxis,
+                                tf.newaxis]
+                image_feature2 = slim.conv2d(image_feature2, skip_depth, 1, activation_fn=tf.nn.relu,
+                                            normalizer_fn=None, scope=IMAGE_POOLING_SCOPE + str(i)+'_fuse1_conv1x1_0')
+                image_feature2 = slim.conv2d(image_feature2, skip_depth, 1, activation_fn=None,
+                                            normalizer_fn=None, scope=IMAGE_POOLING_SCOPE + str(i) + '_fuse1_conv1x1_1')
+                global_attention2 = tf.nn.sigmoid(image_feature2, name=None)
+                skip_features2 = tf.multiply(decoder_features_list2[1], global_attention2, name=None)
+
+                decoder_features2=tf.add(decoder_features_list2[0], skip_features2, name=None)
+
+              # num_convs = 2
+              # decoder_features1 = slim.repeat(
+              #     tf.concat(decoder_features_list1, 3),
+              #     num_convs,
+              #     slim.conv2d,
+              #     decoder_depth,
+              #     3,
+              #     scope='fusion1_conv' + str(i))
+              # decoder_features2 = slim.repeat(
+              #     tf.concat(decoder_features_list2, 3),
+              #     num_convs,
+              #     slim.conv2d,
+              #     decoder_depth,
+              #     3,
+              #     scope='fusion2_conv' + str(i))
+
               # decoder_features1 = slim.conv2d(
               #     tf.concat(decoder_features_list1, 3), decoder_depth, 3, scope='fusion1' + str(i) + 'decoder_conv0')
               # decoder_features1 = slim.conv2d(
