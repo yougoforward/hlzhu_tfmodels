@@ -1176,7 +1176,7 @@ def pyramid_class_aware_refine_by_decoder(features,
 
                 decoder_features1 = tf.add(decoder_features_list1[0], skip_features1, name=None)
 
-                image_feature2 = tf.reduce_mean(tf.concat(decoder_features_list2, 3), axis=[1, 2])[:, tf.newaxis,
+                image_feature2 = tf.reduce_mean(decoder_features_list2[0], axis=[1, 2])[:, tf.newaxis,
                                  tf.newaxis]
                 image_feature2 = slim.conv2d(image_feature2, skip_depth, 1, activation_fn=tf.nn.relu,
                                              normalizer_fn=slim.batch_norm,
