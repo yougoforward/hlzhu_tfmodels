@@ -462,13 +462,18 @@ def multi_scale_class_aware_attention_logits(images,
     # Return when only one input scale.
     if len(image_pyramid) == 1:
         for i in range(ss):
-            for output in sorted(model_options.outputs_to_num_classes):
-                outputs_to_scales_to_logits[output]['softmax'][i][
-                    MERGED_LOGITS_SCOPE] = outputs_to_logits[i][output][0]
-                outputs_to_scales_to_logits[output]['sigmoid'][i][
-                    MERGED_LOGITS_SCOPE] = outputs_to_logits[i][output][1]
-                outputs_to_scales_to_logits[output]['softmax1'][i][
-                    MERGED_LOGITS_SCOPE] = outputs_to_logits[i][output][2]
+            if i==0:
+                for output in sorted(model_options.outputs_to_num_classes):
+                    outputs_to_scales_to_logits[output]['softmax'][i][
+                        MERGED_LOGITS_SCOPE] = outputs_to_logits[i][output][0]
+                    outputs_to_scales_to_logits[output]['sigmoid'][i][
+                        MERGED_LOGITS_SCOPE] = outputs_to_logits[i][output][1]
+                    outputs_to_scales_to_logits[output]['softmax1'][i][
+                        MERGED_LOGITS_SCOPE] = outputs_to_logits[i][output][2]
+            if i==1:
+                for output in sorted(model_options.outputs_to_num_classes):
+                    outputs_to_scales_to_logits[output]['softmax'][i][
+                        MERGED_LOGITS_SCOPE] = outputs_to_logits[i][output][0]
         return outputs_to_scales_to_logits
 
     # Save logits to the output map.
