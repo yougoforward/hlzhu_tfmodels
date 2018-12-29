@@ -29,7 +29,7 @@ python train.py\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
     --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/resnet_v1_50/model.ckpt"\
-    --train_logdir="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/train"\
+    --train_logdir="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/train2"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
 python eval.py\
@@ -50,8 +50,8 @@ python eval.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/train"\
-    --eval_logdir="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/eval"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/train2"\
+    --eval_logdir="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/eval2"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 
@@ -79,8 +79,8 @@ python train.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/train/model.ckpt-30000"\
-    --train_logdir="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/train_finetune"\
+    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/train2/model.ckpt-30000"\
+    --train_logdir="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/train_finetune2"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
 python eval.py\
@@ -101,7 +101,7 @@ python eval.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/train_finetune"\
-    --eval_logdir="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/eval_finetune"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/train_finetune2"\
+    --eval_logdir="datasets/pascal_voc_seg/exp/v3plus_train_res50_on_trainaug_set/eval_finetune2"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
