@@ -1352,7 +1352,7 @@ def get_class_aware_attention_branch_logits1(features,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
   with tf.variable_scope("aspp2", "aspp2"):
-      features_aspp2 = ASPP2(features,
+      features_aspp2 = ASPP(features,
                             model_options,
                             weight_decay=weight_decay,
                             reuse=reuse,
