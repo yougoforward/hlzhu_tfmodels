@@ -1164,19 +1164,19 @@ def pyramid_class_aware_refine_by_decoder(features,
                 1,
                 activation_fn=None,
                 normalizer_fn=None,
-                scope='feature_projection' + str(i))
+                scope='feature_projection' + str(i)+'_1a')
             skip1 = slim.conv2d(
                 skip,
                 skip_depth,
                 3,
-                scope='feature_projection' + str(i))
+                scope='feature_projection' + str(i)+'_2a')
             skip1 = slim.conv2d(
                 skip1,
                 skip_depth,
                 3,
                 activation_fn=None,
                 normalizer_fn=None,
-                scope='feature_projection' + str(i))
+                scope='feature_projection' + str(i)+'_2b')
             skip=tf.add(skip, skip1, name=None)
             skip=tf.nn.relu(skip, name=None)
 
