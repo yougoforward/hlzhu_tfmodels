@@ -29,7 +29,7 @@ python dual_pyramid_train_v3plusCam.py\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
     --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/resnet_v1_50/model.ckpt"\
-    --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_res50_on_trainaug_set/train10"\
+    --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_res50_on_trainaug_set/train11"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
 python dual_pyramid_eval_v3plusCam.py\
@@ -50,8 +50,8 @@ python dual_pyramid_eval_v3plusCam.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_res50_on_trainaug_set/train10"\
-    --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_res50_on_trainaug_set/eval10"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_res50_on_trainaug_set/train11"\
+    --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_res50_on_trainaug_set/eval11"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 
@@ -101,7 +101,7 @@ python dual_pyramid_eval_v3plusCam.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_res50_on_trainaug_set/train_finetune10"\
-    --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_res50_on_trainaug_set/eval_finetune10"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_res50_on_trainaug_set/train_finetune11"\
+    --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_res50_on_trainaug_set/eval_finetune11"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
