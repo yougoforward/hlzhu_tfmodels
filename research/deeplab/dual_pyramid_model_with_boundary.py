@@ -1151,8 +1151,8 @@ def pyramid_class_aware_refine_by_decoder(features,
             decoder_features_list1 = [decoder_features1]
             decoder_features_list2 = [decoder_features2]
 
-            # skip_depth=48 * (4 ** (i))
-            skip_depth=256
+            skip_depth=48 * (4 ** (i))
+            # skip_depth=256
             skip=slim.conv2d(
                 end_points[feature_name],
                 skip_depth,
@@ -1277,8 +1277,8 @@ def pyramid_class_aware_refine_by_decoder(features,
                 global_attention1 = tf.nn.sigmoid(image_feature1, name=None)
                 skip_features1 = tf.multiply(decoder_features_list1[1], global_attention1, name=None)
 
-                decoder_features1=tf.add(decoder_features_list1[0], skip_features1, name=None)
-
+                # decoder_features1=tf.add(decoder_features_list1[0], skip_features1, name=None)
+                decoder_features1 = tf.concat([decoder_features_list1[0], skip_features1], 3)
 
 
                 image_feature2 = tf.reduce_mean(tf.concat(decoder_features_list2,3), axis=[1, 2])[:, tf.newaxis,
@@ -1290,7 +1290,8 @@ def pyramid_class_aware_refine_by_decoder(features,
                 global_attention2 = tf.nn.sigmoid(image_feature2, name=None)
                 skip_features2 = tf.multiply(decoder_features_list2[1], global_attention2, name=None)
 
-                decoder_features2=tf.add(decoder_features_list2[0], skip_features2, name=None)
+                # decoder_features2=tf.add(decoder_features_list2[0], skip_features2, name=None)
+                decoder_features2 = tf.concat([decoder_features_list2[0], skip_features2], 3)
 
                 num_convs = 1
                 decoder_features1 = slim.repeat(
