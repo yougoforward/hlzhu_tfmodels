@@ -206,36 +206,6 @@ def predict_labels(images, model_options, image_pyramid=None):
     predictions[output] = tf.argmax(logits, 3)
 
   return predictions
-def predict_class_aware_attention_labels(images, model_options, image_pyramid=None):
-  """Predicts segmentation labels.
-
-  Args:
-    images: A tensor of size [batch, height, width, channels].
-    model_options: A ModelOptions instance to configure models.
-    image_pyramid: Input image scales for multi-scale feature extraction.
-
-  Returns:
-    A dictionary with keys specifying the output_type (e.g., semantic
-      prediction) and values storing Tensors representing predictions (argmax
-      over channels). Each prediction has size [batch, height, width].
-  """
-  outputs_to_scales_to_logits = multi_scale_class_aware_attention_logits(
-      images,
-      model_options=model_options,
-      image_pyramid=image_pyramid,
-      is_training=False,
-      fine_tune_batch_norm=False)
-
-  predictions = {}
-  for output in sorted(outputs_to_scales_to_logits):
-    scales_to_logits = outputs_to_scales_to_logits[output]['softmax']#modify
-    logits = tf.image.resize_bilinear(
-        scales_to_logits[MERGED_LOGITS_SCOPE],
-        tf.shape(images)[1:3],
-        align_corners=True)
-    predictions[output] = tf.argmax(logits, 3)
-
-  return predictions
 
 def scale_dimension(dim, scale):
   """Scales the input dimension.
@@ -368,250 +338,6 @@ def multi_scale_logits(images,
 
   return outputs_to_scales_to_logits
 
-def pyramid_feature_fusion_multi_scale_logits(images,
-                       model_options,
-                       image_pyramid,
-                       weight_decay=0.0001,
-                       is_training=False,
-                       fine_tune_batch_norm=False):
-  """Gets the logits for multi-scale inputs.
-
-  The returned logits are all downsampled (due to max-pooling layers)
-  for both training and evaluation.
-
-  Args:
-    images: A tensor of size [batch, height, width, channels].
-    model_options: A ModelOptions instance to configure models.
-    image_pyramid: Input image scales for multi-scale feature extraction.
-    weight_decay: The weight decay for model variables.
-    is_training: Is training or not.
-    fine_tune_batch_norm: Fine-tune the batch norm parameters or not.
-
-  Returns:
-    outputs_to_scales_to_logits: A map of maps from output_type (e.g.,
-      semantic prediction) to a dictionary of multi-scale logits names to
-      logits. For each output_type, the dictionary has keys which
-      correspond to the scales and values which correspond to the logits.
-      For example, if `scales` equals [1.0, 1.5], then the keys would
-      include 'merged_logits', 'logits_1.00' and 'logits_1.50'.
-
-  Raises:
-    ValueError: If model_options doesn't specify crop_size and its
-      add_image_level_feature = True, since add_image_level_feature requires
-      crop_size information.
-  """
-  # Setup default values.
-  if not image_pyramid:
-    image_pyramid = [1.0]
-  crop_height = (
-      model_options.crop_size[0]
-      if model_options.crop_size else tf.shape(images)[1])
-  crop_width = (
-      model_options.crop_size[1]
-      if model_options.crop_size else tf.shape(images)[2])
-
-  # Compute the height, width for the output logits.
-  logits_output_stride = (
-      model_options.decoder_output_stride or model_options.output_stride)
-
-  logits_height = scale_dimension(
-      crop_height,
-      max(1.0, max(image_pyramid)) / logits_output_stride)
-  logits_width = scale_dimension(
-      crop_width,
-      max(1.0, max(image_pyramid)) / logits_output_stride)
-
-  # Compute the logits for each scale in the image pyramid.
-  outputs_to_scales_to_logits = {
-      k: {}
-      for k in model_options.outputs_to_num_classes
-  }
-
-  for image_scale in image_pyramid:
-    if image_scale != 1.0:
-      scaled_height = scale_dimension(crop_height, image_scale)
-      scaled_width = scale_dimension(crop_width, image_scale)
-      scaled_crop_size = [scaled_height, scaled_width]
-      scaled_images = tf.image.resize_bilinear(
-          images, scaled_crop_size, align_corners=True)
-      if model_options.crop_size:
-        scaled_images.set_shape([None, scaled_height, scaled_width, 3])
-    else:
-      scaled_crop_size = model_options.crop_size
-      scaled_images = images
-
-    updated_options = model_options._replace(crop_size=scaled_crop_size)
-    outputs_to_logits = _get_pyramid_feature_fusion__logits(
-        scaled_images,
-        updated_options,
-        weight_decay=weight_decay,
-        reuse=tf.AUTO_REUSE,
-        is_training=is_training,
-        fine_tune_batch_norm=fine_tune_batch_norm)
-
-    # Resize the logits to have the same dimension before merging.
-    for output in sorted(outputs_to_logits):
-      outputs_to_logits[output] = tf.image.resize_bilinear(
-          outputs_to_logits[output], [logits_height, logits_width],
-          align_corners=True)
-
-    # Return when only one input scale.
-    if len(image_pyramid) == 1:
-      for output in sorted(model_options.outputs_to_num_classes):
-        outputs_to_scales_to_logits[output][
-            MERGED_LOGITS_SCOPE] = outputs_to_logits[output]
-      return outputs_to_scales_to_logits
-
-    # Save logits to the output map.
-    for output in sorted(model_options.outputs_to_num_classes):
-      outputs_to_scales_to_logits[output][
-          'logits_%.2f' % image_scale] = outputs_to_logits[output]
-
-  # Merge the logits from all the multi-scale inputs.
-  for output in sorted(model_options.outputs_to_num_classes):
-    # Concatenate the multi-scale logits for each output type.
-    all_logits = [
-        tf.expand_dims(logits, axis=4)
-        for logits in outputs_to_scales_to_logits[output].values()
-    ]
-    all_logits = tf.concat(all_logits, 4)
-    merge_fn = (
-        tf.reduce_max
-        if model_options.merge_method == 'max' else tf.reduce_mean)
-    outputs_to_scales_to_logits[output][MERGED_LOGITS_SCOPE] = merge_fn(
-        all_logits, axis=4)
-
-  return outputs_to_scales_to_logits
-
-def multi_scale_class_aware_attention_logits(images,
-                       model_options,
-                       image_pyramid,
-                       weight_decay=0.0001,
-                       is_training=False,
-                       fine_tune_batch_norm=False):
-  """Gets the logits for multi-scale inputs.
-
-  The returned logits are all downsampled (due to max-pooling layers)
-  for both training and evaluation.
-
-  Args:
-    images: A tensor of size [batch, height, width, channels].
-    model_options: A ModelOptions instance to configure models.
-    image_pyramid: Input image scales for multi-scale feature extraction.
-    weight_decay: The weight decay for model variables.
-    is_training: Is training or not.
-    fine_tune_batch_norm: Fine-tune the batch norm parameters or not.
-
-  Returns:
-    outputs_to_scales_to_logits: A map of maps from output_type (e.g.,
-      semantic prediction) to a dictionary of multi-scale logits names to
-      logits. For each output_type, the dictionary has keys which
-      correspond to the scales and values which correspond to the logits.
-      For example, if `scales` equals [1.0, 1.5], then the keys would
-      include 'merged_logits', 'logits_1.00' and 'logits_1.50'.
-
-  Raises:
-    ValueError: If model_options doesn't specify crop_size and its
-      add_image_level_feature = True, since add_image_level_feature requires
-      crop_size information.
-  """
-  # Setup default values.
-  if not image_pyramid:
-    image_pyramid = [1.0]
-  crop_height = (
-      model_options.crop_size[0]
-      if model_options.crop_size else tf.shape(images)[1])
-  crop_width = (
-      model_options.crop_size[1]
-      if model_options.crop_size else tf.shape(images)[2])
-
-  # Compute the height, width for the output logits.
-  logits_output_stride = (
-      model_options.decoder_output_stride or model_options.output_stride)
-
-  logits_height = scale_dimension(
-      crop_height,
-      max(1.0, max(image_pyramid)) / logits_output_stride)
-  logits_width = scale_dimension(
-      crop_width,
-      max(1.0, max(image_pyramid)) / logits_output_stride)
-
-  # Compute the logits for each scale in the image pyramid.
-  outputs_to_scales_to_logits = {
-      k: {'softmax':{},'sigmoid':{}}
-      for k in model_options.outputs_to_num_classes
-  }
-
-  for image_scale in image_pyramid:
-    if image_scale != 1.0:
-      scaled_height = scale_dimension(crop_height, image_scale)
-      scaled_width = scale_dimension(crop_width, image_scale)
-      scaled_crop_size = [scaled_height, scaled_width]
-      scaled_images = tf.image.resize_bilinear(
-          images, scaled_crop_size, align_corners=True)
-      if model_options.crop_size:
-        scaled_images.set_shape([None, scaled_height, scaled_width, 3])
-    else:
-      scaled_crop_size = model_options.crop_size
-      scaled_images = images
-
-    updated_options = model_options._replace(crop_size=scaled_crop_size)
-    outputs_to_logits = _get_class_aware_attention_logits(
-        scaled_images,
-        updated_options,
-        weight_decay=weight_decay,
-        reuse=tf.AUTO_REUSE,
-        is_training=is_training,
-        fine_tune_batch_norm=fine_tune_batch_norm)
-
-    # Resize the logits to have the same dimension before merging.
-    for output in sorted(outputs_to_logits):
-      outputs_to_logits[output] = [tf.image.resize_bilinear(
-          output_logits, [logits_height, logits_width],
-          align_corners=True) for output_logits in outputs_to_logits[output]]
-
-    # Return when only one input scale.
-    if len(image_pyramid) == 1:
-      for output in sorted(model_options.outputs_to_num_classes):
-        outputs_to_scales_to_logits[output]['softmax'][
-            MERGED_LOGITS_SCOPE] = outputs_to_logits[output][0]
-        outputs_to_scales_to_logits[output]['sigmoid'][
-            MERGED_LOGITS_SCOPE] = outputs_to_logits[output][1]
-      return outputs_to_scales_to_logits
-
-    # Save logits to the output map.
-    for output in sorted(model_options.outputs_to_num_classes):
-      outputs_to_scales_to_logits[output]['softmax'][
-          'logits_%.2f' % image_scale] = outputs_to_logits[output][0]
-      outputs_to_scales_to_logits[output]['sigmoid'][
-          'logits_%.2f' % image_scale] = outputs_to_logits[output][1]
-
-  # Merge the logits from all the multi-scale inputs.
-  for output in sorted(model_options.outputs_to_num_classes):
-    # Concatenate the multi-scale logits for each output type.
-    all_logits = [
-        tf.expand_dims(logits, axis=4)
-        for logits in outputs_to_scales_to_logits[output]['softmax'].values()
-    ]
-    all_logits = tf.concat(all_logits, 4)
-    merge_fn = (
-        tf.reduce_max
-        if model_options.merge_method == 'max' else tf.reduce_mean)
-    outputs_to_scales_to_logits[output]['softmax'][MERGED_LOGITS_SCOPE] = merge_fn(
-        all_logits, axis=4)
-
-    all_logits = [
-        tf.expand_dims(logits, axis=4)
-        for logits in outputs_to_scales_to_logits[output]['sigmoid'].values()
-    ]
-    all_logits = tf.concat(all_logits, 4)
-    merge_fn = (
-        tf.reduce_max
-        if model_options.merge_method == 'max' else tf.reduce_mean)
-    outputs_to_scales_to_logits[output]['sigmoid'][MERGED_LOGITS_SCOPE] = merge_fn(
-        all_logits, axis=4)
-
-  return outputs_to_scales_to_logits
 
 def extract_features(images,
                      model_options,
@@ -765,6 +491,18 @@ def _get_logits(images,
       is_training=is_training,
       fine_tune_batch_norm=fine_tune_batch_norm)
 
+  outputs_to_logits = {}
+  for output in sorted(model_options.outputs_to_num_classes):
+    outputs_to_logits[output] = get_branch_logits(
+        features,
+        model_options.outputs_to_num_classes[output],
+        model_options.atrous_rates,
+        aspp_with_batch_norm=model_options.aspp_with_batch_norm,
+        kernel_size=model_options.logits_kernel_size,
+        weight_decay=weight_decay,
+        reuse=reuse,
+        scope_suffix=output)
+
   if model_options.decoder_output_stride is not None:
     if model_options.crop_size is None:
       height = tf.shape(images)[1]
@@ -788,10 +526,11 @@ def _get_logits(images,
         is_training=is_training,
         fine_tune_batch_norm=fine_tune_batch_norm)
 
-
-  outputs_to_logits = {}
+  outputs_to_logits[output] = tf.image.resize_bilinear(
+      outputs_to_logits[output], [decoder_height,decoder_width], align_corners=True)
+  # outputs_to_logits = {}
   for output in sorted(model_options.outputs_to_num_classes):
-    outputs_to_logits[output] = get_branch_logits(
+    outputs_to_logits[output] = outputs_to_logits[output]+get_branch_logits(
         features,
         model_options.outputs_to_num_classes[output],
         model_options.atrous_rates,
@@ -803,133 +542,6 @@ def _get_logits(images,
 
   return outputs_to_logits
 
-def _get_pyramid_feature_fusion_logits(images,
-                model_options,
-                weight_decay=0.0001,
-                reuse=None,
-                is_training=False,
-                fine_tune_batch_norm=False):
-  """Gets the logits by atrous/image spatial pyramid pooling.
-
-  Args:
-    images: A tensor of size [batch, height, width, channels].
-    model_options: A ModelOptions instance to configure models.
-    weight_decay: The weight decay for model variables.
-    reuse: Reuse the model variables or not.
-    is_training: Is training or not.
-    fine_tune_batch_norm: Fine-tune the batch norm parameters or not.
-
-  Returns:
-    outputs_to_logits: A map from output_type to logits.
-  """
-  features, end_points = extract_features(
-      images,
-      model_options,
-      weight_decay=weight_decay,
-      reuse=reuse,
-      is_training=is_training,
-      fine_tune_batch_norm=fine_tune_batch_norm)
-
-  if model_options.decoder_output_stride is not None:
-    if model_options.crop_size is None:
-      height = tf.shape(images)[1]
-      width = tf.shape(images)[2]
-    else:
-      height, width = model_options.crop_size
-
-    decoder_height = scale_dimension(height,
-                                     1.0 / model_options.decoder_output_stride)
-    decoder_width = scale_dimension(width,
-                                    1.0 / model_options.decoder_output_stride)
-    features = pyramid_refine_by_decoder(
-        features,
-        end_points,
-        decoder_height=decoder_height,
-        decoder_width=decoder_width,
-        decoder_use_separable_conv=model_options.decoder_use_separable_conv,
-        model_variant=model_options.model_variant,
-        weight_decay=weight_decay,
-        reuse=reuse,
-        is_training=is_training,
-        fine_tune_batch_norm=fine_tune_batch_norm)
-
-
-  outputs_to_logits = {}
-  for output in sorted(model_options.outputs_to_num_classes):
-    outputs_to_logits[output] = get_branch_logits(
-        features,
-        model_options.outputs_to_num_classes[output],
-        model_options.atrous_rates,
-        aspp_with_batch_norm=model_options.aspp_with_batch_norm,
-        kernel_size=model_options.logits_kernel_size,
-        weight_decay=weight_decay,
-        reuse=reuse,
-        scope_suffix=output)
-
-  return outputs_to_logits
-
-def _get_class_aware_attention_logits(images,
-                model_options,
-                weight_decay=0.0001,
-                reuse=None,
-                is_training=False,
-                fine_tune_batch_norm=False):
-  """Gets the logits by atrous/image spatial pyramid pooling.
-
-  Args:
-    images: A tensor of size [batch, height, width, channels].
-    model_options: A ModelOptions instance to configure models.
-    weight_decay: The weight decay for model variables.
-    reuse: Reuse the model variables or not.
-    is_training: Is training or not.
-    fine_tune_batch_norm: Fine-tune the batch norm parameters or not.
-
-  Returns:
-    outputs_to_logits: A map from output_type to logits.
-  """
-  features, end_points = extract_features(
-      images,
-      model_options,
-      weight_decay=weight_decay,
-      reuse=reuse,
-      is_training=is_training,
-      fine_tune_batch_norm=fine_tune_batch_norm)
-
-  if model_options.decoder_output_stride is not None:
-    if model_options.crop_size is None:
-      height = tf.shape(images)[1]
-      width = tf.shape(images)[2]
-    else:
-      height, width = model_options.crop_size
-    decoder_height = scale_dimension(height,
-                                     1.0 / model_options.decoder_output_stride)
-    decoder_width = scale_dimension(width,
-                                    1.0 / model_options.decoder_output_stride)
-    features = pyramid_refine_by_decoder(
-        features,
-        end_points,
-        decoder_height=decoder_height,
-        decoder_width=decoder_width,
-        decoder_use_separable_conv=model_options.decoder_use_separable_conv,
-        model_variant=model_options.model_variant,
-        weight_decay=weight_decay,
-        reuse=reuse,
-        is_training=is_training,
-        fine_tune_batch_norm=fine_tune_batch_norm)
-
-  outputs_to_logits = {}
-  for output in sorted(model_options.outputs_to_num_classes):
-    outputs_to_logits[output] = get_class_aware_attention_branch_logits(
-        features,
-        model_options.outputs_to_num_classes[output],
-        model_options.atrous_rates,
-        aspp_with_batch_norm=model_options.aspp_with_batch_norm,
-        kernel_size=model_options.logits_kernel_size,
-        weight_decay=weight_decay,
-        reuse=reuse,
-        scope_suffix=output)
-
-  return outputs_to_logits
 
 def refine_by_decoder(features,
                       end_points,
@@ -1033,113 +645,6 @@ def refine_by_decoder(features,
                   3,
                   scope='decoder_conv'+ str(i))
           return decoder_features
-
-def pyramid_refine_by_decoder(features,
-                      end_points,
-                      decoder_height,
-                      decoder_width,
-                      decoder_use_separable_conv=False,
-                      model_variant=None,
-                      weight_decay=0.0001,
-                      reuse=None,
-                      is_training=False,
-                      fine_tune_batch_norm=False):
-  """Adds the decoder to obtain sharper segmentation results.
-
-  Args:
-    features: A tensor of size [batch, features_height, features_width,
-      features_channels].
-    end_points: A dictionary from components of the network to the corresponding
-      activation.
-    decoder_height: The height of decoder feature maps.
-    decoder_width: The width of decoder feature maps.
-    decoder_use_separable_conv: Employ separable convolution for decoder or not.
-    model_variant: Model variant for feature extraction.
-    weight_decay: The weight decay for model variables.
-    reuse: Reuse the model variables or not.
-    is_training: Is training or not.
-    fine_tune_batch_norm: Fine-tune the batch norm parameters or not.
-
-  Returns:
-    Decoder output with size [batch, decoder_height, decoder_width,
-      decoder_channels].
-  """
-  batch_norm_params = {
-      'is_training': is_training and fine_tune_batch_norm,
-      'decay': 0.9997,
-      'epsilon': 1e-5,
-      'scale': True,
-  }
-
-  with slim.arg_scope(
-      [slim.conv2d, slim.separable_conv2d],
-      weights_regularizer=slim.l2_regularizer(weight_decay),
-      activation_fn=tf.nn.relu,
-      normalizer_fn=slim.batch_norm,
-      padding='SAME',
-      stride=1,
-      reuse=reuse):
-    with slim.arg_scope([slim.batch_norm], **batch_norm_params):
-      with tf.variable_scope(DECODER_SCOPE, DECODER_SCOPE, [features]):
-        feature_list = feature_extractor.networks_to_feature_maps[
-            model_variant][feature_extractor.DECODER_END_POINTS]
-        if feature_list is None:
-          tf.logging.info('Not found any decoder end points.')
-          return features
-        else:
-          decoder_features = features
-          for i, name in enumerate(feature_list):
-            decoder_features_list = [decoder_features]
-
-            # MobileNet variants use different naming convention.
-            if 'mobilenet' in model_variant:
-              feature_name = name
-            else:
-              feature_name = '{}/{}'.format(
-                  feature_extractor.name_scope[model_variant], name)
-            decoder_features_list.append(
-                slim.conv2d(
-                    end_points[feature_name],
-                    48,
-                    1,
-                    scope='feature_projection' + str(i)))
-            # Resize to decoder_height/decoder_width.
-
-            for j, feature in enumerate(decoder_features_list):
-              decoder_features_list[j] = tf.image.resize_bilinear(
-                  feature, [scale_dimension(decoder_height,1.0/(2**(1-i))), scale_dimension(decoder_width,1.0/(2**(1-i)))], align_corners=True)
-              h = (None if isinstance(scale_dimension(decoder_height,1.0/(2**(1-i))), tf.Tensor)
-                   else scale_dimension(decoder_height,1.0/(2**(1-i))))
-              w = (None if isinstance(scale_dimension(decoder_width,1.0/(2**(1-i))), tf.Tensor)
-                   else scale_dimension(decoder_width,1.0/(2**(1-i))))
-              decoder_features_list[j].set_shape([None, h, w, None])
-            decoder_depth = 256
-            if decoder_use_separable_conv:
-              decoder_features = split_separable_conv2d(
-                  tf.concat(decoder_features_list, 3),
-                  filters=decoder_depth,
-                  rate=1,
-                  weight_decay=weight_decay,
-                  scope='decoder_conv0')
-              decoder_features = split_separable_conv2d(
-                  decoder_features,
-                  filters=decoder_depth,
-                  rate=1,
-                  weight_decay=weight_decay,
-                  scope='decoder_conv1')
-            else:
-              num_convs = 2
-              decoder_features = slim.repeat(
-                  tf.concat(decoder_features_list, 3),
-                  num_convs,
-                  slim.conv2d,
-                  decoder_depth,
-                  3,
-                  scope='decoder_conv' + str(i))
-          return decoder_features
-
-
-
 
 
 def get_branch_logits(features,

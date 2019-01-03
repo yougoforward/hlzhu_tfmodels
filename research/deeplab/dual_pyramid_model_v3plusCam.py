@@ -1122,7 +1122,7 @@ def pyramid_class_aware_refine_by_decoder(features,
             skip = slim.conv2d(
                 end_points[feature_name],
                 skip_depth,
-                3,
+                1,
                 scope='feature_projection' + str(i))
             # If crop_size is None, we simply do global pooling.
       #       image_feature = tf.reduce_mean(decoder_features, axis=[1, 2])[:, tf.newaxis,
@@ -1133,8 +1133,8 @@ def pyramid_class_aware_refine_by_decoder(features,
 
             # decoder_features_list.append(
             #     tf.multiply(skip, global_attention, name=None))
-            # decoder_features_list1.append(skip)
-            decoder_features_list2.append(skip)
+            decoder_features_list1.append(skip)
+            # decoder_features_list2.append(skip)
 
             # decoder_features_list.append(outputs_to_logits[output][0])
 
@@ -1147,25 +1147,25 @@ def pyramid_class_aware_refine_by_decoder(features,
 
             # Resize to decoder_height/decoder_width.
 
-            # for j, feature in enumerate(decoder_features_list1):
-            #   decoder_features_list1[j] = tf.image.resize_bilinear(
-            #       feature, [scale_dimension(decoder_height,1.0/(2**(i))),
-            #                 scale_dimension(decoder_width,1.0/(2**(i)))], align_corners=True)
-            #   h = (None if isinstance(scale_dimension(decoder_height,1.0/(2**(i))), tf.Tensor)
-            #        else scale_dimension(decoder_height,1.0/(2**(i))))
-            #   w = (None if isinstance(scale_dimension(decoder_width,1.0/(2**(i))), tf.Tensor)
-            #        else scale_dimension(decoder_width,1.0/(2**(i))))
-            #   decoder_features_list1[j].set_shape([None, h, w, None])
-
-            for j, feature in enumerate(decoder_features_list2):
-              decoder_features_list2[j] = tf.image.resize_bilinear(
+            for j, feature in enumerate(decoder_features_list1):
+              decoder_features_list1[j] = tf.image.resize_bilinear(
                   feature, [scale_dimension(decoder_height,1.0/(2**(i))),
                             scale_dimension(decoder_width,1.0/(2**(i)))], align_corners=True)
               h = (None if isinstance(scale_dimension(decoder_height,1.0/(2**(i))), tf.Tensor)
                    else scale_dimension(decoder_height,1.0/(2**(i))))
               w = (None if isinstance(scale_dimension(decoder_width,1.0/(2**(i))), tf.Tensor)
                    else scale_dimension(decoder_width,1.0/(2**(i))))
-              decoder_features_list2[j].set_shape([None, h, w, None])
+              decoder_features_list1[j].set_shape([None, h, w, None])
+
+            # for j, feature in enumerate(decoder_features_list2):
+            #   decoder_features_list2[j] = tf.image.resize_bilinear(
+            #       feature, [scale_dimension(decoder_height,1.0/(2**(i))),
+            #                 scale_dimension(decoder_width,1.0/(2**(i)))], align_corners=True)
+            #   h = (None if isinstance(scale_dimension(decoder_height,1.0/(2**(i))), tf.Tensor)
+            #        else scale_dimension(decoder_height,1.0/(2**(i))))
+            #   w = (None if isinstance(scale_dimension(decoder_width,1.0/(2**(i))), tf.Tensor)
+            #        else scale_dimension(decoder_width,1.0/(2**(i))))
+            #   decoder_features_list2[j].set_shape([None, h, w, None])
 
 
 
@@ -1224,24 +1224,24 @@ def pyramid_class_aware_refine_by_decoder(features,
                 #
                 # decoder_features2 = tf.add(decoder_features_list2[0], skip_features2, name=None)
               num_convs = 2
-              # decoder_features1 = slim.repeat(
-              #     tf.concat(decoder_features_list1, 3),
-              #     num_convs,
-              #     slim.conv2d,
-              #     decoder_depth,
-              #     3,
-              #     scope='fusion1_conv' + str(i))
-              # # decoder_features1 = slim.conv2d(
-              # #     tf.concat(decoder_features_list1, 3), decoder_depth, 3, scope='fusion1' + str(i) + 'decoder_conv0')
-              # # decoder_features1 = slim.conv2d(
-              # #     decoder_features1, decoder_depth, 1, scope='fusion1_conv' + str(i) + 'decoder_conv1')
-              decoder_features2 = slim.repeat(
-                  tf.concat(decoder_features_list2, 3),
+              decoder_features1 = slim.repeat(
+                  tf.concat(decoder_features_list1, 3),
                   num_convs,
                   slim.conv2d,
                   decoder_depth,
                   3,
-                  scope='fusion2_conv' + str(i))
+                  scope='fusion1_conv' + str(i))
+              # # decoder_features1 = slim.conv2d(
+              # #     tf.concat(decoder_features_list1, 3), decoder_depth, 3, scope='fusion1' + str(i) + 'decoder_conv0')
+              # # decoder_features1 = slim.conv2d(
+              # #     decoder_features1, decoder_depth, 1, scope='fusion1_conv' + str(i) + 'decoder_conv1')
+              # decoder_features2 = slim.repeat(
+              #     tf.concat(decoder_features_list2, 3),
+              #     num_convs,
+              #     slim.conv2d,
+              #     decoder_depth,
+              #     3,
+              #     scope='fusion2_conv' + str(i))
               # # decoder_features2 = slim.conv2d(
               # #     tf.concat(decoder_features_list2, 3), decoder_depth, 3, scope='fusion2' + str(i) + 'decoder_conv0')
               # # decoder_features2 = slim.conv2d(
@@ -1429,7 +1429,7 @@ def get_class_aware_attention_branch_logits1(features,
     attentioned_score = tf.multiply(class_sensitive_attention, s1, name=None)
     # addmin = tf.add(attentioned_score, smin, name=None)
 
-    return [attentioned_score,context_free_score_logits,context_sensitive_logits, features_aspp1, features_aspp2_fuse]
+    return [attentioned_score,context_free_score_logits,context_sensitive_logits, features_aspp1, features_aspp2]
 
 def get_class_aware_attention_branch_logits(features,
                       num_classes,

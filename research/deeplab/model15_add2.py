@@ -1303,7 +1303,7 @@ def get_class_aware_attention_branch_logits(features,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
 
-  features_aspp2=tf.add(features_aspp1, features_aspp2, name=None)
+  # features_aspp2=tf.add(features_aspp1, features_aspp2, name=None)
   # features_aspp2 = tf.concat([features_aspp1, features_aspp2], axis=3, name=None)
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
@@ -1539,7 +1539,7 @@ def ASPP(features,
                         aspp_features = slim.conv2d(
                             features, depth, 3, rate=rate, scope=scope)
                     branch_logits.append(aspp_features)
-
+            depth = 256
             # Merge branch logits.
             concat_logits = tf.concat(branch_logits, 3)
             concat_logits = slim.conv2d(
