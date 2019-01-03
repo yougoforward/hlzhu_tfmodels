@@ -1151,34 +1151,34 @@ def pyramid_class_aware_refine_by_decoder(features,
             decoder_features_list1 = [decoder_features1]
             decoder_features_list2 = [decoder_features2]
 
-            skip_depth=48 * (4 ** (i))
-            # skip_depth=256
-            skip=slim.conv2d(
-                end_points[feature_name],
-                skip_depth,
-                3,
-                scope='feature_projection' + str(i))
-            # skip = slim.conv2d(
+            # skip_depth=48 * (4 ** (i))
+            skip_depth=128
+            # skip=slim.conv2d(
             #     end_points[feature_name],
             #     skip_depth,
-            #     1,
-            #     activation_fn=None,
-            #     normalizer_fn=None,
-            #     scope='feature_projection' + str(i)+'_1a')
-            # skip1 = slim.conv2d(
-            #     skip,
-            #     skip_depth,
             #     3,
-            #     scope='feature_projection' + str(i)+'_2a')
-            # skip1 = slim.conv2d(
-            #     skip1,
-            #     skip_depth,
-            #     3,
-            #     activation_fn=None,
-            #     normalizer_fn=None,
-            #     scope='feature_projection' + str(i)+'_2b')
-            # skip=tf.add(skip, skip1, name=None)
-            # skip=tf.nn.relu(skip, name=None)
+            #     scope='feature_projection' + str(i))
+            skip = slim.conv2d(
+                end_points[feature_name],
+                skip_depth,
+                1,
+                activation_fn=None,
+                normalizer_fn=None,
+                scope='feature_projection' + str(i)+'_1a')
+            skip1 = slim.conv2d(
+                skip,
+                skip_depth,
+                3,
+                scope='feature_projection' + str(i)+'_2a')
+            skip1 = slim.conv2d(
+                skip1,
+                skip_depth,
+                3,
+                activation_fn=None,
+                normalizer_fn=None,
+                scope='feature_projection' + str(i)+'_2b')
+            skip=tf.add(skip, skip1, name=None)
+            skip=tf.nn.relu(skip, name=None)
 
 
             # If crop_size is None, we simply do global pooling.
@@ -1299,14 +1299,14 @@ def pyramid_class_aware_refine_by_decoder(features,
                     num_convs,
                     slim.conv2d,
                     decoder_depth,
-                    3,
+                    1,
                     scope='fusion1_conv' + str(i))
                 decoder_features2 = slim.repeat(
                     decoder_features2,
                     num_convs,
                     slim.conv2d,
                     decoder_depth,
-                    3,
+                    1,
                     scope='fusion2_conv' + str(i))
 
                 # num_convs = 2
