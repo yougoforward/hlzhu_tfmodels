@@ -20,7 +20,7 @@ See model.py for more details and usage.
 import six
 import tensorflow as tf
 from deeplab import common
-from deeplab import dual_pyramid_model_with_boundary as model
+from deeplab import model15 as model
 from deeplab.datasets import segmentation_dataset
 from deeplab.utils import input_generator
 from deeplab.utils import train_utils
@@ -36,7 +36,7 @@ FLAGS = flags.FLAGS
 
 # Settings for multi-GPUs/multi-replicas training.
 
-flags.DEFINE_integer('num_clones', 4, 'Number of clones to deploy.')
+flags.DEFINE_integer('num_clones', 1, 'Number of clones to deploy.')
 
 flags.DEFINE_boolean('clone_on_cpu', False, 'Use CPUs to deploy clones.')
 
@@ -217,58 +217,37 @@ def _build_deeplab(inputs_queue, outputs_to_num_classes, ignore_label):
   # Add name to graph node so we can add to summary.
   output_type_dict = outputs_to_scales_to_logits[common.OUTPUT_TYPE]
   output_type_dict[model.MERGED_LOGITS_SCOPE] = tf.identity(
-      output_type_dict['softmax'][1][model.MERGED_LOGITS_SCOPE],
+      output_type_dict['softmax'][model.MERGED_LOGITS_SCOPE],
       name=common.OUTPUT_TYPE)
 
   #  logits 0 for softmax, 1 for sigmoid
-  for i in range(2):
-      # if i==0:
-      #     for output, num_classes in six.iteritems(outputs_to_num_classes):
-      #       train_utils.add_softmax_cross_entropy_loss_for_each_scale(
-      #           outputs_to_scales_to_logits[output]['softmax'][i],
-      #           samples[common.LABEL],
-      #           num_classes,
-      #           ignore_label,
-      #           loss_weight=0.0,
-      #           upsample_logits=FLAGS.upsample_logits,
-      #           scope=output)
-      if i==1:
-          for output, num_classes in six.iteritems(outputs_to_num_classes):
-            train_utils.add_softmax_cross_entropy_loss_for_each_scale(
-                outputs_to_scales_to_logits[output]['softmax'][i],
-                samples[common.LABEL],
-                num_classes,
-                ignore_label,
-                loss_weight=1.0,
-                upsample_logits=FLAGS.upsample_logits,
-                scope=output)
-          for output, num_classes in six.iteritems(outputs_to_num_classes):
-            train_utils.add_sigmoid_cross_entropy_loss_for_each_scale(
-                outputs_to_scales_to_logits[output]['sigmoid'][i],
-                samples[common.LABEL],
-                num_classes,
-                ignore_label,
-                loss_weight=1.0,
-                upsample_logits=FLAGS.upsample_logits,
-                scope=output)
-          for output, num_classes in six.iteritems(outputs_to_num_classes):
-            train_utils.add_softmax_cross_entropy_loss_for_each_scale(
-                outputs_to_scales_to_logits[output]['softmax1'][i],
-                samples[common.LABEL],
-                num_classes,
-                ignore_label,
-                loss_weight=0.1,
-                upsample_logits=FLAGS.upsample_logits,
-                scope=output)
-      # for output, num_classes in six.iteritems(outputs_to_num_classes):
-      #   train_utils.add_softmax_cross_entropy_loss_for_each_scale(
-      #       outputs_to_scales_to_logits[output]['softmax2'][i],
-      #       samples[common.LABEL],
-      #       num_classes,
-      #       ignore_label,
-      #       loss_weight=1.0,
-      #       upsample_logits=FLAGS.upsample_logits,
-      #       scope=output)
+  for output, num_classes in six.iteritems(outputs_to_num_classes):
+    train_utils.add_softmax_cross_entropy_loss_for_each_scale(
+        outputs_to_scales_to_logits[output]['softmax'],
+        samples[common.LABEL],
+        num_classes,
+        ignore_label,
+        loss_weight=1.0,
+        upsample_logits=FLAGS.upsample_logits,
+        scope=output)
+  for output, num_classes in six.iteritems(outputs_to_num_classes):
+    train_utils.add_sigmoid_cross_entropy_loss_for_each_scale(
+        outputs_to_scales_to_logits[output]['sigmoid'],
+        samples[common.LABEL],
+        num_classes,
+        ignore_label,
+        loss_weight=1.0,
+        upsample_logits=FLAGS.upsample_logits,
+        scope=output)
+  for output, num_classes in six.iteritems(outputs_to_num_classes):
+    train_utils.add_softmax_cross_entropy_loss_for_each_scale(
+        outputs_to_scales_to_logits[output]['softmax1'],
+        samples[common.LABEL],
+        num_classes,
+        ignore_label,
+        loss_weight=0.0,
+        upsample_logits=FLAGS.upsample_logits,
+        scope=output)
 
   return outputs_to_scales_to_logits
 
