@@ -799,7 +799,7 @@ def _get_class_aware_attention_logits(images,
     #     reuse=reuse,
     #     scope_suffix=output)
     outputs_to_logits[output] = get_branch_logits(
-        features[1],
+        features[0],
         model_options.outputs_to_num_classes[output],
         model_options.atrous_rates,
         aspp_with_batch_norm=model_options.aspp_with_batch_norm,
