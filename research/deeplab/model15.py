@@ -1365,7 +1365,7 @@ def get_class_aware_attention_branch_logits(features,
         normalizer_fn=None,
         scope="class_sensitive_attention")
 
-    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [features_aspp2]):
+    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [features_fusion]):
       branch_logits = []
       for i, rate in enumerate(atrous_rates):
           scope = scope_suffix
@@ -1374,7 +1374,7 @@ def get_class_aware_attention_branch_logits(features,
 
           branch_logits.append(
               slim.conv2d(
-                  features_aspp2,
+                  features_fusion,
                   num_classes,
                   kernel_size=kernel_size,
                   rate=rate,

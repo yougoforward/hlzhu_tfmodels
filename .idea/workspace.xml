@@ -4,11 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/../tf/tfmodels/research/deeplab/model.py" description="features, end_points = extract_features(" line="760" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_v3plusCam.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_v3plusCam.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train.py" afterDir="false" />
-    </list>
+    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
