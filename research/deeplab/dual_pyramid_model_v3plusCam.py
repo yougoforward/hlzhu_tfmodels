@@ -1345,22 +1345,22 @@ def get_class_aware_attention_branch_logits1(features,
     ValueError: Upon invalid input kernel_size value.
   """
   with tf.variable_scope("aspp1","aspp1"):
-      features_aspp1 = ASPP2(features,
+      features_aspp1 = ASPP(features,
                             model_options,
                             weight_decay=weight_decay,
                             reuse=reuse,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
   with tf.variable_scope("aspp2", "aspp2"):
-      features_aspp2 = ASPP2(features,
+      features_aspp2 = ASPP(features,
                             model_options,
                             weight_decay=weight_decay,
                             reuse=reuse,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
 
-  features_aspp2_fuse = tf.add(features_aspp1, features_aspp2, name=None)
-  # features_aspp2=tf.concat([features_aspp1, features_aspp2],axis=3, name=None)
+  # features_aspp2_fuse = tf.add(features_aspp1, features_aspp2, name=None)
+  features_aspp2_fuse=tf.concat([features_aspp1, features_aspp2],axis=3, name=None)
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
   if aspp_with_batch_norm or atrous_rates is None:
