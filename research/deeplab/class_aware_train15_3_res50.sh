@@ -1,4 +1,9 @@
 #!/bin/bash
+cd ..
+CURRENT_DIR=$(pwd)
+export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
+export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
+cd ./deeplab
 python class_aware_train15_nosoftmax1loss.py\
     --logtostderr \
     --num_clones=2 \
