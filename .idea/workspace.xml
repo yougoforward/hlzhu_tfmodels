@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train15_5_res50.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/class_aware_train15_5_res50.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/dpconcat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dpconcat.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -95,7 +95,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_aware_train15_5_res50.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="class_aware_train15_5_res50.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_5_res50.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
@@ -260,11 +260,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dpconcat.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dpconcat.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dpconcat.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
-              <caret line="2" column="73" lean-forward="true" selection-start-line="2" selection-start-column="73" selection-end-line="2" selection-end-column="74" />
+              <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -457,9 +457,7 @@
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_3_res50.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/cam15.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_v3plusCam.py" />
-        <option value="$PROJECT_DIR$/research/deeplab/dpconcat.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/v3plusconcat.sh" />
@@ -467,6 +465,8 @@
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam_x65.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/nosoftmax1loss_nocam1super.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_5_res50.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/dpconcat.sh" />
       </list>
     </option>
   </component>
@@ -838,13 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="1089" column="17" selection-start-line="1089" selection-start-column="17" selection-end-line="1089" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_v3plusCam.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -863,13 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
           <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dpconcat.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="73" lean-forward="true" selection-start-line="2" selection-start-column="73" selection-end-line="2" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -908,6 +894,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_5_res50.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/nosoftmax1loss_nocam1super.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -915,10 +908,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_5_res50.sh">
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        <state relative-caret-position="456">
+          <caret line="1089" column="17" selection-start-line="1089" selection-start-column="17" selection-end-line="1089" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dpconcat.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
         </state>
       </provider>
     </entry>
