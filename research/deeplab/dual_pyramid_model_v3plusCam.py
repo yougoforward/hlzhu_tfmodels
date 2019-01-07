@@ -1122,7 +1122,7 @@ def pyramid_class_aware_refine_by_decoder(features,
             skip = slim.conv2d(
                 end_points[feature_name],
                 skip_depth,
-                1,
+                3,
                 scope='feature_projection' + str(i))
             # If crop_size is None, we simply do global pooling.
       #       image_feature = tf.reduce_mean(decoder_features, axis=[1, 2])[:, tf.newaxis,
