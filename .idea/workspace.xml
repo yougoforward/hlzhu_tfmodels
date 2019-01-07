@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/research/deeplab/dpconcat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dpconcat.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dual_pyramid_model.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dual_pyramid_model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="456">
@@ -264,16 +266,16 @@
         <entry file="file://$PROJECT_DIR$/research/deeplab/dpconcat.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
-              <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
+              <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dual_pyramid_train_x65.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dual_pyramid_train_x65.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1944">
-              <caret line="92" column="92" selection-start-line="92" selection-start-column="92" selection-end-line="92" selection-end-column="92" />
+            <state relative-caret-position="624">
+              <caret line="92" column="100" selection-start-line="92" selection-start-column="100" selection-end-line="92" selection-end-column="100" />
             </state>
           </provider>
         </entry>
@@ -464,9 +466,9 @@
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam_x65.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/nosoftmax1loss_nocam1super.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_5_res50.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" />
-        <option value="$PROJECT_DIR$/research/deeplab/dpconcat.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/dpconcat.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" />
       </list>
     </option>
   </component>
@@ -901,24 +903,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py">
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="1089" column="17" selection-start-line="1089" selection-start-column="17" selection-end-line="1089" selection-end-column="17" />
+        <state relative-caret-position="624">
+          <caret line="92" column="100" selection-start-line="92" selection-start-column="100" selection-end-line="92" selection-end-column="100" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dpconcat.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
-          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
+          <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65.sh">
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1944">
-          <caret line="92" column="92" selection-start-line="92" selection-start-column="92" selection-end-line="92" selection-end-column="92" />
+        <state relative-caret-position="456">
+          <caret line="1089" column="17" selection-start-line="1089" selection-start-column="17" selection-end-line="1089" selection-end-column="17" />
         </state>
       </provider>
     </entry>
