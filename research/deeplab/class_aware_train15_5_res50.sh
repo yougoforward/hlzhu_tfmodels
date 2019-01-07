@@ -4,7 +4,7 @@ CURRENT_DIR=$(pwd)
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
-python class_aware_train15_nosoftmax1loss.py\
+python class_aware_train15_nosigmoidloss.py\
     --logtostderr \
     --num_clones=2 \
     --train_split="train_aug"\
@@ -53,7 +53,7 @@ python class_aware_eval15.py\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 #
-python class_aware_train15_nosoftmax1loss.py\
+python class_aware_train15_nosigmoidloss.py\
     --logtostderr\
     --num_clones=2\
     --train_split="train_aug"\
