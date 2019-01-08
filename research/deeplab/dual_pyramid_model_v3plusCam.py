@@ -1359,8 +1359,8 @@ def get_class_aware_attention_branch_logits1(features,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
 
-  # features_aspp2_fuse = tf.add(features_aspp1, features_aspp2, name=None)
-  features_aspp2_fuse=tf.concat([features_aspp1, features_aspp2],axis=3, name=None)
+  features_aspp2_fuse = tf.add(features_aspp1, features_aspp2, name=None)
+  # features_aspp2_fuse=tf.concat([features_aspp1, features_aspp2],axis=3, name=None)
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
   if aspp_with_batch_norm or atrous_rates is None:
