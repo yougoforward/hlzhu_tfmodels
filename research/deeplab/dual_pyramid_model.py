@@ -1087,7 +1087,7 @@ def pyramid_class_aware_refine_by_decoder(features,
             skip = slim.conv2d(
                 end_points[feature_name],
                 skip_depth,
-                3,
+                1,
                 scope='feature_projection' + str(i))
             # If crop_size is None, we simply do global pooling.
       #       image_feature = tf.reduce_mean(decoder_features, axis=[1, 2])[:, tf.newaxis,
@@ -1353,8 +1353,8 @@ def get_class_aware_attention_branch_logits1(features,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
 
-  features_aspp2_fuse = tf.add(features_aspp1, features_aspp2, name=None)
-  # features_aspp2_fuse=tf.concat([features_aspp1, features_aspp2],axis=3, name=None)
+  # features_aspp2_fuse = tf.add(features_aspp1, features_aspp2, name=None)
+  features_aspp2_fuse=tf.concat([features_aspp1, features_aspp2],axis=3, name=None)
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
   if aspp_with_batch_norm or atrous_rates is None:
@@ -1507,8 +1507,8 @@ def get_class_aware_attention_branch_logits(features,
   #             rate=1,
   #             scope=scope_suffix + "f22")
   f1,f2=features[0],features[1]
-  f2_fuse = tf.add(f1, f2, name=None)
-  # f2 = tf.concat([f1, f2],axis=3, name=None)
+  # f2_fuse = tf.add(f1, f2, name=None)
+  f2_fuse = tf.concat([f1, f2],axis=3, name=None)
 
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
