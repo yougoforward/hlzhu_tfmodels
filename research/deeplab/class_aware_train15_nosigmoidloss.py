@@ -230,15 +230,15 @@ def _build_deeplab(inputs_queue, outputs_to_num_classes, ignore_label):
         loss_weight=1.0,
         upsample_logits=FLAGS.upsample_logits,
         scope=output)
-  for output, num_classes in six.iteritems(outputs_to_num_classes):
-    train_utils.add_sigmoid_cross_entropy_loss_for_each_scale(
-        outputs_to_scales_to_logits[output]['sigmoid'],
-        samples[common.LABEL],
-        num_classes,
-        ignore_label,
-        loss_weight=0.0,
-        upsample_logits=FLAGS.upsample_logits,
-        scope=output)
+  # for output, num_classes in six.iteritems(outputs_to_num_classes):
+  #   train_utils.add_sigmoid_cross_entropy_loss_for_each_scale(
+  #       outputs_to_scales_to_logits[output]['sigmoid'],
+  #       samples[common.LABEL],
+  #       num_classes,
+  #       ignore_label,
+  #       loss_weight=0.0,
+  #       upsample_logits=FLAGS.upsample_logits,
+  #       scope=output)
   for output, num_classes in six.iteritems(outputs_to_num_classes):
     train_utils.add_softmax_cross_entropy_loss_for_each_scale(
         outputs_to_scales_to_logits[output]['softmax1'],
