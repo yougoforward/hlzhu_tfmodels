@@ -1318,14 +1318,15 @@ def pyramid_class_aware_refine_by_decoder(features,
                   3,
                   scope='fusion1_conv' + str(i))
 
-                num_convs=1
-                decoder_features2 = slim.repeat(
-                  tf.concat(decoder_features_list2, 3),
-                  num_convs,
-                  slim.conv2d,
-                  decoder_depth,
-                  1,
-                  scope='fusion2_conv' + str(i))
+                # num_convs=1
+                # decoder_features2 = slim.repeat(
+                #   tf.concat(decoder_features_list2, 3),
+                #   num_convs,
+                #   slim.conv2d,
+                #   decoder_depth,
+                #   1,
+                #   scope='fusion2_conv' + str(i))
+                decoder_features2 = decoder_features2[-1]
 
               # decoder_features1 = slim.conv2d(
               #     tf.concat(decoder_features_list1, 3), decoder_depth, 3, scope='fusion1' + str(i) + 'decoder_conv0')
@@ -1448,8 +1449,8 @@ def get_class_aware_attention_branch_logits1(features,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
 
-  # features_aspp2_fuse = tf.add(features_aspp1, features_aspp2, name=None)
-  features_aspp2_fuse=tf.concat([features_aspp1, features_aspp2],axis=3, name=None)
+  features_aspp2_fuse = tf.add(features_aspp1, features_aspp2, name=None)
+  # features_aspp2_fuse=tf.concat([features_aspp1, features_aspp2],axis=3, name=None)
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
   if aspp_with_batch_norm or atrous_rates is None:
@@ -1602,8 +1603,8 @@ def get_class_aware_attention_branch_logits(features,
   #             rate=1,
   #             scope=scope_suffix + "f22")
   f1,f2=features[0],features[1]
-  # f2_fuse = tf.add(f1, f2, name=None)
-  f2_fuse = tf.concat([f1, f2],axis=3, name=None)
+  f2_fuse = tf.add(f1, f2, name=None)
+  # f2_fuse = tf.concat([f1, f2],axis=3, name=None)
 
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
