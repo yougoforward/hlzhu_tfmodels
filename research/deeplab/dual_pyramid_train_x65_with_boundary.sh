@@ -49,7 +49,7 @@ python dual_pyramid_eval_with_boundary.py\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 
-#python dual_pyramid_train.py\
+#python dual_pyramid_train_with_boundary.py\
 #    --logtostderr\
 #    --num_clones=2 \
 #    --train_split="train_aug"\
@@ -74,7 +74,7 @@ python dual_pyramid_eval_with_boundary.py\
 #    --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_x65_with_boundary_on_trainaug_set/train_finetune9"\
 #    --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 #
-#python dual_pyramid_eval.py\
+#python dual_pyramid_eval_with_boundary.py\
 #    --logtostderr\
 #    --eval_split="val"\
 #    --model_variant="xception_65"\
