@@ -799,7 +799,7 @@ def _get_class_aware_attention_logits(images,
     #                                                scope='br' + str(3))
   outputs_to_logits[output]=outputs_to_logits[output][:-2]
   inter_logits.append(outputs_to_logits)
-  # inter_logits[1][output][0] += inter_logits[0][output][0]
+  inter_logits[1][output][0] += inter_logits[0][output][0]
   return inter_logits
 
 def refine_by_decoder(features,
@@ -1317,12 +1317,14 @@ def pyramid_class_aware_refine_by_decoder(features,
                   decoder_depth,
                   3,
                   scope='fusion1_conv' + str(i))
+
+                num_convs=1
                 decoder_features2 = slim.repeat(
                   tf.concat(decoder_features_list2, 3),
                   num_convs,
                   slim.conv2d,
                   decoder_depth,
-                  3,
+                  1,
                   scope='fusion2_conv' + str(i))
 
               # decoder_features1 = slim.conv2d(
@@ -1600,8 +1602,8 @@ def get_class_aware_attention_branch_logits(features,
   #             rate=1,
   #             scope=scope_suffix + "f22")
   f1,f2=features[0],features[1]
-  f2_fuse = tf.add(f1, f2, name=None)
-  # f2 = tf.concat([f1, f2],axis=3, name=None)
+  # f2_fuse = tf.add(f1, f2, name=None)
+  f2_fuse = tf.concat([f1, f2],axis=3, name=None)
 
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
