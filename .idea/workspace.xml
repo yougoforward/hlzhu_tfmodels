@@ -5,159 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/research/deeplab/camsupervision.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_eval13.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_eval14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_eval2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_eval3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_eval4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_eval5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_eval6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_eval7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_eval8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train13.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train13.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train13_res101.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train13_res50.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train14_15_res50.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train14_res50.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train2.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train3.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train4.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train5.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train6.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train7.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train8.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model13.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model15_add2.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/model15_add2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model15_loss2.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/model15_loss2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval12.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval13.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval15.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval16.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval17.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval18.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval19.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval20.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval21.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval22.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval23.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval26.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_eval9.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model12.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model13.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model15.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model16.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model17.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model18.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model19.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model20.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model21.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model22.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model23.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model9.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train10.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train12.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train12.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13_res101.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train13_res50.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train14.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train14_res50.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train15.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train15_res50.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train16.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train16.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train16_res101.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train16_res50.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train17.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train17_res50.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train18.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train18_res50.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train19.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train19.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train19_res101.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train19_res50.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train2.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train20.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train20.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train20_res50.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train21.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train21.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train21_res50.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train22.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train22.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train23.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train23.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train26.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train3.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train4.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train5.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train6.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train6.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train7.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train7.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train8.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train8.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train9.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_train9.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_feature_fusion_and_class_aware_eval.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_feature_fusion_and_class_aware_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_feature_fusion_and_class_aware_train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_feature_fusion_and_class_aware_train.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_feature_fusion_eval.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_feature_fusion_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_feature_fusion_train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/pyramid_feature_fusion_train.sh" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/research/deeplab/train_cityscapes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/dpconcat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dpconcat.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -168,52 +20,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="class_aware_train15_loss2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.py">
+      <file leaf-file-name="cam15_train_cityscapes.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="698">
-              <caret line="247" column="23" selection-start-line="247" selection-start-column="23" selection-end-line="247" selection-end-column="23" />
+            <state relative-caret-position="242">
+              <caret line="101" column="27" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_aware_train15_loss2.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.sh">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="class_aware_train15_add2.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh">
+      <file leaf-file-name="dual_pyramid_model_with_boundary.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_with_boundary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="467">
+              <caret line="1324" column="20" lean-forward="true" selection-start-line="1324" selection-start-column="20" selection-end-line="1324" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model15_loss2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/model15_loss2.py">
+      <file leaf-file-name="common.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1094">
-              <caret line="1500" column="23" selection-start-line="1500" selection-start-column="23" selection-end-line="1500" selection-end-column="23" />
-            </state>
+            <state relative-caret-position="-3010" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model_merge2aspp256.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/model_merge2aspp256.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-658">
-              <caret line="1496" column="23" lean-forward="true" selection-start-line="1496" selection-start-column="23" selection-end-line="1496" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class_aware_train15_add2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="class_aware_train15_add2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="247" column="23" selection-start-line="247" selection-start-column="23" selection-end-line="247" selection-end-column="23" />
+            <state relative-caret-position="1276">
+              <caret line="247" column="24" selection-start-line="247" selection-start-column="24" selection-end-line="247" selection-end-column="24" />
               <folding>
                 <element signature="e#777#787#0" expanded="true" />
               </folding>
@@ -221,11 +57,83 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="class_aware_train15.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="543">
+              <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cam15.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/cam15.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="79" lean-forward="true" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dual_pyramid_train.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-start-column="1" selection-end-line="106" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dpconcat.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/dpconcat.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="70" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class_aware_train15_nosigmoidsoftmax1loss.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_nosigmoidsoftmax1loss.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="247" column="23" selection-start-line="247" selection-start-column="23" selection-end-line="247" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class_aware_train15_nosoftmax1loss.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_nosoftmax1loss.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="247" column="23" selection-start-line="247" selection-start-column="23" selection-end-line="247" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class_aware_train15_simple512_2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_simple512_2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="726">
+              <caret line="247" column="23" selection-start-line="247" selection-start-column="23" selection-end-line="247" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dual_pyramid_eval.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_eval.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="176" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="model15_add2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/model15_add2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-270">
-              <caret line="1450" column="26" lean-forward="true" selection-start-line="1450" selection-start-column="26" selection-end-line="1450" selection-end-column="26" />
+            <state relative-caret-position="2290">
+              <caret line="1450" column="26" selection-start-line="1450" selection-start-column="26" selection-end-line="1450" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -237,6 +145,27 @@
               <caret line="113" column="52" selection-start-line="113" selection-start-column="52" selection-end-line="113" selection-end-column="52" />
               <folding>
                 <element signature="e#779#790#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dual_pyramid_train.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="238" column="34" selection-end-line="424" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train_cityscapes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/train_cityscapes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="64" column="73" selection-start-line="64" selection-start-column="73" selection-end-line="64" selection-end-column="73" />
+              <folding>
+                <element signature="e#777#787#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -276,11 +205,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/research/deeplab/pyramid20.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/pyramid21.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/pyramid13.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/merge2aspp_eval.py" />
         <option value="$PROJECT_DIR$/../tf/tfmodels/research/deeplab/dual_pyramid_model_with_boundary.py" />
         <option value="$PROJECT_DIR$/research/deeplab/merge2aspp256_eval.py" />
         <option value="$PROJECT_DIR$/research/deeplab/merge2aspp256_train.py" />
@@ -291,23 +215,15 @@
         <option value="$PROJECT_DIR$/research/deeplab/pyramid26.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/pyramid_class_aware_model26.py" />
         <option value="$PROJECT_DIR$/research/deeplab/merge2aspp.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/merge2aspp256_train.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/merge2aspp_train.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_eval_v3plusCam.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/v3plus_train_res50.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_with_boundary.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/model.py" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_simple512_2.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train.py" />
         <option value="$PROJECT_DIR$/research/deeplab/model15.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_with_boundary.py" />
-        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_with_boundary.py" />
-        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_nosigmoidsoftmax1loss.py" />
-        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_nosoftmax1loss.py" />
-        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_nosigmoidloss.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_v3plusCam.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam.sh" />
@@ -315,9 +231,7 @@
         <option value="$PROJECT_DIR$/research/deeplab/nosoftmax1loss_nocam1super.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/v3plusconcat.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam_x65.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/dpconcat.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_res50.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_3_res50.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_4_res50.sh" />
@@ -327,6 +241,21 @@
         <option value="$PROJECT_DIR$/research/deeplab/model15_add2.py" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.py" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_nosigmoidloss.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_nosigmoidsoftmax1loss.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_nosoftmax1loss.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_simple512_2.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_with_boundary.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/merge2aspp256_train.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/train_cityscapes.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/dpconcat.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh" />
       </list>
     </option>
   </component>
@@ -412,7 +341,7 @@
     <frame x="65" y="24" width="1855" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24690028" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32911393" />
@@ -420,7 +349,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Python Console" order="0" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.32172996" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.32108107" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -436,82 +365,20 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/research/deeplab/train_cityscapes.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/research/deeplab/v3plus_train_res50.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="104" column="96" selection-start-line="104" selection-start-column="96" selection-end-line="104" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_with_boundary.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1012">
-          <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda2/envs/tfpy3/lib/python3.6/site-packages/tensorflow/python/ops/array_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="1020" column="4" selection-start-line="1020" selection-start-column="4" selection-end-line="1020" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/v3train_res101.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1760" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/model15_simple512_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-28243" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_simple512_2.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="82" column="40" lean-forward="true" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="542" column="26" lean-forward="true" selection-start-line="542" selection-start-column="26" selection-end-line="542" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="220" column="30" lean-forward="true" selection-start-line="220" selection-start-column="30" selection-end-line="220" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/core/feature_extractor.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2244" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="219" column="38" selection-start-line="219" selection-start-column="38" selection-end-line="219" selection-end-column="38" />
-          <folding>
-            <element signature="e#777#787#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_eval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="176" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_eval_v3plusCam.py">
@@ -524,27 +391,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_with_boundary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="802" column="2" selection-start-line="802" selection-start-column="2" selection-end-line="802" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_with_boundary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="320" column="43" lean-forward="true" selection-start-line="320" selection-start-column="43" selection-end-line="320" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/camsupervision.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -552,27 +398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_nosigmoidsoftmax1loss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="249" column="23" lean-forward="true" selection-start-line="232" selection-start-column="4" selection-end-line="249" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_nosoftmax1loss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="241" selection-start-line="241" selection-end-line="250" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_nosigmoidloss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="232" selection-start-line="232" selection-end-line="240" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -594,13 +419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4065">
           <caret line="1358" column="52" lean-forward="true" selection-start-line="1358" selection-start-column="52" selection-end-line="1358" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -632,13 +450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="81" column="117" selection-start-line="81" selection-start-column="117" selection-end-line="81" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="910">
@@ -646,24 +457,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dpconcat.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="53" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_res50.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1672">
           <caret line="100" column="113" selection-start-line="100" selection-start-column="113" selection-end-line="100" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/cam15.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -727,30 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/model15_loss2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1094">
-          <caret line="1500" column="23" selection-start-line="1500" selection-start-column="23" selection-end-line="1500" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/model15_add2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="1450" column="26" lean-forward="true" selection-start-line="1450" selection-start-column="26" selection-end-line="1450" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_eval15_add2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2084">
@@ -766,20 +539,188 @@
         <state relative-caret-position="-2976" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.py">
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
+        <state relative-caret-position="499">
+          <caret line="234" column="52" selection-start-line="234" selection-start-column="45" selection-end-line="234" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
           <caret line="247" column="23" selection-start-line="247" selection-start-column="23" selection-end-line="247" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.py">
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_nosigmoidloss.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
+        <state relative-caret-position="723">
           <caret line="247" column="23" selection-start-line="247" selection-start-column="23" selection-end-line="247" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_nosigmoidsoftmax1loss.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="247" column="23" selection-start-line="247" selection-start-column="23" selection-end-line="247" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_nosoftmax1loss.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="247" column="23" selection-start-line="247" selection-start-column="23" selection-end-line="247" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_simple512_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="247" column="23" selection-start-line="247" selection-start-column="23" selection-end-line="247" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_eval.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="176" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="231" column="34" selection-start-line="231" selection-start-column="33" selection-end-line="231" selection-end-column="34" />
           <folding>
             <element signature="e#777#787#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/merge2aspp256_train.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="78" column="121" selection-start-line="78" selection-start-column="121" selection-end-line="78" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="78" column="143" selection-start-line="78" selection-start-column="143" selection-end-line="78" selection-end-column="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/model15_add2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2290">
+          <caret line="1450" column="26" selection-start-line="1450" selection-start-column="26" selection-end-line="1450" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="80" column="52" selection-start-line="55" selection-end-line="102" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_loss2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="249" column="21" lean-forward="true" selection-start-line="249" selection-start-column="21" selection-end-line="249" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/model15_loss2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2100">
+          <caret line="1358" column="46" selection-start-line="1358" selection-start-column="46" selection-end-line="1358" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_with_boundary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="259" column="31" selection-start-line="259" selection-start-column="31" selection-end-line="259" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="238" column="34" selection-end-line="424" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/train_cityscapes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="64" column="73" selection-start-line="64" selection-start-column="73" selection-end-line="64" selection-end-column="73" />
+          <folding>
+            <element signature="e#777#787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3010" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_add2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1276">
+          <caret line="247" column="24" selection-start-line="247" selection-start-column="24" selection-end-line="247" selection-end-column="24" />
+          <folding>
+            <element signature="e#777#787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="101" column="27" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/cam15.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="79" lean-forward="true" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_with_boundary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="1324" column="20" lean-forward="true" selection-start-line="1324" selection-start-column="20" selection-end-line="1324" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dpconcat.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="70" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-start-column="1" selection-end-line="106" selection-end-column="34" />
         </state>
       </provider>
     </entry>
