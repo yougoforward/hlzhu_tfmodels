@@ -1314,31 +1314,6 @@ def get_class_aware_attention_branch_logits(features,
     atrous_rates = [1]
 
 
-
-  # with slim.arg_scope(
-  #     [slim.conv2d],
-  #     weights_regularizer=slim.l2_regularizer(weight_decay),
-  #     weights_initializer=tf.truncated_normal_initializer(stddev=0.01),
-  #     reuse=reuse):
-  #   features1 = slim.conv2d(
-  #         features_aspp2,
-  #         256,
-  #         kernel_size=3,
-  #         rate=1,
-  #         activation_fn=tf.nn.relu,
-  #         normalizer_fn=None,
-  #         scope="class_aware_conv3x3")
-  #   features2 = slim.conv2d(
-  #         features1,
-  #         256,
-  #         kernel_size=1,
-  #         rate=1,
-  #         activation_fn=None,
-  #         normalizer_fn=None,
-  #         scope="class_aware_conv1x1")
-  #   s2 = tf.nn.sigmoid(features2, name=None)
-  #   features3 = tf.multiply(features_aspp1, s2, name=None)
-
     with tf.variable_scope(LOGITS_SCOPE_NAME, LOGITS_SCOPE_NAME, [features_aspp1]):
       branch_logits = []
       for i, rate in enumerate(atrous_rates):
@@ -1521,9 +1496,9 @@ def ASPP(features,
                 branch_logits.append(image_feature)
 
             # Employ a 1x1 convolution.
-            branch_logits.append(slim.conv2d(features, 512, 1,
+            branch_logits.append(slim.conv2d(features, depth, 1,
                                              scope=ASPP_SCOPE + str(0)))
-            depth = 128
+            depth = 256
 
             if model_options.atrous_rates:
                 # Employ 3x3 convolutions with different atrous rates.
@@ -1541,6 +1516,7 @@ def ASPP(features,
                             features, depth, 3, rate=rate, scope=scope)
                     branch_logits.append(aspp_features)
 
+            depth = 256
             # Merge branch logits.
             concat_logits = tf.concat(branch_logits, 3)
             concat_logits = slim.conv2d(

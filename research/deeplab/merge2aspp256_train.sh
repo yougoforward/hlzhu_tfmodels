@@ -19,7 +19,7 @@ python merge2aspp256_train.py\
     --train_crop_size=513\
     --train_crop_size=513\
     --train_batch_size=16\
-    --training_number_of_steps=30000\
+    --training_number_of_steps=60000\
     --fine_tune_batch_norm=true\
     --base_learning_rate=0.007\
     --weight_decay=0.0001\
@@ -76,7 +76,7 @@ python merge2aspp256_train.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/merge2aspp256_res50_multigrad_on_trainaug_set/train/model.ckpt-30000"\
+    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/merge2aspp256_res50_multigrad_on_trainaug_set/train/model.ckpt-60000"\
     --train_logdir="datasets/pascal_voc_seg/exp/merge2aspp256_res50_multigrad_on_trainaug_set/train_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 

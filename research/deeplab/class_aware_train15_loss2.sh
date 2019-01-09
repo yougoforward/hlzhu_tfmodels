@@ -19,7 +19,7 @@ python class_aware_train15_loss2.py\
     --multi_grid=1\
     --multi_grid=2\
     --multi_grid=4\
-    --training_number_of_steps=30000\
+    --training_number_of_steps=60000\
     --fine_tune_batch_norm=true\
     --base_learning_rate=0.007\
     --weight_decay=0.0001\
@@ -76,7 +76,7 @@ python class_aware_train15_loss2.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/class_aware_train15_loss2_res50_multigrad_on_trainaug_set/train/model.ckpt-30000"\
+    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/class_aware_train15_loss2_res50_multigrad_on_trainaug_set/train/model.ckpt-60000"\
     --train_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_loss2_res50_multigrad_on_trainaug_set/train_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
