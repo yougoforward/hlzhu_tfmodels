@@ -774,7 +774,7 @@ def _get_class_aware_attention_logits(images,
         scope_suffix=output)
   outputs_to_logits[output]=outputs_to_logits[output][:-2]
   inter_logits.append(outputs_to_logits)
-  inter_logits[1][output][0] +=inter_logits[0][output][0]
+  inter_logits[1][output][0] += inter_logits[0][output][0]
   return inter_logits
 
 def refine_by_decoder(features,
@@ -1095,7 +1095,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                 256,
                 1,
                 activation_fn=None,
-                scope='feature_projection' + str(i)+'_1a')
+                scope='feature_projection' + str(i) + '_1a')
             skip1 = slim.conv2d(
                 end_points[feature_name],
                 skip_depth,
@@ -1105,15 +1105,15 @@ def pyramid_class_aware_refine_by_decoder(features,
                 skip1,
                 skip_depth,
                 3,
-                scope='feature_projection' + str(i)+'_2b')
+                scope='feature_projection' + str(i) + '_2b')
             skip1 = slim.conv2d(
                 skip1,
                 256,
                 1,
                 activation_fn=None,
-                scope='feature_projection' + str(i)+'_2c')
-            skip=tf.add(skip0, skip1, name=None)
-            skip=tf.nn.relu(skip, name=None)
+                scope='feature_projection' + str(i) + '_2c')
+            skip = tf.add(skip0, skip1, name=None)
+            skip = tf.nn.relu(skip, name=None)
 
             # If crop_size is None, we simply do global pooling.
       #       image_feature = tf.reduce_mean(decoder_features, axis=[1, 2])[:, tf.newaxis,
@@ -1381,14 +1381,14 @@ def get_class_aware_attention_branch_logits1(features,
     ValueError: Upon invalid input kernel_size value.
   """
   with tf.variable_scope("aspp1","aspp1"):
-      features_aspp1 = ASPP2(features,
+      features_aspp1 = ASPP(features,
                             model_options,
                             weight_decay=weight_decay,
                             reuse=reuse,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
   with tf.variable_scope("aspp2", "aspp2"):
-      features_aspp2 = ASPP2(features,
+      features_aspp2 = ASPP(features,
                             model_options,
                             weight_decay=weight_decay,
                             reuse=reuse,

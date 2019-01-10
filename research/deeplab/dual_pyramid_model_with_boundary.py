@@ -1158,6 +1158,7 @@ def pyramid_class_aware_refine_by_decoder(features,
             #     skip_depth,
             #     1,
             #     scope='feature_projection' + str(i))
+
             skip0 = slim.conv2d(
                 end_points[feature_name],
                 256,
@@ -1218,7 +1219,7 @@ def pyramid_class_aware_refine_by_decoder(features,
             decoder_features_list1.append(skip)
             decoder_features_list2.append(skip)
 
-            outputs_to_logits[output].insert(3, outputs_to_logits[output][0])
+            # outputs_to_logits[output].insert(3, outputs_to_logits[output][0])
             # outputs_to_logits[output][0] = tf.stop_gradient(outputs_to_logits[output][0])
 
             # br_prediction = boundary_refine(outputs_to_logits[output][0],
@@ -1278,7 +1279,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                   filters=decoder_depth,
                   rate=1,
                   weight_decay=weight_decay,
-                  scope='fusion'+str(i)+'decoder_conv1')
+                  scope='fusion1'+str(i)+'decoder_conv1')
               decoder_features2 = split_separable_conv2d(
                   tf.concat(decoder_features_list2, 3),
                   filters=decoder_depth,
@@ -1290,7 +1291,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                   filters=decoder_depth,
                   rate=1,
                   weight_decay=weight_decay,
-                  scope='fusion'+str(i)+'decoder_conv1')
+                  scope='fusion2'+str(i)+'decoder_conv1')
             else:
                 # # If crop_size is None, we simply do global pooling.
                 # image_feature1 = tf.reduce_mean(tf.concat(decoder_features_list1,3), axis=[1, 2])[:, tf.newaxis,
