@@ -236,7 +236,7 @@ def _build_deeplab(inputs_queue, outputs_to_num_classes, ignore_label):
   #       samples[common.LABEL],
   #       num_classes,
   #       ignore_label,
-  #       loss_weight=0.0,
+  #       loss_weight=1.0,
   #       upsample_logits=FLAGS.upsample_logits,
   #       scope=output)
   for output, num_classes in six.iteritems(outputs_to_num_classes):
@@ -245,7 +245,7 @@ def _build_deeplab(inputs_queue, outputs_to_num_classes, ignore_label):
         samples[common.LABEL],
         num_classes,
         ignore_label,
-        loss_weight=1.0,
+        loss_weight=0.1,
         upsample_logits=FLAGS.upsample_logits,
         scope=output)
 
