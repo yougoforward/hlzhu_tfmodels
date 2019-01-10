@@ -1286,7 +1286,7 @@ def pyramid_class_aware_refine_by_decoder(features,
             # prediction_features_up_sigmoid = tf.nn.sigmoid(prediction_features_up, name=None)
             # decoder_features = tf.multiply(decoder_features, prediction_features_up_sigmoid, name=None)
 
-          return [decoder_features1,decoder_features2], inter_logits
+          return [decoder_features1,decoder_features2]
 
 
 def get_branch_logits(features,
