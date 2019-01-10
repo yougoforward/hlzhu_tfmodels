@@ -229,7 +229,7 @@ def predict_class_aware_attention_labels(images, model_options, image_pyramid=No
 
   predictions = {}
   for output in sorted(outputs_to_scales_to_logits):
-    scales_to_logits = outputs_to_scales_to_logits[output]['softmax'][0]#modify
+    scales_to_logits = outputs_to_scales_to_logits[output]['softmax1'][1]#modify
     logits = tf.image.resize_bilinear(
         scales_to_logits[MERGED_LOGITS_SCOPE],
         tf.shape(images)[1:3],
