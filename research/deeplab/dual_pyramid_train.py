@@ -217,12 +217,12 @@ def _build_deeplab(inputs_queue, outputs_to_num_classes, ignore_label):
   # Add name to graph node so we can add to summary.
   output_type_dict = outputs_to_scales_to_logits[common.OUTPUT_TYPE]
   output_type_dict[model.MERGED_LOGITS_SCOPE] = tf.identity(
-      output_type_dict['softmax'][1][model.MERGED_LOGITS_SCOPE],
+      output_type_dict['softmax'][0][model.MERGED_LOGITS_SCOPE],
       name=common.OUTPUT_TYPE)
-
+  ss=1
   #  logits 0 for softmax, 1 for sigmoid
-  for i in range(2):
-      if i==1:
+  for i in range(ss):
+      if i==0:
           for output, num_classes in six.iteritems(outputs_to_num_classes):
               train_utils.add_softmax_cross_entropy_loss_for_each_scale(
                   outputs_to_scales_to_logits[output]['softmax'][i],
@@ -248,7 +248,7 @@ def _build_deeplab(inputs_queue, outputs_to_num_classes, ignore_label):
             samples[common.LABEL],
             num_classes,
             ignore_label,
-            loss_weight=1.0,
+            loss_weight=0.1,
             upsample_logits=FLAGS.upsample_logits,
             scope=output)
 
