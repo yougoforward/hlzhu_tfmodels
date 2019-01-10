@@ -1153,11 +1153,36 @@ def pyramid_class_aware_refine_by_decoder(features,
 
             skip_depth=48 * (4 ** (i))
             # skip_depth=128
-            skip=slim.conv2d(
+            # skip=slim.conv2d(
+            #     end_points[feature_name],
+            #     skip_depth,
+            #     1,
+            #     scope='feature_projection' + str(i))
+            skip0 = slim.conv2d(
+                end_points[feature_name],
+                256,
+                1,
+                activation_fn=None,
+                scope='feature_projection' + str(i) + '_1a')
+            skip1 = slim.conv2d(
                 end_points[feature_name],
                 skip_depth,
                 1,
-                scope='feature_projection' + str(i))
+                scope='feature_projection' + str(i) + '_2a')
+            skip1 = slim.conv2d(
+                skip1,
+                skip_depth,
+                3,
+                scope='feature_projection' + str(i) + '_2b')
+            skip1 = slim.conv2d(
+                skip1,
+                256,
+                1,
+                activation_fn=None,
+                scope='feature_projection' + str(i) + '_2c')
+            skip = tf.add(skip0, skip1, name=None)
+            skip = tf.nn.relu(skip, name=None)
+
             # skip = slim.conv2d(
             #     end_points[feature_name],
             #     skip_depth,
@@ -1309,16 +1334,30 @@ def pyramid_class_aware_refine_by_decoder(features,
                 #     1,
                 #     scope='fusion2_conv' + str(i))
 
-                num_convs = 2
-                decoder_features1 = slim.repeat(
-                  tf.concat(decoder_features_list1, 3),
-                  num_convs,
-                  slim.conv2d,
-                  decoder_depth,
-                  3,
-                  scope='fusion1_conv' + str(i))
+                # num_convs = 2
+                # decoder_features1 = slim.repeat(
+                #   tf.concat(decoder_features_list1, 3),
+                #   num_convs,
+                #   slim.conv2d,
+                #   decoder_depth,
+                #   3,
+                #   scope='fusion1_conv' + str(i))
 
-                # num_convs=1
+                num_convs=1
+                decoder_features1 = slim.repeat(
+                    tf.add_n(decoder_features_list1, name=None),
+                    num_convs,
+                    slim.conv2d,
+                    decoder_depth,
+                    3,
+                    scope='fusion1_conv' + str(i))
+                decoder_features2 = slim.repeat(
+                    tf.add_n(decoder_features_list2, name=None),
+                    num_convs,
+                    slim.conv2d,
+                    decoder_depth,
+                    3,
+                    scope='fusion2_conv' + str(i))
                 # decoder_features2 = slim.repeat(
                 #   tf.concat(decoder_features_list2, 3),
                 #   num_convs,
@@ -1326,7 +1365,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                 #   decoder_depth,
                 #   1,
                 #   scope='fusion2_conv' + str(i))
-                decoder_features2 = decoder_features_list2[0]
+                # decoder_features2 = decoder_features_list2[0]
 
               # decoder_features1 = slim.conv2d(
               #     tf.concat(decoder_features_list1, 3), decoder_depth, 3, scope='fusion1' + str(i) + 'decoder_conv0')
@@ -1487,7 +1526,7 @@ def get_class_aware_attention_branch_logits1(features,
           scope=scope+"class_sensitive_attention")
 
 
-    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [features_aspp2_fuse]):
+    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [features_aspp2, features_aspp2_fuse]):
       branch_logits = []
       for i, rate in enumerate(atrous_rates):
           scope = scope_suffix
@@ -1496,7 +1535,7 @@ def get_class_aware_attention_branch_logits1(features,
 
           branch_logits.append(
               slim.conv2d(
-                  features_aspp2_fuse,
+                  features_aspp2,
                   num_classes,
                   kernel_size=kernel_size,
                   rate=rate,
