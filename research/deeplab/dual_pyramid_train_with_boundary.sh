@@ -6,7 +6,7 @@ export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
 python dual_pyramid_train_with_boundary.py\
     --logtostderr \
-    --num_clones=4 \
+    --num_clones=2 \
     --train_split="train_aug"\
     --model_variant="resnet_v1_50_beta"\
     --atrous_rates=6\
@@ -57,7 +57,7 @@ python dual_pyramid_eval_with_boundary.py\
 
 python dual_pyramid_train_with_boundary.py\
     --logtostderr\
-    --num_clones=4 \
+    --num_clones=2 \
     --train_split="train_aug"\
     --model_variant="resnet_v1_50_beta"\
     --atrous_rates=6\
