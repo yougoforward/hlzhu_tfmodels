@@ -1151,60 +1151,60 @@ def pyramid_class_aware_refine_by_decoder(features,
             decoder_features_list1 = [decoder_features1]
             decoder_features_list2 = [decoder_features2]
 
-            skip_depth=48 * (4 ** (i))
-            # skip_depth=128
+            # skip_depth=48 * (4 ** (i))
+            skip_depth=256
             # skip=slim.conv2d(
             #     end_points[feature_name],
             #     skip_depth,
             #     1,
             #     scope='feature_projection' + str(i))
 
-            skip0 = slim.conv2d(
-                end_points[feature_name],
-                256,
-                1,
-                activation_fn=None,
-                scope='feature_projection' + str(i) + '_1a')
-            skip1 = slim.conv2d(
-                end_points[feature_name],
-                skip_depth,
-                1,
-                scope='feature_projection' + str(i) + '_2a')
-            skip1 = slim.conv2d(
-                skip1,
-                skip_depth,
-                3,
-                scope='feature_projection' + str(i) + '_2b')
-            skip1 = slim.conv2d(
-                skip1,
-                256,
-                1,
-                activation_fn=None,
-                scope='feature_projection' + str(i) + '_2c')
-            skip = tf.add(skip0, skip1, name=None)
-            skip = tf.nn.relu(skip, name=None)
-
-            # skip = slim.conv2d(
+            # skip0 = slim.conv2d(
+            #     end_points[feature_name],
+            #     256,
+            #     1,
+            #     activation_fn=None,
+            #     scope='feature_projection' + str(i) + '_1a')
+            # skip1 = slim.conv2d(
             #     end_points[feature_name],
             #     skip_depth,
             #     1,
-            #     activation_fn=None,
-            #     normalizer_fn=None,
-            #     scope='feature_projection' + str(i)+'_1a')
-            # skip1 = slim.conv2d(
-            #     skip,
-            #     skip_depth,
-            #     3,
-            #     scope='feature_projection' + str(i)+'_2a')
+            #     scope='feature_projection' + str(i) + '_2a')
             # skip1 = slim.conv2d(
             #     skip1,
             #     skip_depth,
             #     3,
+            #     scope='feature_projection' + str(i) + '_2b')
+            # skip1 = slim.conv2d(
+            #     skip1,
+            #     256,
+            #     1,
             #     activation_fn=None,
-            #     normalizer_fn=None,
-            #     scope='feature_projection' + str(i)+'_2b')
-            # skip=tf.add(skip, skip1, name=None)
-            # skip=tf.nn.relu(skip, name=None)
+            #     scope='feature_projection' + str(i) + '_2c')
+            # skip = tf.add(skip0, skip1, name=None)
+            # skip = tf.nn.relu(skip, name=None)
+
+            skip = slim.conv2d(
+                end_points[feature_name],
+                skip_depth,
+                1,
+                activation_fn=None,
+                normalizer_fn=None,
+                scope='feature_projection' + str(i)+'_1a')
+            skip1 = slim.conv2d(
+                skip,
+                skip_depth,
+                3,
+                scope='feature_projection' + str(i)+'_2a')
+            skip1 = slim.conv2d(
+                skip1,
+                skip_depth,
+                3,
+                activation_fn=None,
+                normalizer_fn=None,
+                scope='feature_projection' + str(i)+'_2b')
+            skip=tf.add(skip, skip1, name=None)
+            skip=tf.nn.relu(skip, name=None)
 
 
             # If crop_size is None, we simply do global pooling.
@@ -1293,47 +1293,47 @@ def pyramid_class_aware_refine_by_decoder(features,
                   weight_decay=weight_decay,
                   scope='fusion2'+str(i)+'decoder_conv1')
             else:
-                # # If crop_size is None, we simply do global pooling.
-                # image_feature1 = tf.reduce_mean(tf.concat(decoder_features_list1,3), axis=[1, 2])[:, tf.newaxis,
-                #                 tf.newaxis]
-                # image_feature1 = slim.conv2d(image_feature1, skip_depth, 1, activation_fn=tf.nn.relu,
-                #                             normalizer_fn=None, scope=IMAGE_POOLING_SCOPE + str(i)+'_fuse1_conv1x1_0')
-                # image_feature1 = slim.conv2d(image_feature1, skip_depth, 1, activation_fn=None,
-                #                             normalizer_fn=None, scope=IMAGE_POOLING_SCOPE + str(i) + '_fuse1_conv1x1_1')
-                # global_attention1 = tf.nn.sigmoid(image_feature1, name=None)
-                # skip_features1 = tf.multiply(decoder_features_list1[1], global_attention1, name=None)
-                #
-                # # decoder_features1=tf.add(decoder_features_list1[0], skip_features1, name=None)
+                # If crop_size is None, we simply do global pooling.
+                image_feature1 = tf.reduce_mean(tf.concat(decoder_features_list1,3), axis=[1, 2])[:, tf.newaxis,
+                                tf.newaxis]
+                image_feature1 = slim.conv2d(image_feature1, skip_depth, 1, activation_fn=tf.nn.relu,
+                                            normalizer_fn=None, scope=IMAGE_POOLING_SCOPE + str(i)+'_fuse1_conv1x1_0')
+                image_feature1 = slim.conv2d(image_feature1, skip_depth, 1, activation_fn=None,
+                                            normalizer_fn=None, scope=IMAGE_POOLING_SCOPE + str(i) + '_fuse1_conv1x1_1')
+                global_attention1 = tf.nn.sigmoid(image_feature1, name=None)
+                skip_features1 = tf.multiply(decoder_features_list1[1], global_attention1, name=None)
+
+                decoder_features1=tf.add(decoder_features_list1[0], skip_features1, name=None)
                 # decoder_features1 = tf.concat([decoder_features_list1[0], skip_features1], 3)
-                #
-                #
-                # image_feature2 = tf.reduce_mean(tf.concat(decoder_features_list2,3), axis=[1, 2])[:, tf.newaxis,
-                #                 tf.newaxis]
-                # image_feature2 = slim.conv2d(image_feature2, skip_depth, 1, activation_fn=tf.nn.relu,
-                #                             normalizer_fn=None, scope=IMAGE_POOLING_SCOPE + str(i)+'_fuse1_conv1x1_0')
-                # image_feature2 = slim.conv2d(image_feature2, skip_depth, 1, activation_fn=None,
-                #                             normalizer_fn=None, scope=IMAGE_POOLING_SCOPE + str(i) + '_fuse1_conv1x1_1')
-                # global_attention2 = tf.nn.sigmoid(image_feature2, name=None)
-                # skip_features2 = tf.multiply(decoder_features_list2[1], global_attention2, name=None)
-                #
-                # # decoder_features2=tf.add(decoder_features_list2[0], skip_features2, name=None)
+
+
+                image_feature2 = tf.reduce_mean(tf.concat(decoder_features_list2,3), axis=[1, 2])[:, tf.newaxis,
+                                tf.newaxis]
+                image_feature2 = slim.conv2d(image_feature2, skip_depth, 1, activation_fn=tf.nn.relu,
+                                            normalizer_fn=None, scope=IMAGE_POOLING_SCOPE + str(i)+'_fuse1_conv1x1_0')
+                image_feature2 = slim.conv2d(image_feature2, skip_depth, 1, activation_fn=None,
+                                            normalizer_fn=None, scope=IMAGE_POOLING_SCOPE + str(i) + '_fuse1_conv1x1_1')
+                global_attention2 = tf.nn.sigmoid(image_feature2, name=None)
+                skip_features2 = tf.multiply(decoder_features_list2[1], global_attention2, name=None)
+
+                decoder_features2=tf.add(decoder_features_list2[0], skip_features2, name=None)
                 # decoder_features2 = tf.concat([decoder_features_list2[0], skip_features2], 3)
 
-                # num_convs = 1
-                # decoder_features1 = slim.repeat(
-                #     decoder_features1,
-                #     num_convs,
-                #     slim.conv2d,
-                #     decoder_depth,
-                #     1,
-                #     scope='fusion1_conv' + str(i))
-                # decoder_features2 = slim.repeat(
-                #     decoder_features2,
-                #     num_convs,
-                #     slim.conv2d,
-                #     decoder_depth,
-                #     1,
-                #     scope='fusion2_conv' + str(i))
+                num_convs = 1
+                decoder_features1 = slim.repeat(
+                    decoder_features1,
+                    num_convs,
+                    slim.conv2d,
+                    decoder_depth,
+                    3,
+                    scope='fusion1_conv' + str(i))
+                decoder_features2 = slim.repeat(
+                    decoder_features2,
+                    num_convs,
+                    slim.conv2d,
+                    decoder_depth,
+                    3,
+                    scope='fusion2_conv' + str(i))
 
                 # num_convs = 2
                 # decoder_features1 = slim.repeat(
@@ -1344,21 +1344,21 @@ def pyramid_class_aware_refine_by_decoder(features,
                 #   3,
                 #   scope='fusion1_conv' + str(i))
 
-                num_convs=1
-                decoder_features1 = slim.repeat(
-                    tf.add_n(decoder_features_list1, name=None),
-                    num_convs,
-                    slim.conv2d,
-                    decoder_depth,
-                    3,
-                    scope='fusion1_conv' + str(i))
-                decoder_features2 = slim.repeat(
-                    tf.add_n(decoder_features_list2, name=None),
-                    num_convs,
-                    slim.conv2d,
-                    decoder_depth,
-                    3,
-                    scope='fusion2_conv' + str(i))
+                # num_convs=1
+                # decoder_features1 = slim.repeat(
+                #     tf.add_n(decoder_features_list1, name=None),
+                #     num_convs,
+                #     slim.conv2d,
+                #     decoder_depth,
+                #     3,
+                #     scope='fusion1_conv' + str(i))
+                # decoder_features2 = slim.repeat(
+                #     tf.add_n(decoder_features_list2, name=None),
+                #     num_convs,
+                #     slim.conv2d,
+                #     decoder_depth,
+                #     3,
+                #     scope='fusion2_conv' + str(i))
                 # decoder_features2 = slim.repeat(
                 #   tf.concat(decoder_features_list2, 3),
                 #   num_convs,

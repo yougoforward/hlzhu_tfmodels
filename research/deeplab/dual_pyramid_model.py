@@ -747,8 +747,8 @@ def _get_class_aware_attention_logits(images,
                                      1.0 / model_options.decoder_output_stride)
     decoder_width = scale_dimension(width,
                                     1.0 / model_options.decoder_output_stride)
-    # features, inter_logits = pyramid_class_aware_refine_by_decoder(
-    features = pyramid_class_aware_refine_by_decoder(
+    # features = pyramid_class_aware_refine_by_decoder(
+    features, inter_logits = pyramid_class_aware_refine_by_decoder(
         features,
         model_options,
         end_points,
@@ -775,7 +775,7 @@ def _get_class_aware_attention_logits(images,
         scope_suffix=output)
   outputs_to_logits[output]=outputs_to_logits[output][:-2]
   inter_logits.append(outputs_to_logits)
-  # inter_logits[1][output][0] += inter_logits[0][output][0]
+  inter_logits[1][output][0] += inter_logits[0][output][0]
   return inter_logits
 
 def refine_by_decoder(features,
@@ -1055,7 +1055,7 @@ def pyramid_class_aware_refine_by_decoder(features,
             outputs_to_logits = {}
             for output in sorted(model_options.outputs_to_num_classes):
                 if i==0:
-                    outputs_to_logits[output] = get_class_aware_attention_branch_logits2(
+                    outputs_to_logits[output] = get_class_aware_attention_branch_logits1(
                         decoder_features,
                         model_options,
                         model_options.outputs_to_num_classes[output],
@@ -1131,11 +1131,11 @@ def pyramid_class_aware_refine_by_decoder(features,
             # decoder_features_list.append(outputs_to_logits[output][0])
 
 #for cam1
-            # outputs_to_logits[output]=outputs_to_logits[output][:-2]
-            # outputs_to_logits[output][0] = tf.image.resize_bilinear(
-            #     outputs_to_logits[output][0], [scale_dimension(decoder_height, 1.0 / (2 ** (i))),
-            #                     scale_dimension(decoder_width, 1.0 / (2 ** (i)))], align_corners=True)
-            # inter_logits.append(outputs_to_logits)
+            outputs_to_logits[output]=outputs_to_logits[output][:-2]
+            outputs_to_logits[output][0] = tf.image.resize_bilinear(
+                outputs_to_logits[output][0], [scale_dimension(decoder_height, 1.0 / (2 ** (i))),
+                                scale_dimension(decoder_width, 1.0 / (2 ** (i)))], align_corners=True)
+            inter_logits.append(outputs_to_logits)
 
 
             # Resize to decoder_height/decoder_width.
