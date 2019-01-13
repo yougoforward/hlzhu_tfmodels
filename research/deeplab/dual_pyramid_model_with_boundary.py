@@ -1219,7 +1219,7 @@ def pyramid_class_aware_refine_by_decoder(features,
             decoder_features_list1.append(skip)
             decoder_features_list2.append(skip)
 
-            # outputs_to_logits[output].insert(3, outputs_to_logits[output][0])
+            outputs_to_logits[output].insert(3, outputs_to_logits[output][0])
             # outputs_to_logits[output][0] = tf.stop_gradient(outputs_to_logits[output][0])
 
             # br_prediction = boundary_refine(outputs_to_logits[output][0],
