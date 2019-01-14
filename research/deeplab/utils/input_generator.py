@@ -69,7 +69,7 @@ def get(dataset,
         max_scale_factor=1.,
         scale_factor_step_size=0,
         num_readers=1,
-        num_threads=1,
+        num_threads=2,
         dataset_split=None,
         is_training=True,
         model_variant=None):
