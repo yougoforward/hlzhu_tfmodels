@@ -881,110 +881,6 @@ def refine_by_decoder(features,
                   scope='decoder_conv' + str(i))
           return decoder_features
 
-def pyramid_refine_by_decoder(features,
-                      end_points,
-                      decoder_height,
-                      decoder_width,
-                      decoder_use_separable_conv=False,
-                      model_variant=None,
-                      weight_decay=0.0001,
-                      reuse=None,
-                      is_training=False,
-                      fine_tune_batch_norm=False):
-  """Adds the decoder to obtain sharper segmentation results.
-
-  Args:
-    features: A tensor of size [batch, features_height, features_width,
-      features_channels].
-    end_points: A dictionary from components of the network to the corresponding
-      activation.
-    decoder_height: The height of decoder feature maps.
-    decoder_width: The width of decoder feature maps.
-    decoder_use_separable_conv: Employ separable convolution for decoder or not.
-    model_variant: Model variant for feature extraction.
-    weight_decay: The weight decay for model variables.
-    reuse: Reuse the model variables or not.
-    is_training: Is training or not.
-    fine_tune_batch_norm: Fine-tune the batch norm parameters or not.
-
-  Returns:
-    Decoder output with size [batch, decoder_height, decoder_width,
-      decoder_channels].
-  """
-  batch_norm_params = {
-      'is_training': is_training and fine_tune_batch_norm,
-      'decay': 0.9997,
-      'epsilon': 1e-5,
-      'scale': True,
-  }
-
-  with slim.arg_scope(
-      [slim.conv2d, slim.separable_conv2d],
-      weights_regularizer=slim.l2_regularizer(weight_decay),
-      activation_fn=tf.nn.relu,
-      normalizer_fn=slim.batch_norm,
-      padding='SAME',
-      stride=1,
-      reuse=reuse):
-    with slim.arg_scope([slim.batch_norm], **batch_norm_params):
-      with tf.variable_scope(DECODER_SCOPE, DECODER_SCOPE, [features]):
-        feature_list = feature_extractor.networks_to_feature_maps[
-            model_variant][feature_extractor.DECODER_END_POINTS]
-        if feature_list is None:
-          tf.logging.info('Not found any decoder end points.')
-          return features
-        else:
-          decoder_features = features
-          for i, name in enumerate(feature_list):
-            decoder_features_list = [decoder_features]
-
-            # MobileNet variants use different naming convention.
-            if 'mobilenet' in model_variant:
-              feature_name = name
-            else:
-              feature_name = '{}/{}'.format(
-                  feature_extractor.name_scope[model_variant], name)
-            decoder_features_list.append(
-                slim.conv2d(
-                    end_points[feature_name],
-                    48*(4**(1-i)),
-                    1,
-                    scope='feature_projection' + str(i)))
-            # Resize to decoder_height/decoder_width.
-
-            for j, feature in enumerate(decoder_features_list):
-              decoder_features_list[j] = tf.image.resize_bilinear(
-                  feature, [scale_dimension(decoder_height,1.0/(2**(1-i))), scale_dimension(decoder_width,1.0/(2**(1-i)))], align_corners=True)
-              h = (None if isinstance(scale_dimension(decoder_height,1.0/(2**(1-i))), tf.Tensor)
-                   else scale_dimension(decoder_height,1.0/(2**(1-i))))
-              w = (None if isinstance(scale_dimension(decoder_width,1.0/(2**(1-i))), tf.Tensor)
-                   else scale_dimension(decoder_width,1.0/(2**(1-i))))
-              decoder_features_list[j].set_shape([None, h, w, None])
-            decoder_depth = 256
-            if decoder_use_separable_conv:
-              decoder_features = split_separable_conv2d(
-                  tf.concat(decoder_features_list, 3),
-                  filters=decoder_depth,
-                  rate=1,
-                  weight_decay=weight_decay,
-                  scope='fusion'+str(i)+'decoder_conv0')
-              decoder_features = split_separable_conv2d(
-                  decoder_features,
-                  filters=decoder_depth,
-                  rate=1,
-                  weight_decay=weight_decay,
-                  scope='fusion'+str(i)+'decoder_conv1')
-            else:
-              num_convs = 2
-              decoder_features = slim.repeat(
-                  tf.concat(decoder_features_list, 3),
-                  num_convs,
-                  slim.conv2d,
-                  decoder_depth,
-                  3,
-                  scope='decoder_conv' + str(i))
-          return decoder_features
-
 
 def pyramid_class_aware_refine_by_decoder(features,
                       model_options,
@@ -1088,7 +984,7 @@ def pyramid_class_aware_refine_by_decoder(features,
             skip = slim.conv2d(
                 end_points[feature_name],
                 skip_depth,
-                1,
+                3,
                 scope='feature_projection' + str(i))
 
             # skip0 = slim.conv2d(
@@ -1398,8 +1294,8 @@ def get_class_aware_attention_branch_logits1(features,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
 
-  # features_aspp2_fuse = tf.add(features_aspp1, features_aspp2, name=None)
-  features_aspp2_fuse=tf.concat([features_aspp1, features_aspp2],axis=3, name=None)
+  features_aspp2_fuse = tf.add(features_aspp1, features_aspp2, name=None)
+  # features_aspp2_fuse=tf.concat([features_aspp1, features_aspp2],axis=3, name=None)
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
   if aspp_with_batch_norm or atrous_rates is None:
@@ -1601,8 +1497,8 @@ def get_class_aware_attention_branch_logits(features,
   #             rate=1,
   #             scope=scope_suffix + "f22")
   f1,f2=features[0],features[1]
-  # f2_fuse = tf.add(f1, f2, name=None)
-  f2_fuse = tf.concat([f1, f2],axis=3, name=None)
+  f2_fuse = tf.add(f1, f2, name=None)
+  # f2_fuse = tf.concat([f1, f2],axis=3, name=None)
 
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
