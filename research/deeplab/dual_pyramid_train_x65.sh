@@ -6,7 +6,7 @@ export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
 python dual_pyramid_train.py\
     --logtostderr \
-    --num_clones=8 \
+    --num_clones=4 \
     --train_split="train_aug"\
     --model_variant="xception_65"\
     --atrous_rates=6\

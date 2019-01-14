@@ -1280,14 +1280,14 @@ def get_class_aware_attention_branch_logits1(features,
     ValueError: Upon invalid input kernel_size value.
   """
   with tf.variable_scope("aspp1","aspp1"):
-      features_aspp1 = ASPP(features,
+      features_aspp1 = ASPP2(features,
                             model_options,
                             weight_decay=weight_decay,
                             reuse=reuse,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
   with tf.variable_scope("aspp2", "aspp2"):
-      features_aspp2 = ASPP(features,
+      features_aspp2 = ASPP2(features,
                             model_options,
                             weight_decay=weight_decay,
                             reuse=reuse,
