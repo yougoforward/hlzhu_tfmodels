@@ -217,9 +217,9 @@ def _build_deeplab(inputs_queue, outputs_to_num_classes, ignore_label):
   # Add name to graph node so we can add to summary.
   output_type_dict = outputs_to_scales_to_logits[common.OUTPUT_TYPE]
   output_type_dict[model.MERGED_LOGITS_SCOPE] = tf.identity(
-      output_type_dict['softmax'][0][model.MERGED_LOGITS_SCOPE],
+      output_type_dict['softmax'][1][model.MERGED_LOGITS_SCOPE],
       name=common.OUTPUT_TYPE)
-  ss=1
+  ss=2
   #  logits 0 for softmax, 1 for sigmoid
   for i in range(ss):
       for output, num_classes in six.iteritems(outputs_to_num_classes):

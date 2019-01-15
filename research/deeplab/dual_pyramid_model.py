@@ -150,7 +150,7 @@ def predict_labels_multi_scale(images,
             fine_tune_batch_norm=False)
 
     for output in sorted(outputs_to_scales_to_logits):
-      scales_to_logits = outputs_to_scales_to_logits[output]['softmax'][0]
+      scales_to_logits = outputs_to_scales_to_logits[output]['softmax'][1]
       logits = tf.image.resize_bilinear(
           scales_to_logits[MERGED_LOGITS_SCOPE],
           tf.shape(images)[1:3],
@@ -160,7 +160,7 @@ def predict_labels_multi_scale(images,
 
       if add_flipped_images:
         scales_to_logits_reversed = (
-            outputs_to_scales_to_logits_reversed[output]['softmax'][0])
+            outputs_to_scales_to_logits_reversed[output]['softmax'][1])
         logits_reversed = tf.image.resize_bilinear(
             tf.reverse_v2(scales_to_logits_reversed[MERGED_LOGITS_SCOPE], [2]),
             tf.shape(images)[1:3],
@@ -229,7 +229,7 @@ def predict_class_aware_attention_labels(images, model_options, image_pyramid=No
 
   predictions = {}
   for output in sorted(outputs_to_scales_to_logits):
-    scales_to_logits = outputs_to_scales_to_logits[output]['softmax'][0]#modify
+    scales_to_logits = outputs_to_scales_to_logits[output]['softmax'][1]#modify
     logits = tf.image.resize_bilinear(
         scales_to_logits[MERGED_LOGITS_SCOPE],
         tf.shape(images)[1:3],
@@ -451,7 +451,7 @@ def multi_scale_class_aware_attention_logits(images,
         is_training=is_training,
         fine_tune_batch_norm=fine_tune_batch_norm)
 
-    ss=1
+    ss=2
     # Resize the logits to have the same dimension before merging.
     for i in range(ss):
         for output in sorted(outputs_to_logits[i]):
