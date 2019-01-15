@@ -1433,8 +1433,8 @@ def get_class_aware_attention_branch_logits(features,
   """
 
   f1,f2=features[0],features[1]
-  f2_fuse = tf.add(f1, f2, name=None)
-  # f2_fuse = tf.concat([f1, f2],axis=3, name=None)
+  # f2_fuse = tf.add(f1, f2, name=None)
+  f2_fuse = tf.concat([f1, f2],axis=3, name=None)
 
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
