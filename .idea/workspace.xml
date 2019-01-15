@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_fpn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_with_boundary.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_with_boundary.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +19,8 @@
       <file leaf-file-name="dual_pyramid_model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="856">
-              <caret line="1182" column="40" lean-forward="true" selection-start-line="1182" selection-start-column="40" selection-end-line="1182" selection-end-column="40" />
+            <state relative-caret-position="-7455">
+              <caret line="1135" column="22" lean-forward="true" selection-start-line="1135" selection-start-column="22" selection-end-line="1135" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -50,7 +49,7 @@
       <file leaf-file-name="dual_pyramid_model_with_boundary.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_with_boundary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
+            <state relative-caret-position="10578">
               <caret line="2011" column="32" lean-forward="true" selection-start-line="2011" selection-start-column="32" selection-end-line="2011" selection-end-column="32" />
             </state>
           </provider>
@@ -59,8 +58,8 @@
       <file leaf-file-name="dual_pyramid_model_fpn.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="231" column="71" selection-start-line="231" selection-start-column="71" selection-end-line="231" selection-end-column="71" />
+            <state relative-caret-position="422">
+              <caret line="1437" lean-forward="true" selection-start-line="1437" selection-end-line="1437" />
             </state>
           </provider>
         </entry>
@@ -92,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dual_pyramid_train_fpn.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dual_pyramid_train_fpn.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_fpn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1122">
-              <caret line="210" column="36" lean-forward="true" selection-start-line="210" selection-start-column="36" selection-end-line="210" selection-end-column="36" />
+            <state relative-caret-position="308">
+              <caret line="299" lean-forward="true" selection-start-line="299" selection-end-line="299" />
               <folding>
                 <element signature="e#777#787#0" expanded="true" />
               </folding>
@@ -181,11 +180,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dual_pyramid_train_x65_with_boundary.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dual_pyramid_train_x65_with_boundary.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_with_boundary.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+            <state relative-caret-position="-447">
+              <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -377,14 +376,14 @@
         <option value="$PROJECT_DIR$/research/deeplab/utils/input_generator.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_with_boundary.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_with_boundary.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_x65_add2.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/model15_add2.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_fpn.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_with_boundary.sh" />
       </list>
     </option>
   </component>
@@ -760,13 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_with_boundary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="2011" column="32" lean-forward="true" selection-start-line="2011" selection-start-column="32" selection-end-line="2011" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1562">
@@ -778,13 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_with_boundary.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -833,20 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="856">
-          <caret line="1182" column="40" lean-forward="true" selection-start-line="1182" selection-start-column="40" selection-end-line="1182" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="231" column="71" selection-start-line="231" selection-start-column="71" selection-end-line="231" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-983">
@@ -856,11 +827,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_fpn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1122">
-          <caret line="210" column="36" lean-forward="true" selection-start-line="210" selection-start-column="36" selection-end-line="210" selection-end-column="36" />
+        <state relative-caret-position="308">
+          <caret line="299" lean-forward="true" selection-start-line="299" selection-end-line="299" />
           <folding>
             <element signature="e#777#787#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7455">
+          <caret line="1135" column="22" lean-forward="true" selection-start-line="1135" selection-start-column="22" selection-end-line="1135" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_with_boundary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10578">
+          <caret line="2011" column="32" lean-forward="true" selection-start-line="2011" selection-start-column="32" selection-end-line="2011" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="1437" lean-forward="true" selection-start-line="1437" selection-end-line="1437" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_with_boundary.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-447">
+          <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
         </state>
       </provider>
     </entry>
