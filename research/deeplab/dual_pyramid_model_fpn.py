@@ -1017,8 +1017,8 @@ def pyramid_class_aware_refine_by_decoder(features,
             decoder_features_list1 = [decoder_features1]
             decoder_features_list2 = [decoder_features2]
 
-            # skip_depth=48 * (4 ** (i))
-            skip_depth=256
+            skip_depth=48 * (4 ** (i))
+            # skip_depth=256
             skip=slim.conv2d(
                 end_points[feature_name],
                 skip_depth,
@@ -1134,7 +1134,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                 num_convs=1
 
                 decoder_features1 = slim.repeat(
-                    tf.add_n(decoder_features_list1, name=None),
+                    tf.concat(decoder_features_list1, 3),
                     num_convs,
                     slim.conv2d,
                     decoder_depth,
@@ -1151,7 +1151,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                 decoder_features1 = tf.add_n([decoder_features1, decoder_features1_s0], name=None)
 
                 decoder_features2 = slim.repeat(
-                    tf.add_n(decoder_features_list2, name=None),
+                    tf.concat(decoder_features_list2, 3),
                     num_convs,
                     slim.conv2d,
                     decoder_depth,
