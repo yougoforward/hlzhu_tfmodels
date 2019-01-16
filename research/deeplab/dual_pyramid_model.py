@@ -1294,8 +1294,8 @@ def get_class_aware_attention_branch_logits1(features,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
 
-  features_aspp2_fuse = tf.add(features_aspp1, features_aspp2, name=None)
-  # features_aspp2_fuse=tf.concat([features_aspp1, features_aspp2],axis=3, name=None)
+  # features_aspp2_fuse = tf.add(features_aspp1, features_aspp2, name=None)
+  features_aspp2_fuse=tf.concat([features_aspp1, features_aspp2],axis=3, name=None)
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
   if aspp_with_batch_norm or atrous_rates is None:
@@ -1447,58 +1447,10 @@ def get_class_aware_attention_branch_logits(features,
     ValueError: Upon invalid input kernel_size value.
   """
 
-  # batch_norm_params = {
-  #     'is_training': is_training and aspp_with_batch_norm,
-  #     'decay': 0.9997,
-  #     'epsilon': 1e-5,
-  #     'scale': True,
-  # }
-  #
-  # with slim.arg_scope(
-  #         [slim.conv2d, slim.separable_conv2d],
-  #         weights_regularizer=slim.l2_regularizer(weight_decay),
-  #         activation_fn=tf.nn.relu,
-  #         normalizer_fn=slim.batch_norm,
-  #         padding='SAME',
-  #         stride=1,
-  #         reuse=reuse):
-  #     with slim.arg_scope([slim.batch_norm], **batch_norm_params):
-  #         num_convs = 2
-  #         # decoder_features = slim.repeat(
-  #         #     tf.concat(decoder_features_list, 3),
-  #         #     num_convs,
-  #         #     slim.conv2d,
-  #         #     decoder_depth,
-  #         #     3,
-  #         #     scope='decoder_conv' + str(i))
-  #         f1 = slim.conv2d(
-  #             features,
-  #             256,
-  #             kernel_size=3,
-  #             rate=1,
-  #             scope=scope_suffix+'f11')
-  #         f1 = slim.conv2d(
-  #             f1,
-  #             256,
-  #             kernel_size=3,
-  #             rate=1,
-  #             scope=scope_suffix+'f12')
-  #
-  #         f2 = slim.conv2d(
-  #             features,
-  #             128,
-  #             kernel_size=3,
-  #             rate=1,
-  #             scope=scope_suffix + "f21")
-  #         f2 = slim.conv2d(
-  #             f2,
-  #             128,
-  #             kernel_size=3,
-  #             rate=1,
-  #             scope=scope_suffix + "f22")
+
   f1,f2=features[0],features[1]
-  f2_fuse = tf.add(f1, f2, name=None)
-  # f2_fuse = tf.concat([f1, f2],axis=3, name=None)
+  # f2_fuse = tf.add(f1, f2, name=None)
+  f2_fuse = tf.concat([f1, f2],axis=3, name=None)
 
   # When using batch normalization with ASPP, ASPP has been applied before
   # in extract_features, and thus we simply apply 1x1 convolution here.
