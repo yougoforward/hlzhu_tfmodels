@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/../tf/tfmodels/research/deeplab/model.py" description="features, end_points = extract_features(" line="760" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train15_x65_add2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/class_aware_train15_x65_add2.sh" afterDir="false" />
-    </list>
+    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,20 +137,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class_aware_train15_x65_add2.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="class_aware_train15_x65_add2.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_x65_add2.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="-1283">
               <caret line="69" column="104" selection-start-line="69" selection-start-column="104" selection-end-line="69" selection-end-column="104" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model15_add2.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="model15_add2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/model15_add2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="1499" column="23" selection-start-line="1499" selection-start-column="23" selection-end-line="1499" selection-end-column="23" />
+            <state relative-caret-position="298">
+              <caret line="1407" column="11" lean-forward="true" selection-start-line="1407" selection-start-column="11" selection-end-line="1407" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -481,7 +479,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -790,13 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/model15_add2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="1499" column="23" selection-start-line="1499" selection-start-column="23" selection-end-line="1499" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -858,8 +848,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_x65_add2.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="-1283">
           <caret line="69" column="104" selection-start-line="69" selection-start-column="104" selection-end-line="69" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/model15_add2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="1407" column="11" lean-forward="true" selection-start-line="1407" selection-start-column="11" selection-end-line="1407" selection-end-column="11" />
         </state>
       </provider>
     </entry>
