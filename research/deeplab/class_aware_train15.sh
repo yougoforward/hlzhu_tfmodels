@@ -126,10 +126,10 @@ python class_aware_eval15.py\
     --logtostderr\
     --eval_split="val"\
     --model_variant="xception_65"\
+    --atrous_rates=6\
     --atrous_rates=12\
-    --atrous_rates=24\
-    --atrous_rates=36\
-    --output_stride=8\
+    --atrous_rates=18\
+    --output_stride=16\
     --eval_crop_size=513\
     --eval_crop_size=513\
     --aspp_with_batch_norm=true\
@@ -139,11 +139,11 @@ python class_aware_eval15.py\
     --checkpoint_dir="datasets/pascal_voc_seg/exp/class_aware_train15_on_trainaug_set/train_finetune2"\
     --eval_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_on_trainaug_set/eval_finetune2"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
-    --max_number_of_evaluations=1
-#    --eval_scales=0.5\
-#    --eval_scales=0.75\
-#    --eval_scales=1.0\
-#    --eval_scales=1.25\
-#    --eval_scales=1.5\
-#    --eval_scales=1.75\
-#    --add_flipped_images=true
+    --max_number_of_evaluations=1\
+    --eval_scales=0.5\
+    --eval_scales=0.75\
+    --eval_scales=1.0\
+    --eval_scales=1.25\
+    --eval_scales=1.5\
+    --eval_scales=1.75\
+    --add_flipped_images=true
