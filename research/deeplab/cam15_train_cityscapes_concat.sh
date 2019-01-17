@@ -36,8 +36,8 @@ python class_aware_eval15.py\
     --atrous_rates=12\
     --atrous_rates=18\
     --output_stride=16\
-    --eval_crop_size=769\
-    --eval_crop_size=769\
+    --eval_crop_size=1025\
+    --eval_crop_size=2049\
     --aspp_with_batch_norm=true\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
