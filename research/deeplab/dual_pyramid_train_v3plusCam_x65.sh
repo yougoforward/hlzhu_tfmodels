@@ -17,7 +17,7 @@ python dual_pyramid_train_v3plusCam.py\
     --train_crop_size=513\
     --train_batch_size=16\
     --decoder_output_stride=4\
-    --training_number_of_steps=30000\
+    --training_number_of_steps=60000\
     --fine_tune_batch_norm=true\
     --base_learning_rate=0.007\
     --weight_decay=0.00004\
@@ -26,7 +26,7 @@ python dual_pyramid_train_v3plusCam.py\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
     --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/xception/model.ckpt"\
-    --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_xception65_on_trainaug_set/train12"\
+    --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_xception65_on_trainaug_set/train13"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
 python dual_pyramid_eval_v3plusCam.py\
@@ -44,8 +44,8 @@ python dual_pyramid_eval_v3plusCam.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_xception65_on_trainaug_set/train12"\
-    --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_xception65_on_trainaug_set/eval12"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_xception65_on_trainaug_set/train13"\
+    --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_xception65_on_trainaug_set/eval13"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 
