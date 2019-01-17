@@ -24,7 +24,7 @@ python class_aware_train15.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="cityscapes"\
-    --tf_initial_checkpoint="datasets/cityscapes/init_models/xception/model.ckpt"\
+    --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/xception/model.ckpt"\
     --train_logdir="datasets/cityscapes/exp/class_aware_train15_on_train_set/train"\
     --dataset_dir="datasets/cityscapes/tfrecord"
 
