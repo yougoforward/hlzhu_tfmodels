@@ -1611,5 +1611,5 @@ def self_attention(features,
           out = tf.matmul(proj_value, tf.transpose(attention, [0, 2, 1]))
           out = tf.transpose(tf.reshape(out, [n, c, h, w]), [0, 2, 3, 1])
           skip = slim.conv2d(features, 512, 1, scope="skip")
-          f5 = slim.conv2d(tf.concat([out, skip]), 256, 1, scope="sa_proj")
+          f5 = slim.conv2d(tf.concat([out, skip],3), 256, 1, scope="sa_proj")
           return f5

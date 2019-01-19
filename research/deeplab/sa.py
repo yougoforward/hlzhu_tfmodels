@@ -59,7 +59,7 @@ def self_attention(features,
         stride=1,
         reuse=reuse):
       with slim.arg_scope([slim.batch_norm], **batch_norm_params):
-          n, h, w, c = tf.shape(features)
+          n, h, w, c = tf.shape(features)[0],tf.shape(features)[1],tf.shape(features)[2],tf.shape(features)[3]
           f1 = slim.conv2d(features, 64, 1, activation_fn=None, normalizer_fn=None, scope="sa_proj_key")
           f_t = tf.transpose(f1, [0, 3, 1, 2])
           proj_key = tf.reshape(f_t, [n, c, -1])
@@ -74,7 +74,7 @@ def self_attention(features,
           out = tf.matmul(proj_value, tf.transpose(attention, [0, 2, 1]))
           out = tf.transpose(tf.reshape(out, [n, c, h, w]), [0, 2, 3, 1])
           skip = slim.conv2d(features, 512, 1, scope="skip")
-          f5 = slim.conv2d(tf.concat([out, skip]), 256, 1, scope="sa_proj")
+          f5 = slim.conv2d(tf.concat([out, skip],3), 256, 1, scope="sa_proj")
           return f5
         # depth = 256
         # branch_logits = []
