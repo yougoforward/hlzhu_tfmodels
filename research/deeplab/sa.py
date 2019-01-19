@@ -62,14 +62,14 @@ def self_attention(features,
           n, h, w, c = tf.shape(features)[0],tf.shape(features)[1],tf.shape(features)[2],tf.shape(features)[3]
           f1 = slim.conv2d(features, 64, 1, activation_fn=None, normalizer_fn=None, scope="sa_proj_key")
           f_t = tf.transpose(f1, [0, 3, 1, 2])
-          proj_key = tf.reshape(f_t, [n, c, -1])
+          proj_key = tf.reshape(f_t, [n, 64, -1])
           f2 = slim.conv2d(features, 64, 1, activation_fn=None, normalizer_fn=None, scope="sa_proj_query")
-          proj_query = tf.reshape(f2, [n, -1, c])
+          proj_query = tf.reshape(f2, [n, -1, 64])
           energy = tf.matmul(proj_query, proj_key)
 
           attention = tf.nn.softmax(energy)
           f3 = slim.conv2d(features, 512, 1, scope="sa_proj_value")
-          proj_value = tf.reshape(f3, [n, c, -1])
+          proj_value = tf.reshape(f3, [n, 512, -1])
 
           out = tf.matmul(proj_value, tf.transpose(attention, [0, 2, 1]))
           out = tf.transpose(tf.reshape(out, [n, c, h, w]), [0, 2, 3, 1])
