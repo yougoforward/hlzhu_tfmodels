@@ -1596,7 +1596,7 @@ def self_attention(features,
         stride=1,
         reuse=reuse):
       with slim.arg_scope([slim.batch_norm], **batch_norm_params):
-          n, h, w, c = tf.shape(features)
+          n, h, w, c = tf.shape(features)[0],tf.shape(features)[1],tf.shape(features)[2],tf.shape(features)[3]
           f1 = slim.conv2d(features, 64, 1, activation_fn=None, normalizer_fn=None, scope="sa_proj_key")
           f_t = tf.transpose(f1, [0, 3, 1, 2])
           proj_key = tf.reshape(f_t, [n, c, -1])
