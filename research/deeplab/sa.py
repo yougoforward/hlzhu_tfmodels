@@ -17,7 +17,7 @@ def scale_dimension(dim, scale):
     return int((float(dim) - 1.0) * scale + 1.0)
 
 def self_attention(features,
-                     model_options,
+                     model_options=None,
                      weight_decay=0.0001,
                      reuse=None,
                      is_training=False,
@@ -40,8 +40,10 @@ def self_attention(features,
       activation.
   """
 
-  if not model_options.aspp_with_batch_norm:
-    return features
+  # if not model_options.aspp_with_batch_norm:
+  #   return features
+  if not 1:
+      return features
   else:
     batch_norm_params = {
         'is_training': is_training and fine_tune_batch_norm,
@@ -74,6 +76,8 @@ def self_attention(features,
           out = tf.matmul(proj_value, tf.transpose(attention, [0, 2, 1]))
           out = tf.reshape(tf.transpose(out, [0,2,1]), [n,h,w,512])
           skip = slim.conv2d(features, 512, 1, scope="skip")
+          print(tf.shape(out))
+          print(tf.shape(skip))
           f5 = slim.conv2d(tf.concat([out, skip],3), 256, 1, scope="sa_proj")
           return f5
         # depth = 256
@@ -146,3 +150,10 @@ def self_attention(features,
         #     scope=CONCAT_PROJECTION_SCOPE + '_dropout')
         #
         # return concat_logits, end_points
+
+
+import numpy as np
+a = tf.constant(np.arange(1, 3201, dtype=np.float32), shape=[1, 40, 40, 2])
+b=self_attention(a)
+with tf.Session() as sess:
+    c=sess.run(b)
