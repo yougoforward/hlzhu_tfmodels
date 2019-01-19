@@ -1148,7 +1148,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                 #     3,
                 #     scope='fusion1_conv2' + str(i))
                 decoder_features1_s0 = decoder_features_list1[0]
-                decoder_features1 = tf.concat([decoder_features1, decoder_features1_s0], name=None)
+                decoder_features1 = tf.concat([decoder_features1, decoder_features1_s0], 3)
 
                 # decoder_features1 = tf.add_n([decoder_features1, decoder_features1_s0], name=None)
 
