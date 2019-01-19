@@ -1296,7 +1296,7 @@ def get_class_aware_attention_branch_logits(features,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
   with tf.variable_scope("aspp2", "aspp2"):
-      features_aspp2 = ASPP(features,
+      features_aspp2 = self_attention(features,
                             model_options,
                             weight_decay=weight_decay,
                             reuse=reuse,
@@ -1551,3 +1551,65 @@ def ASPP(features,
                 scope=CONCAT_PROJECTION_SCOPE + '_dropout')
 
             return concat_logits
+
+
+def self_attention(features,
+                     model_options,
+                     weight_decay=0.0001,
+                     reuse=None,
+                     is_training=False,
+                     fine_tune_batch_norm=False):
+  """Extracts features by the particular model_variant.
+
+  Args:
+    images: A tensor of size [batch, height, width, channels].
+    model_options: A ModelOptions instance to configure models.
+    weight_decay: The weight decay for model variables.
+    reuse: Reuse the model variables or not.
+    is_training: Is training or not.
+    fine_tune_batch_norm: Fine-tune the batch norm parameters or not.
+
+  Returns:
+    concat_logits: A tensor of size [batch, feature_height, feature_width,
+      feature_channels], where feature_height/feature_width are determined by
+      the images height/width and output_stride.
+    end_points: A dictionary from components of the network to the corresponding
+      activation.
+  """
+
+  if not model_options.aspp_with_batch_norm:
+    return features
+  else:
+    batch_norm_params = {
+        'is_training': is_training and fine_tune_batch_norm,
+        'decay': 0.9997,
+        'epsilon': 1e-5,
+        'scale': True,
+    }
+
+    with slim.arg_scope(
+        [slim.conv2d, slim.separable_conv2d],
+        weights_regularizer=slim.l2_regularizer(weight_decay),
+        activation_fn=tf.nn.relu,
+        normalizer_fn=slim.batch_norm,
+        padding='SAME',
+        stride=1,
+        reuse=reuse):
+      with slim.arg_scope([slim.batch_norm], **batch_norm_params):
+          n, h, w, c = tf.shape(features)
+          f1 = slim.conv2d(features, 64, 1, activation_fn=None, normalizer_fn=None, scope="sa_proj_key")
+          f_t = tf.transpose(f1, [0, 3, 1, 2])
+          proj_key = tf.reshape(f_t, [n, c, -1])
+          f2 = slim.conv2d(features, 64, 1, activation_fn=None, normalizer_fn=None, scope="sa_proj_query")
+          proj_query = tf.reshape(f2, [n, -1, c])
+          energy = tf.matmul(proj_query, proj_key)
+
+          attention = tf.nn.softmax(energy)
+          f3 = slim.conv2d(features, 512, 1, scope="sa_proj_value")
+          proj_value = tf.reshape(f3, [n, c, -1])
+
+          out = tf.matmul(proj_value, tf.transpose(attention, [0, 2, 1]))
+          out = tf.transpose(tf.reshape(out, [n, c, h, w]), [0, 2, 3, 1])
+          skip = slim.conv2d(features, 512, 1, scope="skip")
+          f5 = slim.conv2d(tf.concat([out, skip]), 256, 1, scope="sa_proj")
+          return f5
