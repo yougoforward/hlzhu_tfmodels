@@ -4,7 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/../tf/tfmodels/research/deeplab/model.py" description="features, end_points = extract_features(" line="760" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="" />
+    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes_concat.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes_concat.sh" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cam15_train_cityscapes_concat.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cam15_train_cityscapes_concat.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes_concat.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="90" column="33" lean-forward="true" selection-start-line="90" selection-start-column="33" selection-end-line="90" selection-end-column="33" />
+            <state relative-caret-position="22">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -55,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dual_pyramid_model_fpn.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dual_pyramid_model_fpn.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
@@ -115,8 +118,8 @@
       <file leaf-file-name="dual_pyramid_train_x65_fpn.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="99" column="22" lean-forward="true" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+            <state relative-caret-position="-440">
+              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -209,10 +212,10 @@
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_res50.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" />
         <option value="$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes_concat.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam_x65.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes_concat.sh" />
       </list>
     </option>
   </component>
@@ -589,34 +592,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes_concat.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="90" column="33" lean-forward="true" selection-start-line="90" selection-start-column="33" selection-end-line="90" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_v3plusCam.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="1233" column="59" lean-forward="true" selection-start-line="1233" selection-start-column="59" selection-end-line="1233" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_fpn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="249" column="28" lean-forward="true" selection-start-line="249" selection-start-column="28" selection-end-line="249" selection-end-column="28" />
-          <folding>
-            <element signature="e#777#787#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -673,13 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="99" column="22" lean-forward="true" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_with_boundary.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1254">
@@ -691,6 +663,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="258" column="37" lean-forward="true" selection-start-line="258" selection-start-column="37" selection-end-line="258" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_fpn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="249" column="28" lean-forward="true" selection-start-line="249" selection-start-column="28" selection-end-line="249" selection-end-column="28" />
+          <folding>
+            <element signature="e#777#787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-440">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes_concat.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
