@@ -15,7 +15,7 @@ python class_aware_train15.py\
     --output_stride=16\
     --train_crop_size=769\
     --train_crop_size=769\
-    --train_batch_size=16\
+    --train_batch_size=12\
     --training_number_of_steps=90000\
     --fine_tune_batch_norm=true\
     --base_learning_rate=0.007\
