@@ -41,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sa.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sa.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/sa.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+            <state relative-caret-position="340">
+              <caret line="71" column="45" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -113,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model15.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="model15.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/model15.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2366">
-              <caret line="1598" column="29" selection-start-line="1598" selection-start-column="29" selection-end-line="1598" selection-end-column="29" />
+            <state relative-caret-position="202">
+              <caret line="1598" column="18" lean-forward="true" selection-start-line="1598" selection-end-line="1599" />
             </state>
           </provider>
         </entry>
@@ -278,9 +278,9 @@
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py" />
         <option value="$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes_concat.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/sa.py" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_res50.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/model15.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/sa.py" />
       </list>
     </option>
   </component>
@@ -767,17 +767,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/sa.py">
+    <entry file="file://$PROJECT_DIR$/research/deeplab/model15.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        <state relative-caret-position="202">
+          <caret line="1598" column="18" lean-forward="true" selection-start-line="1598" selection-end-line="1599" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/model15.py">
+    <entry file="file://$PROJECT_DIR$/research/deeplab/sa.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2366">
-          <caret line="1598" column="29" selection-start-line="1598" selection-start-column="29" selection-end-line="1598" selection-end-column="29" />
+        <state relative-caret-position="340">
+          <caret line="71" column="45" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
         </state>
       </provider>
     </entry>
