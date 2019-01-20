@@ -984,7 +984,7 @@ def pyramid_class_aware_refine_by_decoder(features,
             skip = slim.conv2d(
                 end_points[feature_name],
                 skip_depth,
-                3,
+                1,
                 scope='feature_projection' + str(i))
 
             # skip0 = slim.conv2d(
