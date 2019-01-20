@@ -1231,8 +1231,9 @@ def pyramid_class_aware_refine_by_decoder(features,
                   decoder_depth,
                   3,
                   scope='fusion1_conv' + str(i))
-              decoder_features1_s0 = decoder_features_list1[0]
-              decoder_features1 = tf.add_n([decoder_features1, decoder_features1_s0], name=None)
+              # decoder_features1_s0 = decoder_features_list1[0]
+              # decoder_features1 = tf.add_n([decoder_features1, decoder_features1_s0], name=None)
+              decoder_features1=tf.concat([decoder_features1,decoder_features_list1[0]], 3)
               decoder_features2 = decoder_features_list2[0]
               # # decoder_features1 = slim.conv2d(
               # #     tf.concat(decoder_features_list1, 3), decoder_depth, 3, scope='fusion1' + str(i) + 'decoder_conv0')
@@ -1355,7 +1356,7 @@ def get_class_aware_attention_branch_logits1(features,
                             is_training=is_training,
                             fine_tune_batch_norm=aspp_with_batch_norm)
   with tf.variable_scope("aspp2", "aspp2"):
-      features_aspp2 = self_attention(features,
+      features_aspp2 = ASPP(features,
                             model_options,
                             weight_decay=weight_decay,
                             reuse=reuse,
@@ -1432,7 +1433,7 @@ def get_class_aware_attention_branch_logits1(features,
     attentioned_score = tf.multiply(class_sensitive_attention, s1, name=None)
     # addmin = tf.add(attentioned_score, smin, name=None)
 
-    return [attentioned_score,context_free_score_logits,context_sensitive_logits, features_aspp1, class_sensitive_attention]
+    return [attentioned_score,context_free_score_logits,context_sensitive_logits, features_aspp1, features_aspp2]
 
 def get_class_aware_attention_branch_logits(features,
                       num_classes,
