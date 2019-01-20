@@ -6,7 +6,7 @@ export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
 python dual_pyramid_train_v3plusCam.py\
     --logtostderr \
-    --num_clones=2 \
+    --num_clones=4 \
     --train_split="train_aug"\
     --model_variant="resnet_v1_50_beta"\
     --atrous_rates=6\
@@ -28,10 +28,10 @@ python dual_pyramid_train_v3plusCam.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/resnet_v1_50/model.ckpt"\
+    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_res50_on_trainaug_set/train_finetune11/model.ckpt-30000"\
     --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_res50_on_trainaug_set/train13"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
-
+#    --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/resnet_v1_50/model.ckpt"\
 python dual_pyramid_eval_v3plusCam.py\
     --logtostderr\
     --eval_split="val"\
@@ -57,7 +57,7 @@ python dual_pyramid_eval_v3plusCam.py\
 
 python dual_pyramid_train_v3plusCam.py\
     --logtostderr\
-    --num_clones=2 \
+    --num_clones=4 \
     --train_split="train_aug"\
     --model_variant="resnet_v1_50_beta"\
     --atrous_rates=6\
