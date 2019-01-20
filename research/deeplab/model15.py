@@ -1597,11 +1597,11 @@ def self_attention(features,
         reuse=reuse):
       with slim.arg_scope([slim.batch_norm], **batch_norm_params):
           n, h, w, c = tf.shape(features)[0],tf.shape(features)[1],tf.shape(features)[2],tf.shape(features)[3]
-          f1 = slim.conv2d(features, 128, 1, activation_fn=None, normalizer_fn=None, scope="sa_proj_key")
+          f1 = slim.conv2d(features, 64, 1, activation_fn=None, normalizer_fn=None, scope="sa_proj_key")
           f_t = tf.transpose(f1, [0, 3, 1, 2])
-          proj_key = tf.reshape(f_t, [n, 128, -1])
-          f2 = slim.conv2d(features, 128, 1, activation_fn=None, normalizer_fn=None, scope="sa_proj_query")
-          proj_query = tf.reshape(f2, [n, -1, 128])
+          proj_key = tf.reshape(f_t, [n, 64, -1])
+          f2 = slim.conv2d(features, 64, 1, activation_fn=None, normalizer_fn=None, scope="sa_proj_query")
+          proj_query = tf.reshape(f2, [n, -1, 64])
           energy = tf.matmul(proj_query, proj_key)
 
           attention = tf.nn.softmax(energy)

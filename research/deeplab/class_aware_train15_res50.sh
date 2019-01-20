@@ -28,7 +28,7 @@ python class_aware_train15.py\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
     --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/resnet_v1_50/model.ckpt"\
-    --train_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_res50_multigrad_on_trainaug_set/train3"\
+    --train_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_res50_multigrad_on_trainaug_set/train4"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
 python class_aware_eval15.py\
@@ -48,8 +48,8 @@ python class_aware_eval15.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp/class_aware_train15_res50_multigrad_on_trainaug_set/train3"\
-    --eval_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_res50_multigrad_on_trainaug_set/eval3"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp/class_aware_train15_res50_multigrad_on_trainaug_set/train4"\
+    --eval_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_res50_multigrad_on_trainaug_set/eval4"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 
