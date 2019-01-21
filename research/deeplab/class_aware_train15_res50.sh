@@ -84,10 +84,10 @@ python class_aware_eval15.py\
     --logtostderr\
     --eval_split="val"\
     --model_variant="resnet_v1_50_beta"\
-    --atrous_rates=6\
     --atrous_rates=12\
-    --atrous_rates=18\
-    --output_stride=16\
+    --atrous_rates=24\
+    --atrous_rates=36\
+    --output_stride=8\
     --multi_grid=1\
     --multi_grid=2\
     --multi_grid=4\
