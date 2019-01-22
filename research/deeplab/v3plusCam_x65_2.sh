@@ -17,7 +17,7 @@ python dual_pyramid_train_v3plusCam.py\
     --train_crop_size=513\
     --train_batch_size=16\
     --decoder_output_stride=4\
-    --training_number_of_steps=30000\
+    --training_number_of_steps=60000\
     --fine_tune_batch_norm=true\
     --base_learning_rate=0.007\
     --weight_decay=0.00004\
@@ -155,4 +155,4 @@ python dual_pyramid_eval_v3plusCam.py\
 #    --eval_scales=1.25\
 #    --eval_scales=1.5\
 #    --eval_scales=1.75\
-#    --add_flipped_images=true#!/usr/bin/env bash
+#    --add_flipped_images=true
