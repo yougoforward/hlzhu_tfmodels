@@ -25,7 +25,7 @@ python dual_pyramid_train_v3plusCam.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/class_aware_train15_on_trainaug_set/train_finetune2/model.ckpt-30000"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_xception65_on_trainaug_set/train_finetune11/model.ckpt-30000"\
     --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_xception65_on_trainaug_set/train16"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 #    --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/xception/model.ckpt"\
