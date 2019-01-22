@@ -72,8 +72,8 @@
       <file leaf-file-name="dual_pyramid_train_v3plusCam_x65.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam_x65.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="95" selection-start-line="95" selection-end-line="100" selection-end-column="22" />
+            <state relative-caret-position="88">
+              <caret line="94" column="34" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -739,8 +739,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam_x65.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="95" selection-start-line="95" selection-end-line="100" selection-end-column="22" />
+        <state relative-caret-position="88">
+          <caret line="94" column="34" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
         </state>
       </provider>
     </entry>
