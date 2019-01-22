@@ -1230,7 +1230,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                   slim.conv2d,
                   decoder_depth,
                   3,
-                  scope='fusion1_conv' + str(i))
+                  scope='fusion1_conv1' + str(i))
               decoder_features1 = tf.add_n([decoder_features1, decoder_features_list1[0]], name=None)
               decoder_features1 = slim.repeat(
                     tf.concat(decoder_features1, 3),
@@ -1238,7 +1238,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                     slim.conv2d,
                     decoder_depth,
                     3,
-                    scope='fusion1_conv' + str(i))
+                    scope='fusion1_conv2' + str(i))
               decoder_features1 = tf.add_n([decoder_features1, decoder_features_list1[0]], name=None)
               # decoder_features1=tf.concat([decoder_features1,decoder_features_list1[0]], 3)
               decoder_features2 = decoder_features_list2[0]
