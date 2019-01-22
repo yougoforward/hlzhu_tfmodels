@@ -92,7 +92,7 @@ python dual_pyramid_eval_v3plusCam.py\
     --checkpoint_dir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_xception65_on_trainaug_set/train_finetune14"\
     --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_xception65_on_trainaug_set/eval_finetune14"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
-    --max_number_of_evaluations=1
+    --max_number_of_evaluations=1\
     --eval_scales=0.5\
     --eval_scales=0.75\
     --eval_scales=1.0\
