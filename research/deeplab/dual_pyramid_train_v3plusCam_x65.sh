@@ -70,7 +70,7 @@ python dual_pyramid_train_v3plusCam.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_xception65_on_trainaug_set/train16/model.ckpt-30000"\
+    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_xception65_on_trainaug_set/train16/model.ckpt-60000"\
     --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_v3plusCam_xception65_on_trainaug_set/train_finetune16"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
