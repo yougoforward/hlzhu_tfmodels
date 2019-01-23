@@ -99,7 +99,7 @@ python dual_pyramid_eval_v3plusCam.py\
     --eval_scales=1.25\
     --eval_scales=1.5\
     --eval_scales=1.75
-#    --add_flipped_images=true
+    --add_flipped_images=true
 
 
 
