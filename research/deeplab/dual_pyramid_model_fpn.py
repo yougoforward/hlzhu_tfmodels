@@ -1131,7 +1131,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                   weight_decay=weight_decay,
                   scope='fusion2'+str(i)+'decoder_conv1')
             else:
-                num_convs=2
+                num_convs=1
 
                 decoder_features1 = slim.repeat(
                     tf.concat(decoder_features_list1, 3),
@@ -1152,13 +1152,13 @@ def pyramid_class_aware_refine_by_decoder(features,
 
                 decoder_features1 = tf.add_n([decoder_features1, decoder_features1_s0], name=None)
 
-                # decoder_features2 = slim.repeat(
-                #     tf.concat(decoder_features_list2, 3),
-                #     num_convs,
-                #     slim.conv2d,
-                #     decoder_depth,
-                #     1,
-                #     scope='fusion2_conv1' + str(i))
+                decoder_features2 = slim.repeat(
+                     tf.concat(decoder_features_list2, 3),
+                     num_convs,
+                     slim.conv2d,
+                     decoder_depth,
+                     1,
+                     scope='fusion2_conv1' + str(i))
                 # # decoder_features2 = slim.repeat(
                 # #     decoder_features2,
                 # #     num_convs,
@@ -1166,9 +1166,9 @@ def pyramid_class_aware_refine_by_decoder(features,
                 # #     decoder_depth,
                 # #     3,
                 # #     scope='fusion2_conv2' + str(i))
-                # decoder_features2_s0 = decoder_features_list2[0]
-                # decoder_features2 = tf.add_n([decoder_features2, decoder_features2_s0], name=None)
-                decoder_features2 = decoder_features_list2[0]
+                decoder_features2_s0 = decoder_features_list2[0]
+                decoder_features2 = tf.add_n([decoder_features2, decoder_features2_s0], name=None)
+                #decoder_features2 = decoder_features_list2[0]
           return [decoder_features1,decoder_features2]
 
 
@@ -1510,7 +1510,7 @@ def get_class_aware_attention_branch_logits(features,
     attentioned_score = tf.multiply(class_sensitive_attention, s1, name=None)
     # addmin = tf.add(attentioned_score, smin, name=None)
 
-    return [attentioned_score,context_free_score_logits,context_sensitive_logits, f1, f2]
+    return [tf.add_n([attentioned_score,context_sensitive_logits]),context_free_score_logits,context_sensitive_logits, f1, f2]
 
 def split_separable_conv2d(inputs,
                            filters,
