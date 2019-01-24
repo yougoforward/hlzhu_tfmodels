@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-
+cd ..
+CURRENT_DIR=$(pwd)
+export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
+export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
+cd ./deeplab
 python vis_class_aware2.py \
   --logtostderr \
   --vis_split="test" \
