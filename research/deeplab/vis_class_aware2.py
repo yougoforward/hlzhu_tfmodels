@@ -23,7 +23,7 @@ import time
 import numpy as np
 import tensorflow as tf
 from deeplab import common
-from deeplab import model13 as model
+from deeplab import model15 as model
 from deeplab.datasets import segmentation_dataset
 from deeplab.utils import input_generator
 from deeplab.utils import save_annotation
