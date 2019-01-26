@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-python train_cityscapes.py \
+python dual_pyramid_train_fpn.py \
     --logtostderr \
     --num_clones=4 \
     --train_split="train"\
@@ -24,7 +24,7 @@ python train_cityscapes.py \
     --train_logdir="datasets/cityscapes/exp/dpcan/train"\
     --dataset_dir="datasets/cityscapes/tfrecord"
 
-python eval_cityscapes.py \
+python dual_pyramid_eval_fpn.py \
     --logtostderr \
     --eval_split="val" \
     --model_variant="xception_65" \
