@@ -1131,7 +1131,7 @@ def pyramid_class_aware_refine_by_decoder(features,
                   weight_decay=weight_decay,
                   scope='fusion2'+str(i)+'decoder_conv1')
             else:
-                num_convs=1
+                num_convs=2
 
                 decoder_features1 = slim.repeat(
                     tf.concat(decoder_features_list1, 3),
