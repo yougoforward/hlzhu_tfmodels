@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+cd ..
+CURRENT_DIR=$(pwd)
+export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
+export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
+cd ./deeplab
 python dual_pyramid_train_fpn.py \
     --logtostderr \
     --num_clones=4 \
