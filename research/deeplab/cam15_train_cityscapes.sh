@@ -1,4 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
+cd ..
+CURRENT_DIR=$(pwd)
+export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
+export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
+cd ./deeplab
 python train_cityscapes.py \
     --logtostderr \
     --num_clones= 4 \
