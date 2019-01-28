@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
-cd ..
-CURRENT_DIR=$(pwd)
-export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
-export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
-cd ./deeplab
-python dual_pyramid_train_fpn.py \
+python train_cityscapes.py \
     --logtostderr \
-    --num_clones=4 \
+    --num_clones= \
     --train_split="train"\
     --model_variant="xception_65"\
     --atrous_rates=6\
@@ -15,7 +10,7 @@ python dual_pyramid_train_fpn.py \
     --output_stride=16\
     --train_crop_size=769\
     --train_crop_size=769\
-    --train_batch_size=16\
+    --train_batch_size=8\
     --decoder_output_stride=4 \
     --training_number_of_steps=90000\
     --fine_tune_batch_norm=true\
@@ -29,7 +24,7 @@ python dual_pyramid_train_fpn.py \
     --train_logdir="datasets/cityscapes/exp/dpcan/train"\
     --dataset_dir="datasets/cityscapes/tfrecord"
 
-python dual_pyramid_eval_fpn.py \
+python eval_cityscapes.py \
     --logtostderr \
     --eval_split="val" \
     --model_variant="xception_65" \
