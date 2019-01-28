@@ -4,7 +4,7 @@ CURRENT_DIR=$(pwd)
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
-python train_cityscapes.py \
+python dual_pyramid_train_fpn.py \
     --logtostderr \
     --num_clones= 4 \
     --train_split="train"\
@@ -29,7 +29,7 @@ python train_cityscapes.py \
     --train_logdir="datasets/cityscapes/exp/dpcan/train"\
     --dataset_dir="datasets/cityscapes/tfrecord"
 
-python eval_cityscapes.py \
+python dual_pyramid_eval_fpn.py \
     --logtostderr \
     --eval_split="val" \
     --model_variant="xception_65" \
@@ -50,7 +50,7 @@ python eval_cityscapes.py \
     --dataset_dir="datasets/cityscapes/tfrecord"
 
 
-#python train_cityscapes.py \
+#python dual_pyramid_train_fpn.py \
 #    --logtostderr \
 #    --num_clones=2 \
 #    --train_split="train"\
@@ -75,7 +75,7 @@ python eval_cityscapes.py \
 #    --train_logdir="datasets/cityscapes/exp/dpcan/train_finetune"\
 #    --dataset_dir="datasets/cityscapes/tfrecord"
 #
-#python eval_cityscapes.py \
+#python dual_pyramid_train_fpn.py \
 #    --logtostderr \
 #    --eval_split="val" \
 #    --model_variant="xception_65" \
