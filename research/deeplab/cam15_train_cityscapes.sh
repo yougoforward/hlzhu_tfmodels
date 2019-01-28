@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 python train_cityscapes.py \
     --logtostderr \
-    --num_clones= \
+    --num_clones= 4 \
     --train_split="train"\
     --model_variant="xception_65"\
     --atrous_rates=6\
