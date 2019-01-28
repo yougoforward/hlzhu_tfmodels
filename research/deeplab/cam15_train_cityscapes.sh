@@ -4,9 +4,10 @@ CURRENT_DIR=$(pwd)
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
+
 python dual_pyramid_train_fpn.py \
     --logtostderr \
-    --num_clones= 4 \
+    --num_clones=4 \
     --train_split="train"\
     --model_variant="xception_65"\
     --atrous_rates=6\
@@ -15,7 +16,7 @@ python dual_pyramid_train_fpn.py \
     --output_stride=16\
     --train_crop_size=769\
     --train_crop_size=769\
-    --train_batch_size=8\
+    --train_batch_size=16\
     --decoder_output_stride=4 \
     --training_number_of_steps=90000\
     --fine_tune_batch_norm=true\
