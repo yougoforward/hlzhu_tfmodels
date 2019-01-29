@@ -102,6 +102,7 @@ python dual_pyramid_eval_fpn.py \
     --checkpoint_dir="datasets/cityscapes/exp/dpcan/train_finetune"\
     --eval_logdir="datasets/cityscapes/exp/dpcan/eval_finetune"\
     --dataset_dir="datasets/cityscapes/tfrecord"
+    --max_number_of_iterations=1\
 #
 #python train_cityscapes.py \
 #    --logtostderr \
