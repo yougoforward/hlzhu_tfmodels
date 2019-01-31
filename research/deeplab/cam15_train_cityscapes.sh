@@ -108,8 +108,8 @@ python dual_pyramid_eval_fpn.py \
     --eval_scales=1.0\
     --eval_scales=1.25\
     --eval_scales=1.5\
-    --eval_scales=1.75
-#    --add_flipped_images=true
+    --eval_scales=1.75\
+    --add_flipped_images=true
 #
 #python train_cityscapes.py \
 #    --logtostderr \
