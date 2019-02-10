@@ -16,7 +16,7 @@ python train.py \
     --output_stride=16\
     --train_crop_size=769\
     --train_crop_size=769\
-    --train_batch_size=16\
+    --train_batch_size=8\
     --decoder_output_stride=4 \
     --training_number_of_steps=90000\
     --fine_tune_batch_norm=true\
@@ -34,10 +34,10 @@ python eval.py \
     --logtostderr \
     --eval_split="val" \
     --model_variant="xception_65" \
+    --atrous_rates=6 \
     --atrous_rates=12 \
-    --atrous_rates=24 \
-    --atrous_rates=36 \
-    --output_stride=8 \
+    --atrous_rates=18 \
+    --output_stride=16 \
     --decoder_output_stride=4 \
     --eval_crop_size=1025 \
     --eval_crop_size=2049 \
