@@ -27,7 +27,7 @@ python dual_pyramid_train_fpn.py \
     --decoder_use_separable_conv=false\
     --dataset="cityscapes"\
     --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/xception/model.ckpt"\
-    --train_logdir="datasets/cityscapes/exp/dpcan/train"\
+    --train_logdir="datasets/cityscapes/exp/dpcan/train2"\
     --dataset_dir="datasets/cityscapes/tfrecord"
 
 python dual_pyramid_eval_fpn.py \
@@ -46,8 +46,8 @@ python dual_pyramid_eval_fpn.py \
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="cityscapes" \
-    --checkpoint_dir="datasets/cityscapes/exp/dpcan/train"\
-    --eval_logdir="datasets/cityscapes/exp/dpcan/eval"\
+    --checkpoint_dir="datasets/cityscapes/exp/dpcan/train2"\
+    --eval_logdir="datasets/cityscapes/exp/dpcan/eval2"\
     --dataset_dir="datasets/cityscapes/tfrecord"\
     --max_number_of_iterations=1
 #    --eval_scales=0.5\
