@@ -7,7 +7,7 @@ cd ./deeplab
 
 python dual_pyramid_train_fpn.py \
     --logtostderr \
-    --num_clones=4 \
+    --num_clones=2 \
     --train_split="train"\
     --model_variant="xception_65"\
     --atrous_rates=6\
