@@ -5,7 +5,7 @@ export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
 
-python dual_pyramid_train_fpn.py \
+python3 dual_pyramid_train_fpn.py \
     --logtostderr \
     --num_clones=2 \
     --train_split="train"\
@@ -30,7 +30,7 @@ python dual_pyramid_train_fpn.py \
     --train_logdir="datasets/cityscapes/exp/dpcan/train2"\
     --dataset_dir="datasets/cityscapes/tfrecord"
 
-python dual_pyramid_eval_fpn.py \
+python3 dual_pyramid_eval_fpn.py \
     --logtostderr \
     --eval_split="val" \
     --model_variant="xception_65" \
@@ -59,7 +59,7 @@ python dual_pyramid_eval_fpn.py \
 #    --add_flipped_images=true
 
 
-#python dual_pyramid_train_fpn.py \
+#python3 dual_pyramid_train_fpn.py \
 #    --logtostderr \
 #    --num_clones=4 \
 #    --train_split="train"\
@@ -84,7 +84,7 @@ python dual_pyramid_eval_fpn.py \
 #    --train_logdir="datasets/cityscapes/exp/dpcan/train_finetune"\
 #    --dataset_dir="datasets/cityscapes/tfrecord"
 ##
-#python dual_pyramid_eval_fpn.py \
+#python3 dual_pyramid_eval_fpn.py \
 #    --logtostderr \
 #    --eval_split="val" \
 #    --model_variant="xception_65" \
@@ -111,7 +111,7 @@ python dual_pyramid_eval_fpn.py \
 #    --eval_scales=1.75\
 #    --add_flipped_images=true
 #
-#python train_cityscapes.py \
+#python3 train_cityscapes.py \
 #    --logtostderr \
 #    --num_clones=2 \
 #    --train_split="train_val"\
@@ -136,7 +136,7 @@ python dual_pyramid_eval_fpn.py \
 #    --train_logdir="datasets/cityscapes/exp/dpcan/train_finetune"\
 #    --dataset_dir="datasets/cityscapes/tfrecord"
 #
-#python vis_cityscapes.py \
+#python3 vis_cityscapes.py \
 #    --logtostderr \
 #    --eval_split="test" \
 #    --model_variant="xception_65" \
