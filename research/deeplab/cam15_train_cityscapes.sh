@@ -70,8 +70,8 @@ python3 dual_pyramid_train_fpn.py \
     --train_batch_size=8\
     --decoder_output_stride=4 \
     --training_number_of_steps=90000\
-    --fine_tune_batch_norm=true\
-    --base_learning_rate=0.007\
+    --fine_tune_batch_norm=false\
+    --base_learning_rate=0.001\
     --weight_decay=0.00004\
     --aspp_with_batch_norm=true\
     --aspp_with_separable_conv=false\
