@@ -123,14 +123,14 @@ python3 dual_pyramid_eval_fpn.py \
     --checkpoint_dir="datasets/cityscapes/exp/dpcan/train_finetune2"\
     --eval_logdir="datasets/cityscapes/exp/dpcan/eval_finetune2"\
     --dataset_dir="datasets/cityscapes/tfrecord"\
-    --max_number_of_iterations=1\
-    --eval_scales=0.75\
-    --eval_scales=1.0\
-    --eval_scales=1.25\
-    --eval_scales=1.50\
-    --eval_scales=1.75\
-    --eval_scales=2.0\
-    --add_flipped_images=true
+    --max_number_of_iterations=1
+#    --eval_scales=0.75\
+#    --eval_scales=1.0\
+#    --eval_scales=1.25\
+#    --eval_scales=1.50\
+#    --eval_scales=1.75\
+#    --eval_scales=2.0\
+#    --add_flipped_images=true
 
 
 #python3 train_cityscapes.py \
