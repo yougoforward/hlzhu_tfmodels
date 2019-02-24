@@ -127,6 +127,9 @@ python3 dual_pyramid_eval_fpn.py \
     --eval_scales=0.75\
     --eval_scales=1.0\
     --eval_scales=1.25\
+    --eval_scales=1.50\
+    --eval_scales=1.75\
+    --eval_scales=2.0\
     --add_flipped_images=true
 
 
@@ -153,7 +156,7 @@ python3 dual_pyramid_eval_fpn.py \
 #    --dataset="cityscapes"\
 #    --tf_initial_checkpoint="datasets/cityscapes/exp/dpcan/train/model.ckpt-90000"\
 #    --train_logdir="datasets/cityscapes/exp/dpcan/train_finetune"\
-#    --dataset_dir="datasets/cityscapes/tfrecord"
+#    --dataset_dir="datasets/cityscapes/tfrecord"--eval_scales=1.25\
 #
 #python3 vis_cityscapes.py \
 #    --logtostderr \
