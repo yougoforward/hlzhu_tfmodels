@@ -131,6 +131,7 @@ python3 dual_pyramid_eval_fpn.py \
     --eval_scales=1.50\
     --eval_scales=1.75\
     --eval_scales=2.0\
+    --eval_scales=2.2\
     --add_flipped_images=true
 
 
