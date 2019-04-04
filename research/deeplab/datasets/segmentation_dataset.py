@@ -81,6 +81,7 @@ _CITYSCAPES_INFORMATION = DatasetDescriptor(
     splits_to_sizes={
         'train': 2975,
         'val': 500,
+        'trainval':3475,
         'test': 1525,
     },
     num_classes=19,
