@@ -1,0 +1,1 @@
+CODA_VISIBLE_DEVICES=0,1,2,3 sh dp_cityscapes.sh 2>&1 | tee dp_cityscapes_trainval.log

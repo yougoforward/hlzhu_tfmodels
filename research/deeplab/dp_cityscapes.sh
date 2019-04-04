@@ -141,7 +141,7 @@ cd ./deeplab
 python3 dual_pyramid_train_fpn.py \
     --logtostderr \
     --num_clones=4 \
-    --train_split="trainval"\
+    --train_split="train_val"\
     --model_variant="xception_65"\
     --atrous_rates=12\
     --atrous_rates=24\
