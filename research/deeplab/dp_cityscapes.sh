@@ -75,7 +75,7 @@ python3 dual_pyramid_eval_fpn.py \
     --checkpoint_dir="datasets/cityscapes/exp/dpcan/train3"\
     --eval_logdir="datasets/cityscapes/exp/dpcan/eval3_os8_sl"\
     --dataset_dir="datasets/cityscapes/tfrecord"\
-    --max_number_of_iterations=1
+    --max_number_of_evaluations=1
 #    --eval_scales=0.5\
 #    --eval_scales=0.75\
 #    --eval_scales=1.0\
@@ -102,7 +102,7 @@ python3 dual_pyramid_eval_fpn.py \
     --checkpoint_dir="datasets/cityscapes/exp/dpcan/train3"\
     --eval_logdir="datasets/cityscapes/exp/dpcan/eval3_os8_05_175"\
     --dataset_dir="datasets/cityscapes/tfrecord"\
-    --max_number_of_iterations=1\
+    --max_number_of_evaluations=1\
     --eval_scales=0.5\
     --eval_scales=0.75\
     --eval_scales=1.0\
@@ -129,7 +129,7 @@ python3 dual_pyramid_eval_fpn.py \
     --checkpoint_dir="datasets/cityscapes/exp/dpcan/train3"\
     --eval_logdir="datasets/cityscapes/exp/dpcan/eval3_os8_05_175_flip"\
     --dataset_dir="datasets/cityscapes/tfrecord"\
-    --max_number_of_iterations=1\
+    --max_number_of_evaluations=1\
     --eval_scales=0.5\
     --eval_scales=0.75\
     --eval_scales=1.0\
