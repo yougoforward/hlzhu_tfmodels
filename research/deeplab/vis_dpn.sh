@@ -7,6 +7,7 @@ cd ./deeplab
 python vis_class_aware2.py \
   --logtostderr \
   --vis_split="test" \
+  --colormap_type="cityscapes" \
   --model_variant="xception_65" \
   --atrous_rates=12 \
   --atrous_rates=24 \
@@ -60,6 +61,7 @@ python vis_class_aware2.py \
 python vis_class_aware2.py \
   --logtostderr \
   --vis_split="val" \
+  --colormap_type="cityscapes" \
   --model_variant="xception_65" \
   --atrous_rates=12 \
   --atrous_rates=24 \
