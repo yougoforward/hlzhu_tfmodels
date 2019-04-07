@@ -73,7 +73,7 @@ python3 vis_class_aware2.py \
   --aspp_with_batch_norm=true\
   --aspp_with_separable_conv=false\
   --decoder_use_separable_conv=false\
-  --checkpoint_dir="datasets/cityscapes/exp/dpcan/trainval"\
+  --checkpoint_dir="datasets/cityscapes/exp/dpcan/train3"\
   --vis_logdir="datasets/cityscapes/exp/dpcan/vis_val"\
   --dataset_dir="datasets/cityscapes/tfrecord"\
   --max_number_of_evaluations=1\
