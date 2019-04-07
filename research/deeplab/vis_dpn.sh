@@ -19,6 +19,7 @@ python3 vis_class_aware2.py \
   --aspp_with_batch_norm=true\
   --aspp_with_separable_conv=false\
   --decoder_use_separable_conv=false\
+  --dataset="cityscapes" \
   --checkpoint_dir="datasets/cityscapes/exp/dpcan/trainval"\
   --vis_logdir="datasets/cityscapes/exp/dpcan/vis_test"\
   --dataset_dir="datasets/cityscapes/tfrecord"\
@@ -73,6 +74,7 @@ python3 vis_class_aware2.py \
   --aspp_with_batch_norm=true\
   --aspp_with_separable_conv=false\
   --decoder_use_separable_conv=false\
+  --dataset="cityscapes" \
   --checkpoint_dir="datasets/cityscapes/exp/dpcan/train3"\
   --vis_logdir="datasets/cityscapes/exp/dpcan/vis_val"\
   --dataset_dir="datasets/cityscapes/tfrecord"\
