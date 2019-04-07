@@ -173,9 +173,18 @@ def _process_batch(sess, original_images, semantic_predictions, image_names,
     #     _PREDICTION_FORMAT % (image_id_offset + i), add_colormap=True,
     #     colormap_type=FLAGS.colormap_type)
 
-    if FLAGS.also_save_raw_predictions:
-      image_filename = os.path.basename(image_names[i])
+    image_filename = os.path.basename(image_names[i])
+    # Save image.
+    save_annotation.save_annotation(
+        original_image, save_dir, '%s_image' % (bytes.decode(image_filename)),
+        add_colormap=False)
 
+    # Save prediction.
+    save_annotation.save_annotation(
+        crop_semantic_prediction, save_dir,
+        '%s_prediction' % (bytes.decode(image_filename)), add_colormap=True,
+        colormap_type=FLAGS.colormap_type)
+    if FLAGS.also_save_raw_predictions:
       if train_id_to_eval_id is not None:
         crop_semantic_prediction = _convert_train_id_to_eval_id(
             crop_semantic_prediction,
@@ -184,16 +193,7 @@ def _process_batch(sess, original_images, semantic_predictions, image_names,
           crop_semantic_prediction, raw_save_dir,  bytes.decode(image_filename),
           add_colormap=False)
       print(image_filename)
-      # Save image.
-      save_annotation.save_annotation(
-          original_image, save_dir, '%s_image' % (bytes.decode(image_filename)),
-          add_colormap=False)
 
-      # Save prediction.
-      save_annotation.save_annotation(
-          crop_semantic_prediction, save_dir,
-          '%s_prediction' % (bytes.decode(image_filename)), add_colormap=True,
-          colormap_type=FLAGS.colormap_type)
 
 
 
