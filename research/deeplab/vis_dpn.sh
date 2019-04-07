@@ -4,7 +4,7 @@ CURRENT_DIR=$(pwd)
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
-python vis_class_aware2.py \
+python3 vis_class_aware2.py \
   --logtostderr \
   --vis_split="test" \
   --colormap_type="cityscapes" \
@@ -58,7 +58,7 @@ python vis_class_aware2.py \
 #    --eval_scales=1.75\
 #    --add_flipped_images=true
 
-python vis_class_aware2.py \
+python3 vis_class_aware2.py \
   --logtostderr \
   --vis_split="val" \
   --colormap_type="cityscapes" \
