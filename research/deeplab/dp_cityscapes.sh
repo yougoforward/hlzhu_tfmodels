@@ -107,7 +107,7 @@ cd ./deeplab
 #    --eval_scales=0.75\
 #    --eval_scales=1.0\
 #    --eval_scales=1.25\
-#    --eval_scales=1.5\
+#    --eval_scales=1.5\Deformations
 #    --eval_scales=1.75
 ##    --add_flipped_images=true
 #
