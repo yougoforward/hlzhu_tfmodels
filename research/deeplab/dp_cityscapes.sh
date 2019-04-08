@@ -160,5 +160,5 @@ python3 dual_pyramid_train_fpn.py \
     --decoder_use_separable_conv=false\
     --dataset="cityscapes"\
     --tf_initial_checkpoint="datasets/cityscapes/exp/dpcan/train3/model.ckpt-90000"\
-    --train_logdir="datasets/cityscapes/exp/dpcan/trainval"\
+    --train_logdir="datasets/cityscapes/exp/dpcan/trainval2"\
     --dataset_dir="datasets/cityscapes/tfrecord"
