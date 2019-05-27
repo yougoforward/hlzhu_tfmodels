@@ -82,8 +82,8 @@ python3 dual_pyramid_eval_fpn.py \
     --atrous_rates=36 \
     --output_stride=8 \
     --decoder_output_stride=4 \
-    --eval_crop_size=1025 \
-    --eval_crop_size=2049 \
+    --eval_crop_size=513 \
+    --eval_crop_size=513 \
     --aspp_with_batch_norm=true\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
