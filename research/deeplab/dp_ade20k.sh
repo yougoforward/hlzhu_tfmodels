@@ -87,7 +87,7 @@ python3 dual_pyramid_eval_fpn.py \
     --aspp_with_batch_norm=true\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
-    --dataset="cityscapes" \
+    --dataset="ade20k" \
     --checkpoint_dir="datasets/ADE20K/exp/dpcan/train"\
     --eval_logdir="datasets/ADE20K/exp/dpcan/eval_os8_05175"\
     --dataset_dir="datasets/ADE20K/tfrecord"\
