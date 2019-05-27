@@ -31,7 +31,7 @@ python3 dual_pyramid_train_fpn.py \
     --dataset_dir="datasets/ADE20K/tfrecord"
 
 
-#
+
 python3 dual_pyramid_eval_fpn.py \
     --logtostderr \
     --eval_split="val" \
