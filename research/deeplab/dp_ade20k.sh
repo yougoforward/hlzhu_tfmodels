@@ -13,7 +13,7 @@ python3 dual_pyramid_train_fpn.py \
     --atrous_rates=6 \
     --atrous_rates=12 \
     --atrous_rates=18 \
-    --output_stride=8 \
+    --output_stride=16 \
     --train_crop_size=513 \
     --train_crop_size=513 \
     --train_batch_size=8 \
