@@ -107,6 +107,8 @@ def preprocess_image_and_label(image,
   image_height = image_shape[0]
   image_width = image_shape[1]
 
+  print(image_shape)
+
   target_height = image_height + tf.maximum(crop_height - image_height, 0)
   target_width = image_width + tf.maximum(crop_width - image_width, 0)
 
