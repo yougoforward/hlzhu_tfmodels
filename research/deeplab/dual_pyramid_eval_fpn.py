@@ -90,7 +90,7 @@ def main(unused_argv):
 
   tf.gfile.MakeDirs(FLAGS.eval_logdir)
   tf.logging.info('Evaluating on %s set', FLAGS.eval_split)
-
+  print(FLAGS.eval_crop_size)
   with tf.Graph().as_default():
     samples = input_generator.get(
         dataset,
