@@ -17,6 +17,9 @@ python3 dual_pyramid_train_fpn.py \
     --train_crop_size=513 \
     --train_crop_size=513 \
     --train_batch_size=16 \
+    --min_resize_value=513 \
+    --max_resize_value=513 \
+    --resize_factor=16 \
     --decoder_output_stride=4 \
     --training_number_of_steps=150000 \
     --fine_tune_batch_norm=true \
@@ -43,6 +46,9 @@ python3 dual_pyramid_eval_fpn.py \
     --decoder_output_stride=4 \
     --eval_crop_size=513 \
     --eval_crop_size=513 \
+    --min_resize_value=513 \
+    --max_resize_value=513 \
+    --resize_factor=16 \
     --aspp_with_batch_norm=true \
     --aspp_with_separable_conv=false \
     --decoder_use_separable_conv=false \
@@ -63,6 +69,9 @@ python3 dual_pyramid_eval_fpn.py \
     --decoder_output_stride=4 \
     --eval_crop_size=513 \
     --eval_crop_size=513 \
+    --min_resize_value=513 \
+    --max_resize_value=513 \
+    --resize_factor=8 \
     --aspp_with_batch_norm=true \
     --aspp_with_separable_conv=false \
     --decoder_use_separable_conv=false \
@@ -84,6 +93,9 @@ python3 dual_pyramid_eval_fpn.py \
     --decoder_output_stride=4 \
     --eval_crop_size=513 \
     --eval_crop_size=513 \
+    --min_resize_value=513 \
+    --max_resize_value=513 \
+    --resize_factor=8 \
     --aspp_with_batch_norm=true\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
