@@ -5,7 +5,7 @@ export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
 
-python3 dual_pyramid_train_fpn.py \
+python3 train.py \
     --logtostderr \
     --num_clones=4 \
     --train_split="train" \
@@ -30,12 +30,12 @@ python3 dual_pyramid_train_fpn.py \
     --decoder_use_separable_conv=false \
     --dataset="ade20k" \
     --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/xception/model.ckpt" \
-    --train_logdir="datasets/ADE20K/exp/dpcan/train" \
+    --train_logdir="datasets/ADE20K/exp/v3plus/train" \
     --dataset_dir="datasets/ADE20K/tfrecord"
 
 
 
-python3 dual_pyramid_eval_fpn.py \
+python3 eval.py \
     --logtostderr \
     --eval_split="val" \
     --model_variant="xception_65" \
@@ -53,12 +53,12 @@ python3 dual_pyramid_eval_fpn.py \
     --aspp_with_separable_conv=false \
     --decoder_use_separable_conv=false \
     --dataset="ade20k" \
-    --checkpoint_dir="datasets/ADE20K/exp/dpcan/train"\
-    --eval_logdir="datasets/ADE20K/exp/dpcan/eval"\
+    --checkpoint_dir="datasets/ADE20K/exp/v3plus/train"\
+    --eval_logdir="datasets/ADE20K/exp/v3plus/eval"\
     --dataset_dir="datasets/ADE20K/tfrecord"\
     --max_number_of_evaluations=1
 
-python3 dual_pyramid_eval_fpn.py \
+python3 eval.py \
     --logtostderr \
     --eval_split="val" \
     --model_variant="xception_65" \
@@ -76,13 +76,13 @@ python3 dual_pyramid_eval_fpn.py \
     --aspp_with_separable_conv=false \
     --decoder_use_separable_conv=false \
     --dataset="ade20k" \
-    --checkpoint_dir="datasets/ADE20K/exp/dpcan/train"\
-    --eval_logdir="datasets/ADE20K/exp/dpcan/eval_os8"\
+    --checkpoint_dir="datasets/ADE20K/exp/v3plus/train"\
+    --eval_logdir="datasets/ADE20K/exp/v3plus/eval_os8"\
     --dataset_dir="datasets/ADE20K/tfrecord"\
     --max_number_of_evaluations=1
 
 
-python3 dual_pyramid_eval_fpn.py \
+python3 eval.py \
     --logtostderr \
     --eval_split="val" \
     --model_variant="xception_65" \
@@ -100,8 +100,8 @@ python3 dual_pyramid_eval_fpn.py \
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="ade20k" \
-    --checkpoint_dir="datasets/ADE20K/exp/dpcan/train"\
-    --eval_logdir="datasets/ADE20K/exp/dpcan/eval_os8_05175"\
+    --checkpoint_dir="datasets/ADE20K/exp/v3plus/train"\
+    --eval_logdir="datasets/ADE20K/exp/v3plus/eval_os8_05175"\
     --dataset_dir="datasets/ADE20K/tfrecord"\
     --max_number_of_evaluations=1\
     --eval_scales=0.5 \
