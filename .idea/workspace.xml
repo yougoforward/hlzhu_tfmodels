@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/research/deeplab/official_v3plus_ade20k.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/dp_ade20k.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dp_ade20k.sh" afterDir="false" />
-    </list>
+    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,16 +14,7 @@
         <entry file="file://$PROJECT_DIR$/research/deeplab/v3plus_ade20k.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="460">
-              <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/ADE20K/deeplabv3_xception_ade20k_train/checkpoint">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <caret line="113" selection-start-line="113" selection-end-line="113" />
             </state>
           </provider>
         </entry>
@@ -36,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/research/deeplab/official_v3plus_ade20k.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
             </state>
           </provider>
         </entry>
@@ -44,7 +31,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dp_ade20k.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-165">
+            <state relative-caret-position="-1110">
               <caret line="7" selection-start-line="7" selection-start-column="1" selection-end-line="33" selection-end-column="45" />
             </state>
           </provider>
@@ -54,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/research/deeplab/eval.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="112" column="53" lean-forward="true" selection-start-line="112" selection-start-column="53" selection-end-line="112" selection-end-column="53" />
+              <caret line="112" column="53" selection-start-line="112" selection-start-column="53" selection-end-line="112" selection-end-column="53" />
               <folding>
                 <element signature="e#779#790#0" expanded="true" />
               </folding>
@@ -75,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/research/deeplab/utils/input_generator.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="133" column="64" lean-forward="true" selection-start-line="133" selection-start-column="64" selection-end-line="133" selection-end-column="64" />
+              <caret line="133" column="64" selection-start-line="133" selection-start-column="64" selection-end-line="133" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -108,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-4130">
-              <caret line="1160" column="70" lean-forward="true" selection-start-line="1160" selection-start-column="70" selection-end-line="1160" selection-end-column="70" />
+              <caret line="1160" column="70" selection-start-line="1160" selection-start-column="70" selection-end-line="1160" selection-end-column="70" />
               <folding>
                 <element signature="e#2205#2228#0" expanded="true" />
               </folding>
@@ -252,23 +239,6 @@
               <item name="research" type="462c0819:PsiDirectoryNode" />
               <item name="deeplab" type="462c0819:PsiDirectoryNode" />
               <item name="datasets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hlzhu_tfmodels" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hlzhu_tfmodels" type="462c0819:PsiDirectoryNode" />
-              <item name="research" type="462c0819:PsiDirectoryNode" />
-              <item name="deeplab" type="462c0819:PsiDirectoryNode" />
-              <item name="datasets" type="462c0819:PsiDirectoryNode" />
-              <item name="ADE20K" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hlzhu_tfmodels" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hlzhu_tfmodels" type="462c0819:PsiDirectoryNode" />
-              <item name="research" type="462c0819:PsiDirectoryNode" />
-              <item name="deeplab" type="462c0819:PsiDirectoryNode" />
-              <item name="datasets" type="462c0819:PsiDirectoryNode" />
-              <item name="ADE20K" type="462c0819:PsiDirectoryNode" />
-              <item name="deeplabv3_xception_ade20k_train" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="hlzhu_tfmodels" type="b2602c69:ProjectViewProjectNode" />
@@ -426,21 +396,21 @@
       <updated>1539585421758</updated>
       <workItem from="1560238247422" duration="1235000" />
       <workItem from="1560239548432" duration="179000" />
-      <workItem from="1560239764872" duration="16913000" />
+      <workItem from="1560239764872" duration="17160000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18327000" />
+    <option name="totallyTimeSpent" value="18574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="31" y="25" width="1851" height="1055" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25872576" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25872576" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Python Console" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49750692" visible="true" weight="0.36239496" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49750692" visible="true" weight="0.36239496" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5024931" side_tool="true" weight="0.32983193" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -738,7 +708,7 @@
     <entry file="file://$PROJECT_DIR$/research/deeplab/v3plus_ade20k.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
-          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
         </state>
       </provider>
     </entry>
@@ -752,7 +722,7 @@
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4130">
-          <caret line="1160" column="70" lean-forward="true" selection-start-line="1160" selection-start-column="70" selection-end-line="1160" selection-end-column="70" />
+          <caret line="1160" column="70" selection-start-line="1160" selection-start-column="70" selection-end-line="1160" selection-end-column="70" />
           <folding>
             <element signature="e#2205#2228#0" expanded="true" />
           </folding>
@@ -782,7 +752,7 @@
     <entry file="file://$PROJECT_DIR$/research/deeplab/utils/input_generator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="133" column="64" lean-forward="true" selection-start-line="133" selection-start-column="64" selection-end-line="133" selection-end-column="64" />
+          <caret line="133" column="64" selection-start-line="133" selection-start-column="64" selection-end-line="133" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -796,7 +766,7 @@
     <entry file="file://$PROJECT_DIR$/research/deeplab/eval.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="112" column="53" lean-forward="true" selection-start-line="112" selection-start-column="53" selection-end-line="112" selection-end-column="53" />
+          <caret line="112" column="53" selection-start-line="112" selection-start-column="53" selection-end-line="112" selection-end-column="53" />
           <folding>
             <element signature="e#779#790#0" expanded="true" />
           </folding>
@@ -806,13 +776,13 @@
     <entry file="file://$PROJECT_DIR$/research/deeplab/official_v3plus_ade20k.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dp_ade20k.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-165">
+        <state relative-caret-position="-1110">
           <caret line="7" selection-start-line="7" selection-start-column="1" selection-end-line="33" selection-end-column="45" />
         </state>
       </provider>
