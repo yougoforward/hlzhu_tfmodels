@@ -23,7 +23,7 @@ python3 dual_pyramid_train_fpn.py \
     --decoder_output_stride=4 \
     --training_number_of_steps=150000 \
     --fine_tune_batch_norm=true \
-    --base_learning_rate=0.007 \
+    --base_learning_rate=0.014 \
     --weight_decay=0.00004 \
     --aspp_with_batch_norm=true \
     --aspp_with_separable_conv=false \
@@ -34,52 +34,51 @@ python3 dual_pyramid_train_fpn.py \
     --dataset_dir="datasets/ADE20K/tfrecord"
 
 
-
-python3 dual_pyramid_eval_fpn.py \
-    --logtostderr \
-    --eval_split="val" \
-    --model_variant="xception_65" \
-    --atrous_rates=6 \
-    --atrous_rates=12 \
-    --atrous_rates=18 \
-    --output_stride=16 \
-    --decoder_output_stride=4 \
-    --eval_crop_size=513 \
-    --eval_crop_size=513 \
-    --min_resize_value=513 \
-    --max_resize_value=513 \
-    --resize_factor=16 \
-    --aspp_with_batch_norm=true \
-    --aspp_with_separable_conv=false \
-    --decoder_use_separable_conv=false \
-    --dataset="ade20k" \
-    --checkpoint_dir="datasets/ADE20K/exp/dpcan/train"\
-    --eval_logdir="datasets/ADE20K/exp/dpcan/eval"\
-    --dataset_dir="datasets/ADE20K/tfrecord"\
-    --max_number_of_evaluations=1
-
-python3 dual_pyramid_eval_fpn.py \
-    --logtostderr \
-    --eval_split="val" \
-    --model_variant="xception_65" \
-    --atrous_rates=12 \
-    --atrous_rates=24 \
-    --atrous_rates=36 \
-    --output_stride=8 \
-    --decoder_output_stride=4 \
-    --eval_crop_size=513 \
-    --eval_crop_size=513 \
-    --min_resize_value=513 \
-    --max_resize_value=513 \
-    --resize_factor=8 \
-    --aspp_with_batch_norm=true \
-    --aspp_with_separable_conv=false \
-    --decoder_use_separable_conv=false \
-    --dataset="ade20k" \
-    --checkpoint_dir="datasets/ADE20K/exp/dpcan/train"\
-    --eval_logdir="datasets/ADE20K/exp/dpcan/eval_os8"\
-    --dataset_dir="datasets/ADE20K/tfrecord"\
-    --max_number_of_evaluations=1
+#python3 dual_pyramid_eval_fpn.py \
+#    --logtostderr \
+#    --eval_split="val" \
+#    --model_variant="xception_65" \
+#    --atrous_rates=6 \
+#    --atrous_rates=12 \
+#    --atrous_rates=18 \
+#    --output_stride=16 \
+#    --decoder_output_stride=4 \
+#    --eval_crop_size=513 \
+#    --eval_crop_size=513 \
+#    --min_resize_value=513 \
+#    --max_resize_value=513 \
+#    --resize_factor=16 \
+#    --aspp_with_batch_norm=true \
+#    --aspp_with_separable_conv=false \
+#    --decoder_use_separable_conv=false \
+#    --dataset="ade20k" \
+#    --checkpoint_dir="datasets/ADE20K/exp/dpcan/train"\
+#    --eval_logdir="datasets/ADE20K/exp/dpcan/eval"\
+#    --dataset_dir="datasets/ADE20K/tfrecord"\
+#    --max_number_of_evaluations=1
+#
+#python3 dual_pyramid_eval_fpn.py \
+#    --logtostderr \
+#    --eval_split="val" \
+#    --model_variant="xception_65" \
+#    --atrous_rates=12 \
+#    --atrous_rates=24 \
+#    --atrous_rates=36 \
+#    --output_stride=8 \
+#    --decoder_output_stride=4 \
+#    --eval_crop_size=513 \
+#    --eval_crop_size=513 \
+#    --min_resize_value=513 \
+#    --max_resize_value=513 \
+#    --resize_factor=8 \
+#    --aspp_with_batch_norm=true \
+#    --aspp_with_separable_conv=false \
+#    --decoder_use_separable_conv=false \
+#    --dataset="ade20k" \
+#    --checkpoint_dir="datasets/ADE20K/exp/dpcan/train"\
+#    --eval_logdir="datasets/ADE20K/exp/dpcan/eval_os8"\
+#    --dataset_dir="datasets/ADE20K/tfrecord"\
+#    --max_number_of_evaluations=1
 
 
 python3 dual_pyramid_eval_fpn.py \
