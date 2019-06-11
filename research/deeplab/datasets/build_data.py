@@ -35,7 +35,7 @@ import tensorflow as tf
 
 FLAGS = tf.app.flags.FLAGS
 
-tf.app.flags.DEFINE_enum('image_format', 'png', ['jpg', 'jpeg', 'png'],
+tf.app.flags.DEFINE_enum('image_format', 'jpg', ['jpg', 'jpeg', 'png'],
                          'Image format.')
 
 tf.app.flags.DEFINE_enum('label_format', 'png', ['png'],
