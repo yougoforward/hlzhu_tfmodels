@@ -62,10 +62,10 @@ python3 eval.py \
     --atrous_rates=18 \
     --output_stride=16 \
     --decoder_output_stride=4 \
-    --eval_crop_size=2100 \
-    --eval_crop_size=2100 \
-    --min_resize_value=2100 \
-    --max_resize_value=2100 \
+    --eval_crop_size=513 \
+    --eval_crop_size=513 \
+    --min_resize_value=513 \
+    --max_resize_value=513 \
     --resize_factor=16 \
     --aspp_with_batch_norm=true \
     --aspp_with_separable_conv=true \
