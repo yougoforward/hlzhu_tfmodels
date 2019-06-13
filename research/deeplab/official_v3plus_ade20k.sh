@@ -100,32 +100,32 @@ python3 eval.py \
 #    --max_number_of_evaluations=1
 
 
-#python3 eval.py \
-#    --logtostderr \
-#    --eval_split="val" \
-#    --model_variant="xception_65" \
-#    --atrous_rates=12 \
-#    --atrous_rates=24 \
-#    --atrous_rates=36 \
-#    --output_stride=8 \
-#    --decoder_output_stride=4 \
-#    --eval_crop_size=513 \
-#    --eval_crop_size=513 \
-#    --min_resize_value=513 \
-#    --max_resize_value=513 \
-#    --resize_factor=8 \
-#    --aspp_with_batch_norm=true \
-#    --aspp_with_separable_conv=true \
-#    --decoder_use_separable_conv=true \
-#    --dataset="ade20k" \
-#    --checkpoint_dir="datasets/ADE20K/deeplabv3_xception_ade20k_train"\
-#    --eval_logdir="datasets/ADE20K/exp/v3plus/eval_ori_os8_05175"\
-#    --dataset_dir="datasets/ADE20K/tfrecord"\
-#    --max_number_of_evaluations=1\
-#    --eval_scales=0.5 \
-#    --eval_scales=0.75 \
-#    --eval_scales=1.0 \
-#    --eval_scales=1.25 \
-#    --eval_scales=1.5 \
-#    --eval_scales=1.75 \
-#    --add_flipped_images=true
+python3 eval.py \
+    --logtostderr \
+    --eval_split="val" \
+    --model_variant="xception_65" \
+    --atrous_rates=12 \
+    --atrous_rates=24 \
+    --atrous_rates=36 \
+    --output_stride=8 \
+    --decoder_output_stride=4 \
+    --eval_crop_size=513 \
+    --eval_crop_size=513 \
+    --min_resize_value=513 \
+    --max_resize_value=513 \
+    --resize_factor=8 \
+    --aspp_with_batch_norm=true \
+    --aspp_with_separable_conv=true \
+    --decoder_use_separable_conv=true \
+    --dataset="ade20k" \
+    --checkpoint_dir="datasets/ADE20K/deeplabv3_xception_ade20k_train"\
+    --eval_logdir="datasets/ADE20K/exp/v3plus/eval_ori_os8_05175"\
+    --dataset_dir="datasets/ADE20K/tfrecord"\
+    --max_number_of_evaluations=1\
+    --eval_scales=0.5 \
+    --eval_scales=0.75 \
+    --eval_scales=1.0 \
+    --eval_scales=1.25 \
+    --eval_scales=1.5 \
+    --eval_scales=1.75 \
+    --add_flipped_images=true
