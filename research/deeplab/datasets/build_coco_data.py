@@ -59,7 +59,7 @@ import tensorflow as tf
 FLAGS = tf.app.flags.FLAGS
 
 tf.app.flags.DEFINE_string('image_folder',
-                           './coco/train2017',
+                           './coco/trainval2017',
                            'Folder containing images.')
 
 tf.app.flags.DEFINE_string(
