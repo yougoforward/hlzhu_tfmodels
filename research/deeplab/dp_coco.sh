@@ -17,9 +17,9 @@ python dual_pyramid_train_fpn.py\
     --train_crop_size=513\
     --train_batch_size=16\
     --decoder_output_stride=4\
-    --training_number_of_steps=120000\
+    --training_number_of_steps=225000\
     --fine_tune_batch_norm=true\
-    --base_learning_rate=0.01\
+    --base_learning_rate=0.007\
     --weight_decay=0.00004\
     --aspp_with_batch_norm=true\
     --aspp_with_separable_conv=false\
