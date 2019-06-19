@@ -97,7 +97,7 @@ python3 dual_pyramid_eval_fpn.py \
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="ade20k" \
-    --checkpoint_dir="datasets/ADE20K/exp/dpcan/train"\
+    --checkpoint_dir="datasets/ADE20K/exp/dpcan_noresize/train"\
     --eval_logdir="datasets/ADE20K/exp/dpcan_noresize/eval_os8_05175"\
     --dataset_dir="datasets/ADE20K/tfrecord"\
     --max_number_of_evaluations=1\
