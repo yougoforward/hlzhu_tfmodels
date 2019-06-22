@@ -95,7 +95,13 @@ def _convert_dataset(dataset_split, dataset_dir, dataset_label_dir):
         height, width = image_reader.read_image_dims(image_data)
         # Read the semantic segmentation annotation.
         seg_filename = seg_names[i]
-        seg_data = tf.gfile.FastGFile(seg_filename, 'rb').read()
+
+        # seg_data = tf.gfile.FastGFile(seg_filename, 'rb').read()
+
+        seg_data = np.array(Image.open(seg_filename))
+        seg_data = seg_data-1 # 0-150 -1-149
+        seg_data = seg_data.tostring()
+
         seg_height, seg_width = label_reader.read_image_dims(seg_data)
         if height != seg_height or width != seg_width:
           raise RuntimeError('Shape mismatched between image and label.')
