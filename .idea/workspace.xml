@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/research/deeplab/datasets/build_ade20k_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/datasets/build_ade20k_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py" afterDir="false" />
-    </list>
+    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/build_ade20k_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
+            <state relative-caret-position="398">
+              <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
             </state>
           </provider>
         </entry>
@@ -403,22 +400,21 @@
       <workItem from="1560238247422" duration="1235000" />
       <workItem from="1560239548432" duration="179000" />
       <workItem from="1560239764872" duration="18196000" />
-      <workItem from="1560336985209" duration="20766000" />
+      <workItem from="1560336985209" duration="21056000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40376000" />
+    <option name="totallyTimeSpent" value="40666000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="31" y="25" width="1851" height="1055" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19612189" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19612189" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Python Console" order="0" visible="true" weight="0.32983193" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49750692" weight="0.3539916" />
+      <window_info anchor="bottom" id="Python Console" order="0" weight="0.32983193" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49750692" visible="true" weight="0.3539916" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5024931" side_tool="true" weight="0.32983193" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -837,8 +833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/build_ade20k_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
+        <state relative-caret-position="398">
+          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
         </state>
       </provider>
     </entry>
