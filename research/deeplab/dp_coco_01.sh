@@ -72,7 +72,7 @@ python dual_pyramid_train_fpn.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --tf_initial_checkpoint="datasets/coco/exp/dpx65_cocovoc_train_set/train/model.ckpt-225000"\
+    --tf_initial_checkpoint="datasets/coco/exp/dpx65_cocovoc_train_set/train_01/model.ckpt-225000"\
     --train_logdir="datasets/coco/exp/dpx65_voc_trainaug_set/train"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 #
