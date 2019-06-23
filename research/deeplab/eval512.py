@@ -21,7 +21,7 @@ import math
 import six
 import tensorflow as tf
 from deeplab import common
-from deeplab import model512
+from deeplab import model512 as model
 from deeplab.datasets import segmentation_dataset
 from deeplab.utils import input_generator
 
