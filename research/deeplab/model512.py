@@ -56,7 +56,6 @@ from deeplab.core import feature_extractor
 
 slim = tf.contrib.slim
 
-CLASS_AWARE_LOGITS_SCOPE_NAME = 'class_aware_logits'
 LOGITS_SCOPE_NAME = 'logits'
 MERGED_LOGITS_SCOPE = 'merged_logits'
 IMAGE_POOLING_SCOPE = 'image_pooling'
@@ -79,27 +78,6 @@ def get_extra_layer_scopes(last_layers_contain_logits_only=False):
     return [LOGITS_SCOPE_NAME]
   else:
     return [
-        LOGITS_SCOPE_NAME,
-        IMAGE_POOLING_SCOPE,
-        ASPP_SCOPE,
-        CONCAT_PROJECTION_SCOPE,
-        DECODER_SCOPE,
-    ]
-
-def get_class_aware_extra_layer_scopes(last_layers_contain_logits_only=False):
-  """Gets the scopes for extra layers.
-
-  Args:
-    last_layers_contain_logits_only: Boolean, True if only consider logits as
-    the last layer (i.e., exclude ASPP module, decoder module and so on)
-
-  Returns:
-    A list of scopes for extra layers.
-  """
-  if last_layers_contain_logits_only:
-    return [CLASS_AWARE_LOGITS_SCOPE_NAME,LOGITS_SCOPE_NAME]
-  else:
-    return [CLASS_AWARE_LOGITS_SCOPE_NAME,
         LOGITS_SCOPE_NAME,
         IMAGE_POOLING_SCOPE,
         ASPP_SCOPE,
@@ -695,93 +673,6 @@ def get_branch_logits(features,
 
       return tf.add_n(branch_logits)
 
-def get_class_aware_attention_branch_logits(features,
-                      num_classes,
-                      atrous_rates=None,
-                      aspp_with_batch_norm=False,
-                      kernel_size=1,
-                      weight_decay=0.0001,
-                      reuse=None,
-                      scope_suffix=''):
-  """Gets the logits from each model's branch.
-
-  The underlying model is branched out in the last layer when atrous
-  spatial pyramid pooling is employed, and all branches are sum-merged
-  to form the final logits.
-
-  Args:
-    features: A float tensor of shape [batch, height, width, channels].
-    num_classes: Number of classes to predict.
-    atrous_rates: A list of atrous convolution rates for last layer.
-    aspp_with_batch_norm: Use batch normalization layers for ASPP.
-    kernel_size: Kernel size for convolution.
-    weight_decay: Weight decay for the model variables.
-    reuse: Reuse model variables or not.
-    scope_suffix: Scope suffix for the model variables.
-
-  Returns:
-    Merged logits with shape [batch, height, width, num_classes].
-
-  Raises:
-    ValueError: Upon invalid input kernel_size value.
-  """
-  # When using batch normalization with ASPP, ASPP has been applied before
-  # in extract_features, and thus we simply apply 1x1 convolution here.
-  if aspp_with_batch_norm or atrous_rates is None:
-    if kernel_size != 1:
-      raise ValueError('Kernel size must be 1 when atrous_rates is None or '
-                       'using aspp_with_batch_norm. Gets %d.' % kernel_size)
-    atrous_rates = [1]
-
-  with slim.arg_scope(
-      [slim.conv2d],
-      weights_regularizer=slim.l2_regularizer(weight_decay),
-      weights_initializer=tf.truncated_normal_initializer(stddev=0.01),
-      reuse=reuse):
-    with tf.variable_scope(LOGITS_SCOPE_NAME, LOGITS_SCOPE_NAME, [features]):
-      branch_logits = []
-      for i, rate in enumerate(atrous_rates):
-        scope = scope_suffix
-        if i:
-          scope += '_%d' % i
-
-        branch_logits.append(
-            slim.conv2d(
-                features,
-                num_classes,
-                kernel_size=kernel_size,
-                rate=rate,
-                activation_fn=None,
-                normalizer_fn=None,
-                scope=scope))
-      context_sensitive_logits = tf.add_n(branch_logits)
-
-
-    with tf.variable_scope(CLASS_AWARE_LOGITS_SCOPE_NAME, CLASS_AWARE_LOGITS_SCOPE_NAME, [features]):
-      branch_logits = []
-      for i, rate in enumerate(atrous_rates):
-          scope = scope_suffix
-          if i:
-            scope += '_%d' % i
-
-          branch_logits.append(
-              slim.conv2d(
-                  features,
-                  num_classes,
-                  kernel_size=kernel_size,
-                  rate=rate,
-                  activation_fn=None,
-                  normalizer_fn=None,
-                  scope=scope))
-      context_free_score_logits = tf.add_n(branch_logits)
-
-    smin = tf.reduce_min(context_sensitive_logits, axis=3, keepdims=True, name=None)
-    submin = tf.subtract(context_sensitive_logits, smin, name=None)
-    s1 = tf.nn.sigmoid(context_free_score_logits, name=None)
-    class_aware_attention = tf.multiply(submin, s1, name=None)
-    addmin = tf.add(class_aware_attention, smin, name=None)
-
-    return [addmin,context_free_score_logits]
 
 def split_separable_conv2d(inputs,
                            filters,
