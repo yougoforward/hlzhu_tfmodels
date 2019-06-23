@@ -6,7 +6,7 @@ export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
 python train512.py\
     --logtostderr \
-    --num_clones=4 \
+    --num_clones=2 \
     --train_split="train_aug"\
     --model_variant="resnet_v1_50_beta"\
     --atrous_rates=6\
@@ -57,7 +57,7 @@ python class_aware_eval15.py\
 
 python class_aware_train15.py\
     --logtostderr\
-    --num_clones=4 \
+    --num_clones=2 \
     --train_split="train_aug"\
     --model_variant="resnet_v1_50_beta"\
     --atrous_rates=6\
