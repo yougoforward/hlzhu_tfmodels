@@ -491,6 +491,18 @@ def _get_logits(images,
       is_training=is_training,
       fine_tune_batch_norm=fine_tune_batch_norm)
 
+  outputs_to_logits = {}
+  for output in sorted(model_options.outputs_to_num_classes):
+    outputs_to_logits[output] = get_branch_logits(
+        features,
+        model_options.outputs_to_num_classes[output],
+        model_options.atrous_rates,
+        aspp_with_batch_norm=model_options.aspp_with_batch_norm,
+        kernel_size=model_options.logits_kernel_size,
+        weight_decay=weight_decay,
+        reuse=reuse,
+        scope_suffix=output)
+
   if model_options.decoder_output_stride is not None:
     if model_options.crop_size is None:
       height = tf.shape(images)[1]
@@ -514,9 +526,10 @@ def _get_logits(images,
         is_training=is_training,
         fine_tune_batch_norm=fine_tune_batch_norm)
 
+
   outputs_to_logits = {}
   for output in sorted(model_options.outputs_to_num_classes):
-    outputs_to_logits[output] = get_branch_logits(
+    outputs_to_logits[output] = outputs_to_logits[output]+get_branch_logits(
         features,
         model_options.outputs_to_num_classes[output],
         model_options.atrous_rates,

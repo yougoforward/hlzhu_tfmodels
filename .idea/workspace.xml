@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/model512.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/model512.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,15 +13,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/v3plus_ade20k.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="68" column="4" lean-forward="true" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/v3plus_pascal_train512.sh">
           <provider selected="true" editor-type-id="text-editor">
@@ -57,11 +49,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/v3_train512.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/eval512.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2215">
+              <caret line="394" column="39" lean-forward="true" selection-start-line="394" selection-start-column="39" selection-end-line="394" selection-end-column="39" />
+              <folding>
+                <element signature="e#2205#2228#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,28 +89,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_fpn.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="51" column="30" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/train512.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+            <state relative-caret-position="150">
+              <caret line="10" column="74" lean-forward="true" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
+              <folding>
+                <element signature="e#777#787#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15_res50.sh">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/model512.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="65" column="20" lean-forward="true" selection-end-line="167" selection-end-column="30" />
+            <state relative-caret-position="1706">
+              <caret line="456" column="30" selection-start-line="456" selection-start-column="27" selection-end-line="456" selection-end-column="30" />
+              <folding>
+                <element signature="e#2205#2228#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,7 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/research/deeplab/dp_fpn.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dpconcatwith.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dpconcat.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_with_boundary.py" />
@@ -188,13 +197,14 @@
         <option value="$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py" />
         <option value="$PROJECT_DIR$/research/deeplab/datasets/build_ade20k_data.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dp_coco_01.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/model512.py" />
-        <option value="$PROJECT_DIR$/research/deeplab/eval512.py" />
-        <option value="$PROJECT_DIR$/research/deeplab/train512.py" />
         <option value="$PROJECT_DIR$/research/deeplab/v3_train512.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dp_ade20k.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/v3_pascal_train512.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/v3plus_pascal_train512.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/eval512.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/train512.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/model.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/model512.py" />
       </list>
     </option>
   </component>
@@ -242,9 +252,9 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hlzhu_tfmodels (copy)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/research/deeplab/model.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
-    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/research/deeplab/model.py" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -407,22 +417,22 @@
       <workItem from="1560238247422" duration="1235000" />
       <workItem from="1560239548432" duration="179000" />
       <workItem from="1560239764872" duration="18196000" />
-      <workItem from="1560336985209" duration="31992000" />
+      <workItem from="1560336985209" duration="33000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51602000" />
+    <option name="totallyTimeSpent" value="52610000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="31" y="25" width="1851" height="1055" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19612189" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19612189" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Python Console" order="0" weight="0.32983193" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49750692" visible="true" weight="0.2857143" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49750692" visible="true" weight="0.2857143" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5024931" side_tool="true" weight="0.32983193" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -499,7 +509,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/research/deeplab/model.py</url>
-          <line>198</line>
+          <line>184</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -514,12 +524,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/research/deeplab/model.py</url>
-          <line>485</line>
+          <line>545</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/research/deeplab/model.py</url>
-          <line>646</line>
+          <line>702</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -789,26 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="53" selection-end-line="846" />
-          <folding>
-            <element signature="e#2205#2228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/model512.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="607" column="68" lean-forward="true" selection-start-line="607" selection-start-column="68" selection-end-line="607" selection-end-column="68" />
-          <folding>
-            <element signature="e#2205#2228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -826,24 +816,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/eval512.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_fpn.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="51" column="30" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/train512.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -900,6 +876,43 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/eval512.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/train512.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="74" lean-forward="true" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
+          <folding>
+            <element signature="e#777#787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2215">
+          <caret line="394" column="39" lean-forward="true" selection-start-line="394" selection-start-column="39" selection-end-line="394" selection-end-column="39" />
+          <folding>
+            <element signature="e#2205#2228#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/model512.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1706">
+          <caret line="456" column="30" selection-start-line="456" selection-start-column="27" selection-end-line="456" selection-end-column="30" />
+          <folding>
+            <element signature="e#2205#2228#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

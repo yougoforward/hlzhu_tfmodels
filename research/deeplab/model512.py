@@ -454,7 +454,7 @@ def extract_features(images,
         # Merge branch logits.
         concat_logits = tf.concat(branch_logits, 3)
         concat_logits = slim.conv2d(
-            concat_logits, depth, 1, scope=CONCAT_PROJECTION_SCOPE)
+            concat_logits, 256, 1, scope=CONCAT_PROJECTION_SCOPE)
         concat_logits = slim.dropout(
             concat_logits,
             keep_prob=0.9,
@@ -491,18 +491,6 @@ def _get_logits(images,
       is_training=is_training,
       fine_tune_batch_norm=fine_tune_batch_norm)
 
-  outputs_to_logits = {}
-  for output in sorted(model_options.outputs_to_num_classes):
-    outputs_to_logits[output] = get_branch_logits(
-        features,
-        model_options.outputs_to_num_classes[output],
-        model_options.atrous_rates,
-        aspp_with_batch_norm=model_options.aspp_with_batch_norm,
-        kernel_size=model_options.logits_kernel_size,
-        weight_decay=weight_decay,
-        reuse=reuse,
-        scope_suffix=output)
-
   if model_options.decoder_output_stride is not None:
     if model_options.crop_size is None:
       height = tf.shape(images)[1]
@@ -526,11 +514,9 @@ def _get_logits(images,
         is_training=is_training,
         fine_tune_batch_norm=fine_tune_batch_norm)
 
-  outputs_to_logits[output] = tf.image.resize_bilinear(
-      outputs_to_logits[output], [decoder_height,decoder_width], align_corners=True)
-  # outputs_to_logits = {}
+  outputs_to_logits = {}
   for output in sorted(model_options.outputs_to_num_classes):
-    outputs_to_logits[output] = outputs_to_logits[output]+get_branch_logits(
+    outputs_to_logits[output] = get_branch_logits(
         features,
         model_options.outputs_to_num_classes[output],
         model_options.atrous_rates,
