@@ -103,7 +103,7 @@ def _convert_dataset(dataset_split, dataset_dir, dataset_label_dir):
         seg_data = np.array(Image.open(seg_filename))
         seg_data = seg_data - 1  # 0-150 to 255 0-149
         seg_data = seg_data.astype(np.uint8)
-        seg_data = cv2.imencode('.jpg', seg_data)[1].tostring()
+        seg_data = cv2.imencode('.png', seg_data)[1].tostring()
 
         seg_height, seg_width = label_reader.read_image_dims(seg_data)
 
