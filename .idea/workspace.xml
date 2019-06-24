@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/dp_ade20k.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dp_ade20k.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,13 +21,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dp_ade20k.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
               <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/hlzhu_tfmodels/research/deeplab/v3_pascal_train512.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8520">
+              <caret line="95" column="21" lean-forward="true" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/hlzhu_tfmodels/research/deeplab/v3plus_pascal_train512.log">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -39,15 +52,6 @@
               <folding>
                 <element signature="e#751#774#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/v3_train512.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -82,23 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/v3_pascal_train512.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
-              <caret line="104" column="14" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/train512.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
-              <folding>
-                <element signature="e#777#787#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-352">
+              <caret line="74" column="32" lean-forward="true" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -257,7 +249,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -428,22 +420,22 @@
       <workItem from="1560238247422" duration="1235000" />
       <workItem from="1560239548432" duration="179000" />
       <workItem from="1560239764872" duration="18196000" />
-      <workItem from="1560336985209" duration="36862000" />
+      <workItem from="1560336985209" duration="38057000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56472000" />
+    <option name="totallyTimeSpent" value="57667000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="31" y="25" width="1851" height="1055" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19612189" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19612189" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Python Console" order="0" weight="0.32983193" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49750692" visible="true" weight="0.2857143" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49750692" visible="true" weight="0.2857143" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5024931" side_tool="true" weight="0.32983193" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -455,7 +447,7 @@
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="right" id="Remote Host" weight="0.27091414" />
+      <window_info anchor="right" id="Remote Host" visible="true" weight="0.27091414" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -906,13 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/v3_pascal_train512.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="104" column="14" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/v3plus_pascal_train512.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1770">
@@ -924,6 +909,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/v3_pascal_train512.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-352">
+          <caret line="74" column="32" lean-forward="true" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
         </state>
       </provider>
     </entry>

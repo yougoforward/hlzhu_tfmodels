@@ -29,7 +29,7 @@ python train512.py\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
     --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/resnet_v1_50/model.ckpt"\
-    --train_logdir="datasets/pascal_voc_seg/exp512/v3/train"\
+    --train_logdir="datasets/pascal_voc_seg/exp512/v3plus/train"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
 python eval512.py\
@@ -50,8 +50,8 @@ python eval512.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp512/v3/train"\
-    --eval_logdir="datasets/pascal_voc_seg/exp512/v3/eval"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp512/v3plus/train"\
+    --eval_logdir="datasets/pascal_voc_seg/exp512/v3plus/eval"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 
@@ -79,8 +79,8 @@ python train512.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp512/v3/train/model.ckpt-60000"\
-    --train_logdir="datasets/pascal_voc_seg/exp512/v3/train_finetune"\
+    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp512/v3plus/train/model.ckpt-60000"\
+    --train_logdir="datasets/pascal_voc_seg/exp512/v3plus/train_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
 python eval512.py\
@@ -101,8 +101,8 @@ python eval512.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp512/v3/train_finetune"\
-    --eval_logdir="datasets/pascal_voc_seg/exp512/v3/eval_finetune"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp512/v3plus/train_finetune"\
+    --eval_logdir="datasets/pascal_voc_seg/exp512/v3plus/eval_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 
@@ -124,8 +124,8 @@ python eval512.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/pascal_voc_seg/exp512/v3/train_finetune"\
-    --eval_logdir="datasets/pascal_voc_seg/exp512/v3/eval_finetune"\
+    --checkpoint_dir="datasets/pascal_voc_seg/exp512/v3plus/train_finetune"\
+    --eval_logdir="datasets/pascal_voc_seg/exp512/v3plus/eval_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1\
     --eval_scales=0.5\
