@@ -32,7 +32,7 @@ python train512.py\
     --train_logdir="datasets/pascal_voc_seg/exp512/v3/train"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
-python class_aware_eval15.py\
+python eval512.py\
     --logtostderr\
     --eval_split="val"\
     --model_variant="resnet_v1_50_beta"\
@@ -55,7 +55,7 @@ python class_aware_eval15.py\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 
-python class_aware_train15.py\
+python train512.py\
     --logtostderr\
     --num_clones=4 \
     --train_split="train_aug"\
@@ -83,7 +83,7 @@ python class_aware_train15.py\
     --train_logdir="datasets/pascal_voc_seg/exp512/v3/train_finetune"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 
-python class_aware_eval15.py\
+python eval512.py\
     --logtostderr\
     --eval_split="val"\
     --model_variant="resnet_v1_50_beta"\
@@ -106,7 +106,7 @@ python class_aware_eval15.py\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 
-python class_aware_eval15.py\
+python eval512.py\
     --logtostderr\
     --eval_split="val"\
     --model_variant="resnet_v1_50_beta"\
