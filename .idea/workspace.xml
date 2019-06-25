@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="" />
+    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,15 +12,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/v3plus_pascal_train512.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1905">
-              <caret line="127" column="56" selection-start-line="127" selection-start-column="56" selection-end-line="127" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dp_coco_01.sh">
           <provider selected="true" editor-type-id="text-editor">
@@ -37,11 +30,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+              <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -175,7 +177,6 @@
         <option value="$PROJECT_DIR$/research/deeplab/official_v3plus_ade20k.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dp_coco_voc.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/utils/input_generator.py" />
-        <option value="$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dp_ade20k_noresize.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dp_coco.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/datasets/build_data.py" />
@@ -191,6 +192,7 @@
         <option value="&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/hlzhu_tfmodels/research/deeplab/dp_coco_01.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dp_coco_01.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dp_ade20k.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py" />
       </list>
     </option>
   </component>
@@ -418,12 +420,12 @@
       <workItem from="1560239548432" duration="179000" />
       <workItem from="1560239764872" duration="18196000" />
       <workItem from="1560336985209" duration="41449000" />
-      <workItem from="1561449135520" duration="3915000" />
+      <workItem from="1561449135520" duration="4170000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64974000" />
+    <option name="totallyTimeSpent" value="65229000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="25" width="1851" height="1055" extended-state="0" />
@@ -703,13 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.conda/envs/tf/lib/python3.6/site-packages/tensorflow/python/platform/gfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
@@ -913,7 +908,14 @@
     <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+          <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
         </state>
       </provider>
     </entry>

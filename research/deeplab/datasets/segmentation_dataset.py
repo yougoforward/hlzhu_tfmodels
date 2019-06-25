@@ -100,9 +100,18 @@ _PASCAL_VOC_SEG_INFORMATION = DatasetDescriptor(
     ignore_label=255,
 )
 
+# _COCO_VOC_SEG_INFORMATION = DatasetDescriptor(
+#     splits_to_sizes={
+#         'train': 118287,
+#         'val': 5000,
+#     },
+#     num_classes=21,
+#     ignore_label=255,
+# )
+
 _COCO_VOC_SEG_INFORMATION = DatasetDescriptor(
     splits_to_sizes={
-        'train': 118287,
+        'train': 56781,
         'val': 5000,
     },
     num_classes=21,
