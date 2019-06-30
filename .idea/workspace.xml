@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+            <state relative-caret-position="507">
+              <caret line="138" selection-start-line="138" selection-end-line="138" />
             </state>
           </provider>
         </entry>
@@ -45,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-270">
-              <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+              <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -70,7 +68,7 @@
         <entry file="remoteDeploymentFS://&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/deeplabv3plus-pytorch/lib/net/xception.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="27" column="15" lean-forward="true" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+              <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -419,22 +417,22 @@
       <workItem from="1560239764872" duration="18196000" />
       <workItem from="1560336985209" duration="41449000" />
       <workItem from="1561449135520" duration="6330000" />
-      <workItem from="1561829620166" duration="9896000" />
+      <workItem from="1561829620166" duration="11372000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77285000" />
+    <option name="totallyTimeSpent" value="78761000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="25" width="1851" height="1055" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20055401" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20055401" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Python Console" order="0" weight="0.32983193" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49750692" visible="true" weight="0.2710084" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49750692" visible="true" weight="0.2710084" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5024931" side_tool="true" weight="0.32983193" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -899,7 +897,7 @@
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-270">
-          <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -912,8 +910,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+        <state relative-caret-position="507">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
         </state>
       </provider>
     </entry>
