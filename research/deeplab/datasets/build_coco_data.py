@@ -64,12 +64,12 @@ tf.app.flags.DEFINE_string('image_folder',
 
 tf.app.flags.DEFINE_string(
     'semantic_segmentation_folder',
-    './coco/ins1000_trainval',
+    './coco/vocpng_trainval1000',
     'Folder containing semantic segmentation annotations.')
 
 tf.app.flags.DEFINE_string(
     'list_folder',
-    './coco/list',
+    './coco/vocpng1000_list',
     'Folder containing lists for training and validation')
 
 tf.app.flags.DEFINE_string(
