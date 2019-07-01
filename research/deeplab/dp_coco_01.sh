@@ -7,7 +7,7 @@ cd ./deeplab
 python dual_pyramid_train_fpn.py\
     --logtostderr \
     --num_clones=8 \
-    --train_split="train"\
+    --train_split="trainval"\
     --model_variant="xception_65"\
     --atrous_rates=6\
     --atrous_rates=12\
@@ -15,11 +15,11 @@ python dual_pyramid_train_fpn.py\
     --output_stride=16\
     --train_crop_size=513\
     --train_crop_size=513\
-    --train_batch_size=16\
+    --train_batch_size=32\
     --decoder_output_stride=4\
-    --training_number_of_steps=180000\
+    --training_number_of_steps=90000\
     --fine_tune_batch_norm=true\
-    --base_learning_rate=0.01\
+    --base_learning_rate=0.02\
     --weight_decay=0.00004\
     --aspp_with_batch_norm=true\
     --aspp_with_separable_conv=false\
