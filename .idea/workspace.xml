@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/dp_coco_01.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dp_coco_01.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,20 +21,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="122" column="22" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/dp_x65_fpn.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-848">
-              <caret line="6" selection-start-line="6" selection-end-line="30" />
+            <state relative-caret-position="442">
+              <caret line="124" column="25" selection-start-line="124" selection-start-column="25" selection-end-line="124" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -53,6 +44,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="49" column="52" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/dp_coco_01.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1455">
+              <caret line="97" selection-start-line="97" selection-end-line="97" />
             </state>
           </provider>
         </entry>
@@ -182,13 +182,13 @@
         <option value="$PROJECT_DIR$/research/deeplab/v3plus_pascal_train512.sh" />
         <option value="&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/hlzhu_tfmodels/research/deeplab/dp_coco_01.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dp_ade20k.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/dp_coco_01.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dp_x65_fpn.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh" />
         <option value="&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/deeplabv3plus-pytorch/lib/net/backbone.py" />
         <option value="&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/deeplabv3plus-pytorch/lib/net/xception.py" />
         <option value="$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py" />
         <option value="$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py" />
+        <option value="$PROJECT_DIR$/research/deeplab/dp_coco_01.sh" />
       </list>
     </option>
   </component>
@@ -417,22 +417,22 @@
       <workItem from="1560239764872" duration="18196000" />
       <workItem from="1560336985209" duration="41449000" />
       <workItem from="1561449135520" duration="6330000" />
-      <workItem from="1561829620166" duration="11635000" />
+      <workItem from="1561829620166" duration="12357000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79024000" />
+    <option name="totallyTimeSpent" value="79746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="25" width="1851" height="1055" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20055401" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20055401" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Python Console" order="0" weight="0.32983193" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49750692" visible="true" weight="0.2710084" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49750692" visible="true" weight="0.2710084" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5024931" side_tool="true" weight="0.32983193" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -834,13 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dp_coco_01.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="74" column="84" selection-start-line="74" selection-start-column="84" selection-end-line="74" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/utils/train_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1065">
@@ -910,8 +903,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="122" column="22" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
+        <state relative-caret-position="442">
+          <caret line="124" column="25" selection-start-line="124" selection-start-column="25" selection-end-line="124" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dp_coco_01.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
         </state>
       </provider>
     </entry>
