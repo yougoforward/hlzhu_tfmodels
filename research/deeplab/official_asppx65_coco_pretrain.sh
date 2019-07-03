@@ -18,8 +18,8 @@ python dual_pyramid_eval_fpn.py\
     --min_resize_value=513 \
     --max_resize_value=513 \
     --aspp_with_batch_norm=true \
-    --aspp_with_separable_conv=false \
-    --decoder_use_separable_conv=false \
+    --aspp_with_separable_conv=true \
+    --decoder_use_separable_conv=true \
     --dataset="pascal_voc_seg" \
     --checkpoint_dir="datasets/pascal_voc_seg/init_models/xception_65_coco_pretrained" \
     --eval_logdir="datasets/coco/exp/xception_65_coco_pretrained/eval" \
