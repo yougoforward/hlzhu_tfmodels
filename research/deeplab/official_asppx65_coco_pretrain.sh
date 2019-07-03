@@ -4,7 +4,7 @@ CURRENT_DIR=$(pwd)
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
-python dual_pyramid_eval_fpn.py\
+python eval.py\
     --logtostderr\
     --eval_split="val"\
     --model_variant="xception_65"\
