@@ -62,18 +62,18 @@ python dual_pyramid_train_fpn.py\
     --output_stride=16\
     --train_crop_size=513\
     --train_crop_size=513\
-    --train_batch_size=32\
+    --train_batch_size=16\
     --decoder_output_stride=4\
     --training_number_of_steps=30000\
-    --fine_tune_batch_norm=true\
-    --base_learning_rate=0.002\
+    --fine_tune_batch_norm=false\
+    --base_learning_rate=0.001\
     --weight_decay=0.00004\
     --aspp_with_batch_norm=true\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
     --tf_initial_checkpoint="datasets/coco/exp/dpx65_cocovoc1000_train_set/train/model.ckpt-90000"\
-    --train_logdir="datasets/coco/exp/dpx65_voc_trainaug_set/train_bs32"\
+    --train_logdir="datasets/coco/exp/dpx65_voc_trainaug_set/train_bs32_nobn"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"
 #
 python dual_pyramid_eval_fpn.py\
@@ -91,8 +91,8 @@ python dual_pyramid_eval_fpn.py\
     --aspp_with_separable_conv=false\
     --decoder_use_separable_conv=false\
     --dataset="pascal_voc_seg"\
-    --checkpoint_dir="datasets/coco/exp/dpx65_voc_trainaug_set/train_bs32"\
-    --eval_logdir="datasets/coco/exp/dpx65_voc_trainaug_set/val_bs32"\
+    --checkpoint_dir="datasets/coco/exp/dpx65_voc_trainaug_set/train_bs32_nobn"\
+    --eval_logdir="datasets/coco/exp/dpx65_voc_trainaug_set/val_bs32_nobn"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
 
