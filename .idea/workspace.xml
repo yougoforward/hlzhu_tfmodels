@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/research/deeplab/model15.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/model15.py" afterDir="false" />
-    </list>
+    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +28,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="285">
               <caret line="246" column="52" selection-start-line="246" selection-start-column="26" selection-end-line="246" selection-end-column="52" />
               <folding>
                 <element signature="e#799#810#0" expanded="true" />
@@ -51,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/model15.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="813">
-              <caret line="220" column="62" selection-start-line="220" selection-start-column="62" selection-end-line="220" selection-end-column="62" />
+            <state relative-caret-position="296">
+              <caret line="166" column="40" selection-start-line="166" selection-start-column="40" selection-end-line="166" selection-end-column="40" />
               <folding>
                 <element signature="e#2205#2228#0" expanded="true" />
               </folding>
@@ -75,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="223" column="62" lean-forward="true" selection-start-line="198" selection-start-column="8" selection-end-line="223" selection-end-column="62" />
+            <state relative-caret-position="205">
+              <caret line="155" column="59" selection-start-line="155" selection-start-column="53" selection-end-line="155" selection-end-column="59" />
               <folding>
                 <element signature="e#2205#2228#0" expanded="true" />
               </folding>
@@ -133,6 +131,7 @@
       <find>predict_class_aware_attention_labels</find>
       <find>OUTPUT_TYPE</find>
       <find>get_pyramid_feature_fusion__logits</find>
+      <find>predict_labels_multi_scale</find>
     </findStrings>
     <replaceStrings>
       <replace>fpn</replace>
@@ -424,15 +423,16 @@
       <workItem from="1560336985209" duration="41449000" />
       <workItem from="1561449135520" duration="6330000" />
       <workItem from="1561829620166" duration="15655000" />
-      <workItem from="1562063319322" duration="29827000" />
+      <workItem from="1562063319322" duration="30285000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112871000" />
+    <option name="totallyTimeSpent" value="113329000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="25" width="1851" height="1055" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20277008" />
@@ -908,10 +908,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="246" column="52" selection-start-line="246" selection-start-column="26" selection-end-line="246" selection-end-column="52" />
+          <folding>
+            <element signature="e#799#810#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="223" column="62" lean-forward="true" selection-start-line="198" selection-start-column="8" selection-end-line="223" selection-end-column="62" />
+        <state relative-caret-position="205">
+          <caret line="155" column="59" selection-start-line="155" selection-start-column="53" selection-end-line="155" selection-end-column="59" />
           <folding>
             <element signature="e#2205#2228#0" expanded="true" />
           </folding>
@@ -920,20 +930,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/model15.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="220" column="62" selection-start-line="220" selection-start-column="62" selection-end-line="220" selection-end-column="62" />
+        <state relative-caret-position="296">
+          <caret line="166" column="40" selection-start-line="166" selection-start-column="40" selection-end-line="166" selection-end-column="40" />
           <folding>
             <element signature="e#2205#2228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="246" column="52" selection-start-line="246" selection-start-column="26" selection-end-line="246" selection-end-column="52" />
-          <folding>
-            <element signature="e#799#810#0" expanded="true" />
           </folding>
         </state>
       </provider>

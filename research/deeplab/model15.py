@@ -591,7 +591,7 @@ def multi_scale_class_aware_attention_logits(images,
 
   # Compute the logits for each scale in the image pyramid.
   outputs_to_scales_to_logits = {
-      k: {'softmax':{},'sigmoid':{},'softmax1':{}}
+      k: {'softmax':{},'sigmoid':{},'softmax1':{},'attention1':{}, 'attention2':{}, 'attention3':{}}
       for k in model_options.outputs_to_num_classes
   }
 
