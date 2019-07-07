@@ -250,8 +250,8 @@ def main(unused_argv):
           eval_scales=FLAGS.eval_scales,
           add_flipped_images=FLAGS.add_flipped_images)
     print(predictions.keys())
-    # predictions = predictions[common.OUTPUT_TYPE]
-    predictions = predictions['attention1']
+    predictions = predictions[common.OUTPUT_TYPE]
+    # predictions = predictions['attention1']
     # predictions = predictions['attention2']
     # predictions = predictions['attention3']
     if FLAGS.min_resize_value and FLAGS.max_resize_value:
