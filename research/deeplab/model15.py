@@ -159,7 +159,7 @@ def predict_labels_multi_scale(images,
       outputs_to_predictions[output].append(
           tf.expand_dims(tf.nn.softmax(logits), 4))
 
-      scales_to_logits = outputs_to_scales_to_logits[output]['attention1'][0]
+      scales_to_logits = outputs_to_scales_to_logits[output]['attention1']
       logits = tf.image.resize_bilinear(
           scales_to_logits[MERGED_LOGITS_SCOPE],
           tf.shape(images)[1:3],
@@ -167,7 +167,7 @@ def predict_labels_multi_scale(images,
       outputs_to_predictions['attention1'].append(
           tf.expand_dims(tf.nn.softmax(logits), 4))
 
-      scales_to_logits = outputs_to_scales_to_logits[output]['attention2'][0]
+      scales_to_logits = outputs_to_scales_to_logits[output]['attention2']
       logits = tf.image.resize_bilinear(
           scales_to_logits[MERGED_LOGITS_SCOPE],
           tf.shape(images)[1:3],
@@ -175,7 +175,7 @@ def predict_labels_multi_scale(images,
       outputs_to_predictions['attention2'].append(
           tf.expand_dims(tf.nn.softmax(logits), 4))
 
-      scales_to_logits = outputs_to_scales_to_logits[output]['attention3'][0]
+      scales_to_logits = outputs_to_scales_to_logits[output]['attention3']
       logits = tf.image.resize_bilinear(
           scales_to_logits[MERGED_LOGITS_SCOPE],
           tf.shape(images)[1:3],
@@ -194,7 +194,7 @@ def predict_labels_multi_scale(images,
             tf.expand_dims(tf.nn.softmax(logits_reversed), 4))
 
         scales_to_logits_reversed = (
-            outputs_to_scales_to_logits_reversed[output]['attention1'][0])
+            outputs_to_scales_to_logits_reversed[output]['attention1'])
         logits_reversed = tf.image.resize_bilinear(
             tf.reverse_v2(scales_to_logits_reversed[MERGED_LOGITS_SCOPE], [2]),
             tf.shape(images)[1:3],
@@ -203,7 +203,7 @@ def predict_labels_multi_scale(images,
             tf.expand_dims(tf.nn.softmax(logits_reversed), 4))
 
         scales_to_logits_reversed = (
-            outputs_to_scales_to_logits_reversed[output]['attention2'][0])
+            outputs_to_scales_to_logits_reversed[output]['attention2'])
         logits_reversed = tf.image.resize_bilinear(
             tf.reverse_v2(scales_to_logits_reversed[MERGED_LOGITS_SCOPE], [2]),
             tf.shape(images)[1:3],
@@ -212,7 +212,7 @@ def predict_labels_multi_scale(images,
             tf.expand_dims(tf.nn.softmax(logits_reversed), 4))
 
         scales_to_logits_reversed = (
-            outputs_to_scales_to_logits_reversed[output]['attention3'][0])
+            outputs_to_scales_to_logits_reversed[output]['attention3'])
         logits_reversed = tf.image.resize_bilinear(
             tf.reverse_v2(scales_to_logits_reversed[MERGED_LOGITS_SCOPE], [2]),
             tf.shape(images)[1:3],
