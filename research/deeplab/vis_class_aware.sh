@@ -21,7 +21,7 @@ cd ./deeplab
 #  --checkpoint_dir="datasets/pascal_voc_seg/exp/class_aware_train15_on_trainaug_set/trainval_finetune2"\
 #  --vis_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_on_trainaug_set/vis_trainval_finetune2"\
 #  --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
-#  --max_number_of_iterations=1\
+#  --max_number_of_evaluations=1\
 #  --eval_scales=0.5\
 #  --eval_scales=0.75\
 #  --eval_scales=1.0\
@@ -46,7 +46,7 @@ cd ./deeplab
 #  --checkpoint_dir="datasets/pascal_voc_seg/exp/class_aware_train15_on_trainaug_set/train_finetune2"\
 #  --vis_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_on_trainaug_set/vis_train_finetune2"\
 #  --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
-#  --max_number_of_iterations=1 \
+#  --max_number_of_evaluations=1 \
 #  --eval_scales=0.5\
 #  --eval_scales=0.75\
 #  --eval_scales=1.0\
@@ -70,9 +70,9 @@ python vis_class_aware2.py \
   --aspp_with_separable_conv=false\
   --decoder_use_separable_conv=false\
   --checkpoint_dir="datasets/pascal_voc_seg/exp/class_aware_train15_on_trainaug_set/train_finetune2"\
-  --vis_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_on_trainaug_set/vis_train_finetune2_os16"\
+  --vis_logdir="datasets/pascal_voc_seg/exp/class_aware_train15_on_trainaug_set/vis_train_finetune2_os16_attention1"\
   --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
-  --max_number_of_iterations=1
+  --max_number_of_evaluations=1
 #  --eval_scales=0.5\
 #  --eval_scales=0.75\
 #  --eval_scales=1.0\
