@@ -873,7 +873,7 @@ def _get_class_aware_attention_logits(images,
         reuse=reuse,
         scope_suffix=output)
 
-  outputs_to_logits[output]=outputs_to_logits[output][:6]
+  outputs_to_logits[output]=outputs_to_logits[output]
   inter_logits.append(outputs_to_logits)
   return inter_logits
 
