@@ -249,7 +249,9 @@ def main(unused_argv):
           eval_scales=FLAGS.eval_scales,
           add_flipped_images=FLAGS.add_flipped_images)
     predictions = predictions[common.OUTPUT_TYPE]
-
+    # predictions = predictions['attention1']
+    # predictions = predictions['attention2']
+    # predictions = predictions['attention3']
     if FLAGS.min_resize_value and FLAGS.max_resize_value:
       # Only support batch_size = 1, since we assume the dimensions of original
       # image after tf.squeeze is [height, width, 3].
