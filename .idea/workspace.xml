@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/vis_class_aware.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/vis_class_aware.sh" afterDir="false" />
-    </list>
+    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,24 +10,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/dp_coco_02.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="84" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/official_asppx65_coco_pretrain.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="true" current-in-tab="false">
         <entry file="remoteDeploymentFS://&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/hlzhu_tfmodels/research/deeplab/dp_coco_01.sh">
           <provider selected="true" editor-type-id="text-editor">
@@ -68,20 +46,44 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="191" column="38" lean-forward="true" selection-start-line="191" selection-start-column="38" selection-end-line="191" selection-end-column="38" />
+            <state relative-caret-position="342">
+              <caret line="47" column="41" lean-forward="true" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+              <folding>
+                <element signature="e#799#810#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/input_preprocess.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1158">
+              <caret line="135" column="45" selection-start-line="135" selection-start-column="45" selection-end-line="135" selection-end-column="45" />
+              <folding>
+                <element signature="e#751#774#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/utils/input_generator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="162" column="12" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="73" column="30" lean-forward="true" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
+            <state relative-caret-position="690">
+              <caret line="71" column="104" selection-start-line="71" selection-start-column="104" selection-end-line="71" selection-end-column="104" />
             </state>
           </provider>
         </entry>
@@ -89,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="225" column="45" selection-start-line="225" selection-start-column="23" selection-end-line="225" selection-end-column="45" />
+            <state relative-caret-position="296">
+              <caret line="1299" column="25" selection-start-line="1299" selection-start-column="23" selection-end-line="1299" selection-end-column="25" />
               <folding>
                 <element signature="e#2205#2228#0" expanded="true" />
               </folding>
@@ -100,7 +102,9 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/vis_dpn.sh">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-362" />
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -139,6 +143,8 @@
       <find>mio</find>
       <find>miou</find>
       <find>get_class_aware_attention_branch_logits</find>
+      <find>tf.concat([f1, f2],axis=3, name=None)</find>
+      <find>batch_size</find>
     </findStrings>
     <replaceStrings>
       <replace>fpn</replace>
@@ -430,23 +436,23 @@
       <workItem from="1560336985209" duration="41449000" />
       <workItem from="1561449135520" duration="6330000" />
       <workItem from="1561829620166" duration="15655000" />
-      <workItem from="1562063319322" duration="25955000" />
+      <workItem from="1562063319322" duration="26674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108999000" />
+    <option name="totallyTimeSpent" value="109718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="25" width="1851" height="1055" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20277008" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20277008" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="File Transfer" weight="0.32983193" />
       <window_info anchor="bottom" id="Python Console" order="0" weight="0.32983193" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49695292" visible="true" weight="0.2647059" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49695292" visible="true" weight="0.2647059" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5030471" side_tool="true" weight="0.2647059" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -749,23 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/utils/input_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="133" column="68" selection-start-line="133" selection-start-column="68" selection-end-line="133" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/input_preprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="98" column="46" lean-forward="true" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
-          <folding>
-            <element signature="e#751#774#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/v3plus_pascal_train512.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1905">
@@ -903,29 +892,51 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/vis_dpn.sh">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-362" />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="225" column="45" selection-start-line="225" selection-start-column="23" selection-end-line="225" selection-end-column="45" />
+        <state relative-caret-position="296">
+          <caret line="1299" column="25" selection-start-line="1299" selection-start-column="23" selection-end-line="1299" selection-end-column="25" />
           <folding>
             <element signature="e#2205#2228#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware2.py">
+    <entry file="file://$PROJECT_DIR$/research/deeplab/input_preprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="191" column="38" lean-forward="true" selection-start-line="191" selection-start-column="38" selection-end-line="191" selection-end-column="38" />
+        <state relative-caret-position="1158">
+          <caret line="135" column="45" selection-start-line="135" selection-start-column="45" selection-end-line="135" selection-end-column="45" />
+          <folding>
+            <element signature="e#751#774#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/utils/input_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="162" column="12" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="73" column="30" lean-forward="true" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
+        <state relative-caret-position="690">
+          <caret line="71" column="104" selection-start-line="71" selection-start-column="104" selection-end-line="71" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="47" column="41" lean-forward="true" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+          <folding>
+            <element signature="e#799#810#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
