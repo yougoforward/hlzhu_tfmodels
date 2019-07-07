@@ -237,6 +237,7 @@ def main(unused_argv):
 
     if tuple(FLAGS.eval_scales) == (1.0,):
       tf.logging.info('Performing single-scale test.')
+      print(samples[common.IMAGE].shape)
       predictions = model.predict_class_aware_attention_labels(
           samples[common.IMAGE],
           model_options=model_options,
