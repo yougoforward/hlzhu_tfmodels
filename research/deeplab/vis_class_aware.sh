@@ -65,7 +65,7 @@ python vis_class_aware2.py \
   --output_stride=16 \
   --vis_crop_size=513 \
   --vis_crop_size=513 \
-  --vis_batch_size=1\
+  --vis_batch_size=2 \
   --aspp_with_batch_norm=true\
   --aspp_with_separable_conv=false\
   --decoder_use_separable_conv=false\

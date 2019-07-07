@@ -33,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="223" column="54" selection-start-line="223" selection-start-column="40" selection-end-line="223" selection-end-column="54" />
+            <state relative-caret-position="162">
+              <caret line="227" column="64" lean-forward="true" selection-start-line="227" selection-start-column="64" selection-end-line="227" selection-end-column="64" />
               <folding>
                 <element signature="e#799#810#0" expanded="true" />
               </folding>
@@ -87,7 +87,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
+            <state relative-caret-position="298">
               <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
             </state>
           </provider>
@@ -105,8 +105,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="875" column="53" selection-start-line="875" selection-start-column="53" selection-end-line="875" selection-end-column="53" />
+            <state relative-caret-position="475">
+              <caret line="1299" column="16" selection-start-line="1299" selection-start-column="16" selection-end-line="1299" selection-end-column="16" />
               <folding>
                 <element signature="e#2205#2228#0" expanded="true" />
               </folding>
@@ -150,8 +150,8 @@
       <find>miou</find>
       <find>get_class_aware_attention_branch_logits</find>
       <find>tf.concat([f1, f2],axis=3, name=None)</find>
-      <find>predict_class_aware_attention_labels</find>
       <find>batch_size</find>
+      <find>predict_class_aware_attention_labels</find>
     </findStrings>
     <replaceStrings>
       <replace>fpn</replace>
@@ -210,9 +210,9 @@
         <option value="&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/hlzhu_tfmodels/research/deeplab/dp_coco_02.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dp_coco_02.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/official_asppx65_coco_pretrain.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/vis_class_aware2.py" />
         <option value="$PROJECT_DIR$/research/deeplab/vis_class_aware.sh" />
         <option value="&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/hlzhu_tfmodels/research/deeplab/dp_coco_03.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/vis_class_aware2.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py" />
       </list>
     </option>
@@ -443,12 +443,12 @@
       <workItem from="1560336985209" duration="41449000" />
       <workItem from="1561449135520" duration="6330000" />
       <workItem from="1561829620166" duration="15655000" />
-      <workItem from="1562063319322" duration="27454000" />
+      <workItem from="1562063319322" duration="27824000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110498000" />
+    <option name="totallyTimeSpent" value="110868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="25" width="1851" height="1055" extended-state="0" />
@@ -923,15 +923,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
+        <state relative-caret-position="298">
           <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="223" column="54" selection-start-line="223" selection-start-column="40" selection-end-line="223" selection-end-column="54" />
+        <state relative-caret-position="162">
+          <caret line="227" column="64" lean-forward="true" selection-start-line="227" selection-start-column="64" selection-end-line="227" selection-end-column="64" />
           <folding>
             <element signature="e#799#810#0" expanded="true" />
           </folding>
@@ -940,8 +940,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="875" column="53" selection-start-line="875" selection-start-column="53" selection-end-line="875" selection-end-column="53" />
+        <state relative-caret-position="475">
+          <caret line="1299" column="16" selection-start-line="1299" selection-start-column="16" selection-end-line="1299" selection-end-column="16" />
           <folding>
             <element signature="e#2205#2228#0" expanded="true" />
           </folding>
