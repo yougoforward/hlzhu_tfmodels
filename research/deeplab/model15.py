@@ -151,6 +151,7 @@ def predict_labels_multi_scale(images,
             fine_tune_batch_norm=False)
 
     for output in sorted(outputs_to_scales_to_logits):
+      print(outputs_to_scales_to_logits)
       scales_to_logits = outputs_to_scales_to_logits[output]['softmax']
       logits = tf.image.resize_bilinear(
           scales_to_logits[MERGED_LOGITS_SCOPE],
