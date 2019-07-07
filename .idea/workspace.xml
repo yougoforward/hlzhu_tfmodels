@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/vis_class_aware.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/vis_class_aware.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/vis_class_aware2.py" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/vis_class_aware2.py" afterDir="false" />
-    </list>
+    <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="254" column="43" lean-forward="true" selection-start-line="254" selection-start-column="43" selection-end-line="254" selection-end-column="43" />
+            <state relative-caret-position="285">
+              <caret line="224" column="65" lean-forward="true" selection-start-line="224" selection-start-column="65" selection-end-line="224" selection-end-column="65" />
               <folding>
                 <element signature="e#799#810#0" expanded="true" />
               </folding>
@@ -436,12 +432,12 @@
       <workItem from="1560336985209" duration="41449000" />
       <workItem from="1561449135520" duration="6330000" />
       <workItem from="1561829620166" duration="15655000" />
-      <workItem from="1562063319322" duration="31506000" />
+      <workItem from="1562063319322" duration="32712000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114550000" />
+    <option name="totallyTimeSpent" value="115756000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="25" width="1851" height="1055" extended-state="0" />
@@ -943,8 +939,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="254" column="43" lean-forward="true" selection-start-line="254" selection-start-column="43" selection-end-line="254" selection-end-column="43" />
+        <state relative-caret-position="285">
+          <caret line="224" column="65" lean-forward="true" selection-start-line="224" selection-start-column="65" selection-end-line="224" selection-end-column="65" />
           <folding>
             <element signature="e#799#810#0" expanded="true" />
           </folding>

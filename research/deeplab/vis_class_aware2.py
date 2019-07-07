@@ -249,7 +249,7 @@ def main(unused_argv):
           model_options=model_options,
           eval_scales=FLAGS.eval_scales,
           add_flipped_images=FLAGS.add_flipped_images)
-    print(predictions.keys())
+    print(predictions)
     # predictions = predictions[common.OUTPUT_TYPE]
     predictions = predictions['attention1']
     # predictions = predictions['attention2']
