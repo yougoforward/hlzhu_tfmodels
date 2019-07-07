@@ -129,7 +129,9 @@ def predict_labels_multi_scale(images,
       output: []
       for output in model_options.outputs_to_num_classes
   }
-
+  outputs_to_predictions.update({'attention1':[],
+                                    'attention2':[],
+                                    'attention3':[]})
   for i, image_scale in enumerate(eval_scales):
     with tf.variable_scope(tf.get_variable_scope(), reuse=True if i else None):
       outputs_to_scales_to_logits = multi_scale_class_aware_attention_logits(
@@ -157,6 +159,30 @@ def predict_labels_multi_scale(images,
       outputs_to_predictions[output].append(
           tf.expand_dims(tf.nn.softmax(logits), 4))
 
+      scales_to_logits = outputs_to_scales_to_logits[output]['attention1'][0]
+      logits = tf.image.resize_bilinear(
+          scales_to_logits[MERGED_LOGITS_SCOPE],
+          tf.shape(images)[1:3],
+          align_corners=True)
+      outputs_to_predictions['attention1'].append(
+          tf.expand_dims(tf.nn.softmax(logits), 4))
+
+      scales_to_logits = outputs_to_scales_to_logits[output]['attention2'][0]
+      logits = tf.image.resize_bilinear(
+          scales_to_logits[MERGED_LOGITS_SCOPE],
+          tf.shape(images)[1:3],
+          align_corners=True)
+      outputs_to_predictions['attention2'].append(
+          tf.expand_dims(tf.nn.softmax(logits), 4))
+
+      scales_to_logits = outputs_to_scales_to_logits[output]['attention3'][0]
+      logits = tf.image.resize_bilinear(
+          scales_to_logits[MERGED_LOGITS_SCOPE],
+          tf.shape(images)[1:3],
+          align_corners=True)
+      outputs_to_predictions['attention3'].append(
+          tf.expand_dims(tf.nn.sigmoid(logits), 4))
+
       if add_flipped_images:
         scales_to_logits_reversed = (
             outputs_to_scales_to_logits_reversed[output]['softmax'])
@@ -165,6 +191,33 @@ def predict_labels_multi_scale(images,
             tf.shape(images)[1:3],
             align_corners=True)
         outputs_to_predictions[output].append(
+            tf.expand_dims(tf.nn.softmax(logits_reversed), 4))
+
+        scales_to_logits_reversed = (
+            outputs_to_scales_to_logits_reversed[output]['attention1'][0])
+        logits_reversed = tf.image.resize_bilinear(
+            tf.reverse_v2(scales_to_logits_reversed[MERGED_LOGITS_SCOPE], [2]),
+            tf.shape(images)[1:3],
+            align_corners=True)
+        outputs_to_predictions['attention1'].append(
+            tf.expand_dims(tf.nn.softmax(logits_reversed), 4))
+
+        scales_to_logits_reversed = (
+            outputs_to_scales_to_logits_reversed[output]['attention2'][0])
+        logits_reversed = tf.image.resize_bilinear(
+            tf.reverse_v2(scales_to_logits_reversed[MERGED_LOGITS_SCOPE], [2]),
+            tf.shape(images)[1:3],
+            align_corners=True)
+        outputs_to_predictions['attention2'].append(
+            tf.expand_dims(tf.nn.softmax(logits_reversed), 4))
+
+        scales_to_logits_reversed = (
+            outputs_to_scales_to_logits_reversed[output]['attention3'][0])
+        logits_reversed = tf.image.resize_bilinear(
+            tf.reverse_v2(scales_to_logits_reversed[MERGED_LOGITS_SCOPE], [2]),
+            tf.shape(images)[1:3],
+            align_corners=True)
+        outputs_to_predictions['attention3'].append(
             tf.expand_dims(tf.nn.softmax(logits_reversed), 4))
 
   for output in sorted(outputs_to_predictions):
@@ -441,7 +494,7 @@ def pyramid_feature_fusion_multi_scale_logits(images,
       scaled_images = images
 
     updated_options = model_options._replace(crop_size=scaled_crop_size)
-    outputs_to_logits = _get_pyramid_feature_fusion__logits(
+    outputs_to_logits = _get_pyramid_feature_fusion_logits(
         scaled_images,
         updated_options,
         weight_decay=weight_decay,
@@ -579,6 +632,13 @@ def multi_scale_class_aware_attention_logits(images,
             MERGED_LOGITS_SCOPE] = outputs_to_logits[output][1]
         outputs_to_scales_to_logits[output]['softmax1'][
             MERGED_LOGITS_SCOPE] = outputs_to_logits[output][2]
+        outputs_to_scales_to_logits[output]['attention1'][
+            MERGED_LOGITS_SCOPE] = outputs_to_logits[output][-3]
+        outputs_to_scales_to_logits[output]['attention2'][
+            MERGED_LOGITS_SCOPE] = outputs_to_logits[output][-2]
+        outputs_to_scales_to_logits[output]['attention3'][
+            MERGED_LOGITS_SCOPE] = outputs_to_logits[output][-1]
+
       return outputs_to_scales_to_logits
 
     # Save logits to the output map.
@@ -589,6 +649,12 @@ def multi_scale_class_aware_attention_logits(images,
           'logits_%.2f' % image_scale] = outputs_to_logits[output][1]
       outputs_to_scales_to_logits[output]['softmax1'][
           'logits_%.2f' % image_scale] = outputs_to_logits[output][2]
+      outputs_to_scales_to_logits[output]['attention1'][
+          'logits_%.2f' % image_scale] = outputs_to_logits[output][-3]
+      outputs_to_scales_to_logits[output]['attention2'][
+          'logits_%.2f' % image_scale] = outputs_to_logits[output][-2]
+      outputs_to_scales_to_logits[output]['attention3'][
+          'logits_%.2f' % image_scale] = outputs_to_logits[output][-1]
 
   # Merge the logits from all the multi-scale inputs.
   for output in sorted(model_options.outputs_to_num_classes):
@@ -624,6 +690,39 @@ def multi_scale_class_aware_attention_logits(images,
         tf.reduce_max
         if model_options.merge_method == 'max' else tf.reduce_mean)
     outputs_to_scales_to_logits[output]['softmax1'][MERGED_LOGITS_SCOPE] = merge_fn(
+        all_logits, axis=4)
+
+    all_logits = [
+        tf.expand_dims(logits, axis=4)
+        for logits in outputs_to_scales_to_logits[output]['attention1'].values()
+    ]
+    all_logits = tf.concat(all_logits, 4)
+    merge_fn = (
+        tf.reduce_max
+        if model_options.merge_method == 'max' else tf.reduce_mean)
+    outputs_to_scales_to_logits[output]['attention1'][MERGED_LOGITS_SCOPE] = merge_fn(
+        all_logits, axis=4)
+
+    all_logits = [
+        tf.expand_dims(logits, axis=4)
+        for logits in outputs_to_scales_to_logits[output]['attention2'].values()
+    ]
+    all_logits = tf.concat(all_logits, 4)
+    merge_fn = (
+        tf.reduce_max
+        if model_options.merge_method == 'max' else tf.reduce_mean)
+    outputs_to_scales_to_logits[output]['attention2'][MERGED_LOGITS_SCOPE] = merge_fn(
+        all_logits, axis=4)
+
+    all_logits = [
+        tf.expand_dims(logits, axis=4)
+        for logits in outputs_to_scales_to_logits[output]['attention3'].values()
+    ]
+    all_logits = tf.concat(all_logits, 4)
+    merge_fn = (
+        tf.reduce_max
+        if model_options.merge_method == 'max' else tf.reduce_mean)
+    outputs_to_scales_to_logits[output]['attention3'][MERGED_LOGITS_SCOPE] = merge_fn(
         all_logits, axis=4)
 
   return outputs_to_scales_to_logits
@@ -1313,32 +1412,6 @@ def get_class_aware_attention_branch_logits(features,
                        'using aspp_with_batch_norm. Gets %d.' % kernel_size)
     atrous_rates = [1]
 
-
-
-  # with slim.arg_scope(
-  #     [slim.conv2d],
-  #     weights_regularizer=slim.l2_regularizer(weight_decay),
-  #     weights_initializer=tf.truncated_normal_initializer(stddev=0.01),
-  #     reuse=reuse):
-  #   features1 = slim.conv2d(
-  #         features_aspp2,
-  #         256,
-  #         kernel_size=3,
-  #         rate=1,
-  #         activation_fn=tf.nn.relu,
-  #         normalizer_fn=None,
-  #         scope="class_aware_conv3x3")
-  #   features2 = slim.conv2d(
-  #         features1,
-  #         256,
-  #         kernel_size=1,
-  #         rate=1,
-  #         activation_fn=None,
-  #         normalizer_fn=None,
-  #         scope="class_aware_conv1x1")
-  #   s2 = tf.nn.sigmoid(features2, name=None)
-  #   features3 = tf.multiply(features_aspp1, s2, name=None)
-
     with tf.variable_scope(LOGITS_SCOPE_NAME, LOGITS_SCOPE_NAME, [features_aspp1]):
       branch_logits = []
       for i, rate in enumerate(atrous_rates):
@@ -1397,7 +1470,7 @@ def get_class_aware_attention_branch_logits(features,
     attentioned_score = tf.multiply(class_sensitive_attention, s1, name=None)
     # addmin = tf.add(attentioned_score, smin, name=None)
 
-    return [attentioned_score,context_free_score_logits,context_sensitive_logits]
+    return [attentioned_score,context_free_score_logits,context_sensitive_logits, attentioned_score,class_sensitive_attention,class_aware_attention]
 
 
 def split_separable_conv2d(inputs,
