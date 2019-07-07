@@ -1297,6 +1297,7 @@ def get_class_aware_attention_branch_logits(features,
 
   f1,f2=features[0],features[1]
   # f2_fuse = tf.add(f1, f2, name=None)
+  print(f1.shape)
   f2_fuse = tf.concat([f1, f2],axis=3, name=None)
 
   # When using batch normalization with ASPP, ASPP has been applied before
