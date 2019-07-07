@@ -1371,7 +1371,7 @@ def get_class_aware_attention_branch_logits(features,
     attentioned_score = tf.multiply(class_sensitive_attention, s1, name=None)
     # addmin = tf.add(attentioned_score, smin, name=None)
 
-    return [tf.add_n([attentioned_score,context_sensitive_logits]),context_free_score_logits,context_sensitive_logits, f1, f2, [attentioned_score,class_sensitive_attention,class_aware_attention]]
+    return [tf.add_n([attentioned_score,context_sensitive_logits]),context_free_score_logits,context_sensitive_logits, f1, f2, attentioned_score,class_sensitive_attention,class_aware_attention]
 
 def split_separable_conv2d(inputs,
                            filters,
