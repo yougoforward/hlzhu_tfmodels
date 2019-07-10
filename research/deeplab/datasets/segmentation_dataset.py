@@ -150,7 +150,7 @@ _DATASETS_INFORMATION = {
     'cityscapes': _CITYSCAPES_INFORMATION,
     'pascal_voc_seg': _PASCAL_VOC_SEG_INFORMATION,
     'ade20k': _ADE20K_INFORMATION,
-    'coco_voc': _COCO_VOC_SEG_INFORMATION
+    'coco_voc': _COCO_VOC_SEG_INFORMATION,
     'cocovoc': _COCOVOC_SEG_INFORMATION
 }
 
