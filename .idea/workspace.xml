@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/dp_cocovoc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dp_cocovoc.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +22,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dp_cocovoc.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1425">
-              <caret line="95" column="61" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="61" />
+            <state relative-caret-position="360">
+              <caret line="96" lean-forward="true" selection-start-line="52" selection-end-line="96" />
             </state>
           </provider>
         </entry>
@@ -48,11 +49,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="309">
               <caret line="152" column="42" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/hlzhu_tfmodels/research/deeplab/dp_cocovoc.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider">
+            <state relative-caret-position="-1087">
+              <caret line="5315" column="41" selection-start-line="5315" selection-start-column="35" selection-end-line="5315" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -139,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes_concat.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/sa.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam.py" />
@@ -188,8 +197,9 @@
         <option value="$PROJECT_DIR$/research/deeplab/vis_class_aware2.py" />
         <option value="$PROJECT_DIR$/research/deeplab/model15.py" />
         <option value="&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/hlzhu_tfmodels/research/deeplab/dp_coco_03.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/dp_cocovoc.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py" />
+        <option value="&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/hlzhu_tfmodels/research/deeplab/dp_cocovoc.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/dp_cocovoc.sh" />
       </list>
     </option>
   </component>
@@ -421,15 +431,15 @@
       <workItem from="1561829620166" duration="15655000" />
       <workItem from="1562063319322" duration="37524000" />
       <workItem from="1562737625433" duration="4233000" />
-      <workItem from="1562826286015" duration="556000" />
+      <workItem from="1562826286015" duration="817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125357000" />
+    <option name="totallyTimeSpent" value="125618000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="25" width="1851" height="1055" extended-state="1" />
+    <frame x="65" y="25" width="1851" height="1055" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20720221" />
@@ -877,13 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dp_cocovoc.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="95" column="61" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
@@ -926,6 +929,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="152" column="42" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dp_cocovoc.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="96" lean-forward="true" selection-start-line="52" selection-end-line="96" />
         </state>
       </provider>
     </entry>

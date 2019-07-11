@@ -4,7 +4,7 @@ CURRENT_DIR=$(pwd)
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
-python train.py\
+python dual_pyramid_train_fpn.py\
     --logtostderr \
     --num_clones=8 \
     --train_split="train"\
@@ -50,50 +50,50 @@ python dual_pyramid_eval_fpn.py\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord" \
     --max_number_of_evaluations=1
 
-#python dual_pyramid_train_fpn.py\
-#    --logtostderr \
-#    --num_clones=8 \
-#    --train_split="train_aug"\
-#    --model_variant="xception_65"\
-#    --atrous_rates=6\
-#    --atrous_rates=12\
-#    --atrous_rates=18\
-#    --output_stride=16\
-#    --train_crop_size=513\
-#    --train_crop_size=513\
-#    --train_batch_size=32\
-#    --decoder_output_stride=4\
-#    --training_number_of_steps=30000\
-#    --fine_tune_batch_norm=true\
-#    --base_learning_rate=0.002\
-#    --weight_decay=0.00004\
-#    --aspp_with_batch_norm=true\
-#    --aspp_with_separable_conv=false\
-#    --decoder_use_separable_conv=false\
-#    --dataset="pascal_voc_seg"\
-#    --tf_initial_checkpoint="datasets/cocovoc/exp/x65_train_set/train/model.ckpt-50000"\
-#    --train_logdir="datasets/cocovoc/exp/x65_train_aug_set/train"\
-#    --dataset_dir="datasets/pascal_voc_seg/tfrecord"
-#
-#python dual_pyramid_eval_fpn.py\
-#    --logtostderr\
-#    --eval_split="val"\
-#    --model_variant="xception_65"\
-#    --atrous_rates=6\
-#    --atrous_rates=12\
-#    --atrous_rates=18\
-#    --output_stride=16\
-#    --decoder_output_stride=4\
-#    --eval_crop_size=513\
-#    --eval_crop_size=513\
-#    --aspp_with_batch_norm=true\
-#    --aspp_with_separable_conv=false\
-#    --decoder_use_separable_conv=false\
-#    --dataset="pascal_voc_seg"\
-#    --checkpoint_dir="datasets/cocovoc/exp/x65_train_aug_set/train"\
-#    --eval_logdir="datasets/cocovoc/exp/x65_train_aug_set/val"\
-#    --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
-#    --max_number_of_evaluations=1
+python dual_pyramid_train_fpn.py\
+    --logtostderr \
+    --num_clones=8 \
+    --train_split="train_aug"\
+    --model_variant="xception_65"\
+    --atrous_rates=6\
+    --atrous_rates=12\
+    --atrous_rates=18\
+    --output_stride=16\
+    --train_crop_size=513\
+    --train_crop_size=513\
+    --train_batch_size=32\
+    --decoder_output_stride=4\
+    --training_number_of_steps=30000\
+    --fine_tune_batch_norm=true\
+    --base_learning_rate=0.002\
+    --weight_decay=0.00004\
+    --aspp_with_batch_norm=true\
+    --aspp_with_separable_conv=false\
+    --decoder_use_separable_conv=false\
+    --dataset="pascal_voc_seg"\
+    --tf_initial_checkpoint="datasets/cocovoc/exp/x65_train_set/train/model.ckpt-50000"\
+    --train_logdir="datasets/cocovoc/exp/x65_train_aug_set/train"\
+    --dataset_dir="datasets/pascal_voc_seg/tfrecord"
+
+python dual_pyramid_eval_fpn.py\
+    --logtostderr\
+    --eval_split="val"\
+    --model_variant="xception_65"\
+    --atrous_rates=6\
+    --atrous_rates=12\
+    --atrous_rates=18\
+    --output_stride=16\
+    --decoder_output_stride=4\
+    --eval_crop_size=513\
+    --eval_crop_size=513\
+    --aspp_with_batch_norm=true\
+    --aspp_with_separable_conv=false\
+    --decoder_use_separable_conv=false\
+    --dataset="pascal_voc_seg"\
+    --checkpoint_dir="datasets/cocovoc/exp/x65_train_aug_set/train"\
+    --eval_logdir="datasets/cocovoc/exp/x65_train_aug_set/val"\
+    --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
+    --max_number_of_evaluations=1
 
 ##
 #python dual_pyramid_train_fpn.py\
