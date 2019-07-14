@@ -22,8 +22,8 @@ python dual_pyramid_train_fpn.py\
     --base_learning_rate=0.04\
     --weight_decay=0.00004\
     --aspp_with_batch_norm=true\
-    --aspp_with_separable_conv=true\
-    --decoder_use_separable_conv=true\
+    --aspp_with_separable_conv=false\
+    --decoder_use_separable_conv=false\
     --dataset="cocovoc"\
     --tf_initial_checkpoint="datasets/pascal_voc_seg/init_models/xception/model.ckpt"\
     --train_logdir="datasets/cocovoc/exp/x65_train_set/train"\
