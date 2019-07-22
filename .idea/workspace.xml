@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/research/deeplab/export_class_aware_train15.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/research/deeplab/export_dual_pyramid_train_x65_fpn.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train15.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/class_aware_train15.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,37 +17,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/vis_class_aware.sh">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/dp_cocovoc.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="915">
-              <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
+            <state relative-caret-position="-255">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/local_test.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="129" selection-start-line="129" selection-end-line="146" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="5" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/dp_cocovoc.sh">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/export_dual_pyramid_train_x65_fpn.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+            <state relative-caret-position="75">
+              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="915">
-              <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
+            <state>
+              <caret selection-end-line="5" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/build_coco_voc_data.py">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/export_class_aware_train15.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1650">
-              <caret line="114" column="44" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
+            <state relative-caret-position="90">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -51,17 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
+            <state relative-caret-position="2250">
               <caret line="152" column="42" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/hlzhu_tfmodels/research/deeplab/dp_cocovoc.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="-1087">
-              <caret line="5315" column="41" selection-start-line="5315" selection-start-column="35" selection-end-line="5315" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -78,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2295">
+            <state relative-caret-position="2325">
               <caret line="155" column="59" selection-start-line="155" selection-start-column="53" selection-end-line="155" selection-end-column="59" />
               <folding>
                 <element signature="e#2205#2228#0" expanded="true" />
@@ -148,8 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/research/deeplab/sa.py" />
-        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/test_v3plusCam_x65.sh" />
@@ -158,7 +169,6 @@
         <option value="$PROJECT_DIR$/research/deeplab/v3plusCam_x65_2.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam_x65.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_fpn.py" />
-        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_fpn.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/vis_class_aware_decoder.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/cam15_train_cityscapes.sh" />
@@ -181,7 +191,6 @@
         <option value="$PROJECT_DIR$/research/deeplab/v3plus_pascal_train512.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dp_ade20k.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dp_x65_fpn.sh" />
-        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh" />
         <option value="&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/deeplabv3plus-pytorch/lib/net/backbone.py" />
         <option value="&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/deeplabv3plus-pytorch/lib/net/xception.py" />
         <option value="$PROJECT_DIR$/research/deeplab/datasets/build_coco_data.py" />
@@ -199,10 +208,14 @@
         <option value="$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py" />
         <option value="&lt;4434cb6d-a8d0-4154-9074-171d2eed1396&gt;/hlzhu/hlzhu_tfmodels/research/deeplab/dp_cocovoc.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/dp_cocovoc.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/export_class_aware_train15.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/export_dual_pyramid_train_x65_fpn.sh" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="25" />
     <option name="width" value="1851" />
@@ -260,7 +273,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hlzhu_tfmodels (copy)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py" />
   </component>
@@ -430,22 +443,23 @@
       <workItem from="1561829620166" duration="15655000" />
       <workItem from="1562063319322" duration="37524000" />
       <workItem from="1562737625433" duration="4233000" />
-      <workItem from="1562826286015" duration="1827000" />
+      <workItem from="1562826286015" duration="3252000" />
+      <workItem from="1563803200804" duration="986000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126628000" />
+    <option name="totallyTimeSpent" value="129039000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="25" width="1851" height="1055" extended-state="1" />
+    <frame x="65" y="25" width="1851" height="1055" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20720221" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20941828" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Python Console" order="0" weight="0.32983193" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49695292" visible="true" weight="0.25210086" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49695292" visible="true" weight="0.24579832" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5030471" side_tool="true" weight="0.2647059" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -566,30 +580,6 @@
     <SUITE FILE_PATH="coverage/hlzhu_tfmodels$read_tfckpt.coverage" NAME="read_tfckpt Coverage Results" MODIFIED="1560255342784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/download_and_convert_ade20k.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/.conda/envs/tf/lib/python3.6/site-packages/tensorflow/python/ops/gen_image_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="1074" selection-start-line="1074" selection-end-line="1074" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.conda/envs/tf/lib/python3.6/contextlib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.conda/envs/tf/lib/python3.6/site-packages/tensorflow/python/client/session.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="884" selection-start-line="884" selection-end-line="884" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.conda/envs/tf/lib/python3.6/site-packages/tensorflow/python/platform/gfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
@@ -745,13 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="107" column="22" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dp_coco_01.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-345">
@@ -763,13 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1754">
-          <caret line="205" column="134" selection-start-line="205" selection-start-column="30" selection-end-line="205" selection-end-column="134" />
         </state>
       </provider>
     </entry>
@@ -901,6 +877,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="152" column="42" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dp_coco_02.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -910,7 +893,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_model_fpn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
+        <state relative-caret-position="2325">
           <caret line="155" column="59" selection-start-line="155" selection-start-column="53" selection-end-line="155" selection-end-column="59" />
           <folding>
             <element signature="e#2205#2228#0" expanded="true" />
@@ -925,17 +908,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py">
+    <entry file="file://$PROJECT_DIR$/research/deeplab/model_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="152" column="42" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
-        </state>
+        <state relative-caret-position="-369" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/research/deeplab/dp_cocovoc.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        <state relative-caret-position="-255">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/local_test.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="129" selection-start-line="129" selection-end-line="146" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/class_aware_train15.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/export_class_aware_train15.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/export_dual_pyramid_train_x65_fpn.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
         </state>
       </provider>
     </entry>

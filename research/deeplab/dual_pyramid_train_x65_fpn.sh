@@ -48,6 +48,7 @@ python dual_pyramid_eval_fpn.py\
     --eval_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_x65_fpn_on_trainaug_set/eval12"\
     --dataset_dir="datasets/pascal_voc_seg/tfrecord"\
     --max_number_of_evaluations=1
+
 #
 #python dual_pyramid_train_fpn.py\
 #    --logtostderr\
@@ -206,3 +207,20 @@ python dual_pyramid_eval_fpn.py\
 #    --tf_initial_checkpoint="datasets/pascal_voc_seg/exp/dual_pyramid_train_x65_fpn_on_trainaug_set/train_finetune13/model.ckpt-30000"\
 #    --train_logdir="datasets/pascal_voc_seg/exp/dual_pyramid_train_x65_fpn_on_trainaug_set/trainval_finetune13"\
 #    --dataset_dir="datasets/pascal_voc_seg/tfrecord"
+
+
+
+python export_model.py \
+  --logtostderr \
+  --checkpoint_path="datasets/pascal_voc_seg/exp/dual_pyramid_train_x65_fpn_on_trainaug_set/train_finetune13/model.ckpt-30000" \
+  --export_path="datasets/pascal_voc_seg/exp/dual_pyramid_train_x65_fpn_on_trainaug_set/train_finetune13/frozen_inference_graph.pb" \
+  --model_variant="xception_65" \
+  --atrous_rates=6 \
+  --atrous_rates=12 \
+  --atrous_rates=18 \
+  --output_stride=16 \
+  --decoder_output_stride=4 \
+  --num_classes=21 \
+  --crop_size=513 \
+  --crop_size=513 \
+  --inference_scales=1.0
