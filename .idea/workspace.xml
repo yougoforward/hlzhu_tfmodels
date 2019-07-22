@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="461bd51b-f994-40f9-ab3a-9495d045cd0f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/research/deeplab/export_class_aware_train15.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/research/deeplab/export_dual_pyramid_train_x65_fpn.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/class_aware_train15.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/class_aware_train15.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh" beforeDir="false" afterPath="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_x65_fpn.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/research/deeplab/export_cam_model.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,13 +39,30 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/research/deeplab/export_dual_pyramid_train_x65_fpn.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/export_model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="25" lean-forward="true" selection-end-line="165" />
+              <folding>
+                <element signature="e#745#754#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/research/deeplab/export_cam_model.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -66,24 +79,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/datasets/segmentation_dataset.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2250">
-              <caret line="152" column="42" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/research/deeplab/dp_coco_02.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="84" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -161,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam.py" />
         <option value="$PROJECT_DIR$/research/deeplab/dual_pyramid_train_v3plusCam.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/test_v3plusCam_x65.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15_res50.sh" />
@@ -212,6 +206,7 @@
         <option value="$PROJECT_DIR$/research/deeplab/class_aware_train15.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/export_class_aware_train15.sh" />
         <option value="$PROJECT_DIR$/research/deeplab/export_dual_pyramid_train_x65_fpn.sh" />
+        <option value="$PROJECT_DIR$/research/deeplab/export_cam_model.py" />
       </list>
     </option>
   </component>
@@ -444,12 +439,12 @@
       <workItem from="1562063319322" duration="37524000" />
       <workItem from="1562737625433" duration="4233000" />
       <workItem from="1562826286015" duration="3252000" />
-      <workItem from="1563803200804" duration="986000" />
+      <workItem from="1563803200804" duration="1394000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129039000" />
+    <option name="totallyTimeSpent" value="129447000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="25" width="1851" height="1055" extended-state="0" />
@@ -580,20 +575,6 @@
     <SUITE FILE_PATH="coverage/hlzhu_tfmodels$read_tfckpt.coverage" NAME="read_tfckpt Coverage Results" MODIFIED="1560255342784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.conda/envs/tf/lib/python3.6/site-packages/tensorflow/python/platform/gfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.conda/envs/tf/lib/python3.6/site-packages/tensorflow/python/lib/io/file_io.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="131" column="34" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.conda/envs/tf/lib/python3.6/site-packages/tensorflow/python/pywrap_tensorflow_internal.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -954,6 +935,19 @@
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/export_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="25" lean-forward="true" selection-end-line="165" />
+          <folding>
+            <element signature="e#745#754#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research/deeplab/export_cam_model.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
