@@ -114,7 +114,7 @@ def main(unused_argv):
 
     if tuple(FLAGS.inference_scales) == (1.0,):
       tf.logging.info('Exported model performs single-scale inference.')
-      predictions = model.predict_labels(
+      predictions = model.predict_class_aware_attention_labels(
           image,
           model_options=model_options,
           image_pyramid=FLAGS.image_pyramid)
