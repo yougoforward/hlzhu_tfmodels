@@ -4,7 +4,7 @@ CURRENT_DIR=$(pwd)
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
-python export_model.py \
+python export_dpcam_model.py \
   --logtostderr \
   --checkpoint_path="datasets/pascal_voc_seg/exp/dual_pyramid_train_x65_fpn_on_trainaug_set/train_finetune13/model.ckpt-30000" \
   --export_path="datasets/pascal_voc_seg/exp/dual_pyramid_train_x65_fpn_on_trainaug_set/train_finetune13/frozen_inference_graph.pb" \

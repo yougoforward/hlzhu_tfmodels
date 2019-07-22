@@ -5,7 +5,7 @@ export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/slim
 export PYTHONPATH=$PYTHONPATH:$CURRENT_DIR:$CURRENT_DIR/deeplab
 cd ./deeplab
 
-python export_model.py \
+python export_cam_model.py \
   --logtostderr \
   --checkpoint_path="datasets/pascal_voc_seg/exp/class_aware_train15_on_trainaug_set/train_finetune2/model.ckpt-30000" \
   --export_path="datasets/pascal_voc_seg/exp/class_aware_train15_on_trainaug_set/train_finetune2/frozen_inference_graph.pb" \
